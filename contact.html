@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Contact Us - LEO Jeans</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with the LEO Jeans team. We'd love to hear from you." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
+    rel="stylesheet" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+      color: #fff;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/banner-image-3.jpg') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .page-hero h1 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 4px;
+      position: relative;
+    }
+
+    .page-hero p {
+      color: rgba(255, 255, 255, 0.75);
+      position: relative;
+    }
+
+    .breadcrumb-item a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item.active {
+      color: #fff;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Contact layout */
+    .contact-section {
+      padding: 90px 0;
+    }
+
+    /* Info cards */
+    .info-card {
+      background: #f9f9f9;
+      border-left: 4px solid #111;
+      padding: 30px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .info-icon {
+      width: 54px;
+      height: 54px;
+      background: #111;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .info-card h5 {
+      font-family: 'Marcellus', serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .info-card p,
+    .info-card a {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+      text-decoration: none;
+      line-height: 1.6;
+      display: block;
+    }
+
+    .info-card a:hover {
+      color: #111;
+    }
+
+    /* Hours table */
+    .hours-card {
+      background: #111;
+      color: #fff;
+      padding: 30px 28px;
+      margin-bottom: 24px;
+    }
+
+    .hours-card h5 {
+      font-family: 'Marcellus', serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-row .day {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .hours-row .time {
+      font-weight: 500;
+    }
+
+    /* Form styles */
+    .contact-form-wrap {
+      background: #fff;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
+      padding: 50px 44px;
+    }
+
+    .contact-form-wrap h3 {
+      font-family: 'Marcellus', serif;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrap .subtitle {
+      color: #888;
+      margin-bottom: 36px;
+      font-size: 0.95rem;
+    }
+
+    .form-group-custom {
+      margin-bottom: 24px;
+    }
+
+    .form-group-custom label {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #555;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group-custom input,
+    .form-group-custom textarea,
+    .form-group-custom select {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #e0e0e0;
+      border-radius: 0;
+      padding: 10px 0;
+      font-size: 0.95rem;
+      background: transparent;
+      outline: none;
+      color: #111;
+      transition: border-color 0.3s;
+      font-family: 'Jost', sans-serif;
+      -webkit-appearance: none;
+    }
+
+    .form-group-custom select {
+      cursor: pointer;
+    }
+
+    .form-group-custom input:focus,
+    .form-group-custom textarea:focus,
+    .form-group-custom select:focus {
+      border-color: #111;
+    }
+
+    .form-group-custom textarea {
+      resize: none;
+      min-height: 120px;
+    }
+
+    .form-group-custom input::placeholder,
+    .form-group-custom textarea::placeholder {
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+
+    /* Subject chips */
+    .subject-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .subject-chip {
+      padding: 8px 18px;
+      border: 1.5px solid #ddd;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: transparent;
+      color: #666;
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .subject-chip:hover,
+    .subject-chip.active {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    /* Submit button */
+    .btn-submit {
+      background: #111;
+      color: #fff;
+      border: 2px solid #111;
+      padding: 14px 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-family: 'Jost', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: transparent;
+      color: #111;
+    }
+
+    /* Success message */
+    .success-msg {
+      display: none;
+      background: #f0faf0;
+      border-left: 4px solid #28a745;
+      padding: 16px 20px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #155724;
+    }
+
+    /* Map mock */
+    .map-section {
+      margin-top: 0;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.03) 40px, rgba(255, 255, 255, 0.03) 41px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.03) 40px, rgba(255, 255, 255, 0.03) 41px);
+    }
+
+    .map-pin {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-pin .pin-icon {
+      font-size: 3rem;
+      animation: bounce 1.5s infinite;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .map-pin p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-10px)
+      }
+    }
+
+    /* FAQ Strip */
+    .faq-section {
+      padding: 80px 0;
+      background: #f9f9f9;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1rem;
+      user-select: none;
+    }
+
+    .faq-question .toggle {
+      font-size: 1.4rem;
+      color: #888;
+      transition: transform 0.3s;
+    }
+
+    .faq-question.open .toggle {
+      transform: rotate(45deg);
+      color: #111;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .faq-answer.open {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-form-wrap {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SVG Sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <defs>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor"
+          d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor"
+          d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 15 15">
+        <path fill="currentColor"
+          d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334Zm-.498 2.959a.5.5 0 1 0-1 0h1Zm-6.49.082h-.5h.5Zm0 .959h.5h-.5Zm-6.99 7V12a.5.5 0 0 0-.278.916L.5 12.5Zm.998-11l.469-.175a.5.5 0 0 0-.916-.048l.447.223Zm3.994 9l.354.353a.5.5 0 0 0-.195-.827l-.159.474Zm7.224-8.027l-.37.336l.18.199l.265-.04l-.075-.495Zm1.264-.94c.051.778.003 1.25-.123 1.606c-.122.345-.336.629-.723 1l.692.722c.438-.42.776-.832.974-1.388c.193-.546.232-1.178.177-2.006l-.998.066Zm0 3.654V4.46h-1v.728h1Zm-6.99-.646V5.5h1v-.959h-1Zm0 .959V6h1v-.5h-1ZM10.525 1a3.539 3.539 0 0 0-3.537 3.541h1A2.539 2.539 0 0 1 10.526 2V1Zm2.454 4.187C12.98 9.503 9.487 13 5.18 13v1c4.86 0 8.8-3.946 8.8-8.813h-1ZM1.03 1.675C1.574 3.127 3.614 6 7.49 6V5C4.174 5 2.421 2.54 1.966 1.325l-.937.35Zm.021-.398C.004 3.373-.157 5.407.604 7.139c.759 1.727 2.392 3.055 4.73 3.835l.317-.948c-2.155-.72-3.518-1.892-4.132-3.29c-.612-1.393-.523-3.11.427-5.013l-.895-.446Zm4.087 8.87C4.536 10.75 2.726 12 .5 12v1c2.566 0 4.617-1.416 5.346-2.147l-.708-.706Zm7.949-8.009A3.445 3.445 0 0 0 10.526 1v1c.721 0 1.37.311 1.82.809l.74-.671Zm-.296.83a3.513 3.513 0 0 0 2.06-1.134l-.744-.668a2.514 2.514 0 0 1-1.466.813l.15.989ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 15 15">
+        <path fill="currentColor"
+          d="m1.61 12.738l-.104.489Zm11.78 0l.104.489Zm0-10.476l.104-.489Zm-11.78 0l.106.489ZM6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5Zm0 4H6a.5.5 0 0 0 .777.416Zm3-2l.277.416a.5.5 0 0 0 0-.832ZM0 3.636v7.728h1V3.636Zm15 7.728V3.636h-1v7.728ZM13.494 1.773a28.606 28.606 0 0 0-11.988 0l.21.978a27.607 27.607 0 0 1 11.568 0ZM15 3.636c0-.898-.628-1.675-1.506-1.863l-.21.978c.418.09.716.458.716.885Zm-1 7.728a.905.905 0 0 1-.716.885l.21.978A1.905 1.905 0 0 0 15 11.364Zm-14 0c0 .898.628 1.675 1.506 1.863l.21-.978A.905.905 0 0 1 1 11.364Zm1-7.728c0-.427.298-.796.716-.885l-.21-.978A1.905 1.905 0 0 0 0 3.636ZM6 5.5v4h1v-4Zm.777 4.416l3-2l-.554-.832l-3 2Zm3-2.832l-3-2l-.554.832l3 2Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="pinterest" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor"
+          d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
+
+  <!-- Cart Offcanvas -->
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="My Cart">
+    <div class="offcanvas-header justify-content-center">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your denim cart</span>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item"><span class="text-muted">Your cart is empty.</span></li>
+        </ul>
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Popup -->
+  <div class="search-popup">
+    <div class="search-popup-container">
+      <form role="search" method="get" class="form-group" action="">
+        <input type="search" id="search-form" class="form-control border-0 border-bottom"
+          placeholder="Type and press enter" value="" name="s" />
+        <button type="submit" class="search-submit border-0 position-absolute bg-white" style="top: 15px; right: 15px">
+          <svg class="search" width="24" height="24">
+            <use xlink:href="#search"></use>
+          </svg>
+        </button>
+      </form>
+      <h5 class="cat-list-title">Browse Categories</h5>
+      <ul class="cat-list">
+        <li class="cat-list-item"><a href="shop.html">Skinny Jeans</a></li>
+        <li class="cat-list-item"><a href="shop.html">Straight Jeans</a></li>
+        <li class="cat-list-item"><a href="shop.html">Denim Jackets</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center w-100">
+        <div class="col-auto">
+          <a class="navbar-brand text-white" href="index.html">
+            <span style="display: flex; align-items: center; gap: 12px">
+              <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo" style="height: 80px; width: auto" />
+              <span
+                style="font-size: 2.2rem; font-family: 'Marcellus', Roboto, sans-serif; font-weight: 400; color: #111; letter-spacing: 2px;">LEO</span>
+            </span>
+          </a>
+        </div>
+        <div class="col-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 col-lg-auto">
+          <ul class="list-unstyled d-flex m-0">
+            <li class="d-none d-lg-block">
+              <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#cart"></use>
+                </svg>
+                <span class="cart-count ms-1">(0)</span>
+              </a>
+            </li>
+            <li class="d-lg-none">
+              <a href="#" class="mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#cart"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="search-box mx-2">
+              <a href="#search" class="search-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container text-center">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb justify-content-center" style="background:transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+      </nav>
+      <h1 class="mb-4">Get In Touch</h1>
+      <p class="mx-auto" style="max-width: 520px;">Have a question about sizing, an order, or just want to say hello?
+        We're here for you — always.</p>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Left: Info + Hours -->
+        <div class="col-lg-4" data-aos="fade-right">
+          <p class="text-uppercase mb-2" style="font-size: 0.78rem; letter-spacing: 3px; color: #888;">How to Reach Us
+          </p>
+          <h2 class="section-title mb-4" style="font-size: 2rem;">Contact<br>Information</h2>
+
+          <div class="info-card">
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></div>
+            <div>
+              <h5>Our Store</h5>
+              <p>42 Denim Lane, Fashion District<br>New York, NY 10001, USA</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.908.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></div>
+            <div>
+              <h5>Phone</h5>
+              <a href="tel:+12345678901">+1 (234) 567-8901</a>
+              <a href="tel:+12345678902" style="margin-top:4px">+1 (234) 567-8902</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg></div>
+            <div>
+              <h5>Email</h5>
+              <a href="mailto:hello@leojeans.com">hello@leojeans.com</a>
+              <a href="mailto:support@leojeans.com" style="margin-top:4px">support@leojeans.com</a>
+            </div>
+          </div>
+
+          <div class="hours-card">
+            <h5>Store Hours</h5>
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">9:00 – 19:00</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time">10:00 – 18:00</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time">11:00 – 16:00</span></div>
+            <div class="hours-row"><span class="day">Public Holidays</span><span class="time">Closed</span></div>
+          </div>
+
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-dark"><svg width="22" height="22" viewBox="0 0 15 15">
+                <use xlink:href="#instagram"></use>
+              </svg></a>
+            <a href="#" class="text-dark"><svg width="22" height="22" viewBox="0 0 15 15">
+                <use xlink:href="#facebook"></use>
+              </svg></a>
+            <a href="#" class="text-dark"><svg width="22" height="22" viewBox="0 0 15 15">
+                <use xlink:href="#twitter"></use>
+              </svg></a>
+            <a href="#" class="text-dark"><svg width="22" height="22" viewBox="0 0 15 15">
+                <use xlink:href="#pinterest"></use>
+              </svg></a>
+          </div>
+        </div>
+
+        <!-- Right: Contact Forms -->
+        <div class="col-lg-8" data-aos="fade-left" data-aos-delay="150">
+          <div class="contact-form-wrap">
+            <h3>Send Us a Message</h3>
+            <p class="subtitle">Fill in the form below and we'll get back to you within 24 hours.</p>
+
+            <!-- Subject chips -->
+            <div class="mb-4">
+              <p
+                style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: #555; margin-bottom: 12px; font-weight: 500;">
+                I'm contacting about:</p>
+              <div class="subject-chips">
+                <button type="button" class="subject-chip active" data-subject="General Inquiry">General
+                  Inquiry</button>
+                <button type="button" class="subject-chip" data-subject="Order Support">Order Support</button>
+                <button type="button" class="subject-chip" data-subject="Returns & Exchanges">Returns &amp;
+                  Exchanges</button>
+                <button type="button" class="subject-chip" data-subject="Sizing Help">Sizing Help</button>
+                <button type="button" class="subject-chip" data-subject="Wholesale">Wholesale</button>
+                <button type="button" class="subject-chip" data-subject="Press & Media">Press &amp; Media</button>
+              </div>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <input type="hidden" id="hiddenSubject" name="subject" value="General Inquiry" />
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group-custom">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="John" required />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group-custom">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group-custom">
+                    <label for="emailAddress">Email Address *</label>
+                    <input type="email" id="emailAddress" name="email" placeholder="john@example.com" required />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group-custom">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="orderNumber">Order Number (if applicable)</label>
+                <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g. LEO-2024-00123" />
+              </div>
+
+              <div class="form-group-custom">
+                <label for="messageBody">Your Message *</label>
+                <textarea id="messageBody" name="message" placeholder="Tell us how we can help you..."
+                  required></textarea>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <input type="checkbox" id="newsletter" name="newsletter"
+                  style="width:18px; height:18px; cursor:pointer; accent-color:#111;" />
+                <label for="newsletter" style="font-size: 0.85rem; color: #666; cursor: pointer; margin: 0;">Subscribe
+                  to our newsletter for exclusive deals &amp; new arrivals</label>
+              </div>
+
+              <button type="submit" class="btn-submit">Send Message &rarr;</button>
+              <div class="success-msg" id="successMsg">
+                ✅ Thank you! Your message has been sent. We'll reply within 24 hours.
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="map-placeholder">
+      <div class="map-pin">
+        <span class="pin-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg></span>
+        <p>42 Denim Lane, New York, NY 10001</p>
+        <a href="https://maps.google.com" target="_blank"
+          style="color: rgba(255,255,255,0.6); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; margin-top: 8px; display: inline-block;">Open
+          in Google Maps →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center">
+          <p class="text-uppercase mb-2" style="font-size: 0.78rem; letter-spacing: 3px; color: #888;">Quick Answers</p>
+          <h2 class="section-title" style="font-size: 2.2rem;">Frequently Asked Questions</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How long does shipping take?
+              <span class="toggle">+</span>
+            </div>
+            <div class="faq-answer">Standard shipping takes 3–5 business days within the US. Express shipping (1–2 days)
+              is available at checkout. International orders typically arrive within 7–14 business days depending on
+              location.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What is your return policy?
+              <span class="toggle">+</span>
+            </div>
+            <div class="faq-answer">We accept returns within 30 days of delivery, for items in original condition with
+              tags attached. Simply use our returns portal online or drop your parcel at any of our partner locations.
+              Exchanges are always free.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I find my perfect size?
+              <span class="toggle">+</span>
+            </div>
+            <div class="faq-answer">Each product page includes a detailed size guide with waist, hip, and inseam
+              measurements. If you're between sizes, we generally recommend sizing up for a more relaxed fit or sizing
+              down for a sleeker, slimmer silhouette.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Do you offer wholesale or bulk ordering?
+              <span class="toggle">+</span>
+            </div>
+            <div class="faq-answer">Yes! We work with boutiques, retailers, and stylists. For wholesale inquiries,
+              please select "Wholesale" in the contact form above or email us directly at wholesale@leojeans.com.
+              Minimum order quantities apply.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Are your jeans sustainably made?
+              <span class="toggle">+</span>
+            </div>
+            <div class="faq-answer">Absolutely. We use certified organic cotton blends, water-recycling wash techniques,
+              and partner only with ethically certified manufacturing facilities. Sustainability is at the core of
+              everything we create — not just a label.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="mt-0">
+    <div class="container">
+      <div class="row d-flex flex-wrap justify-content-between py-5">
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu footer-menu-001">
+            <div class="footer-intro mb-4">
+              <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+                <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo" style="height:55px;width:auto" />
+                <span
+                  style="font-size:1.6rem;font-family:'Marcellus',Roboto,sans-serif;font-weight:400;color:#111;letter-spacing:2px">LEO</span>
+              </a>
+            </div>
+            <p>Premium denim crafted for real life. Quality you can feel, style you can own.</p>
+            <div class="social-links">
+              <ul class="list-unstyled d-flex flex-wrap gap-3">
+                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="#facebook"></use>
+                    </svg></a></li>
+                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="#twitter"></use>
+                    </svg></a></li>
+                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="#youtube"></use>
+                    </svg></a></li>
+                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 15 15">
+                      <use xlink:href="#instagram"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu footer-menu-002">
+            <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
+            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
+              <li class="menu-item"><a href="index.html" class="item-anchor">Home</a></li>
+              <li class="menu-item"><a href="about.html" class="item-anchor">About</a></li>
+              <li class="menu-item"><a href="shop.html" class="item-anchor">Shop</a></li>
+              <li class="menu-item"><a href="contact.html" class="item-anchor">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu footer-menu-003">
+            <h5 class="widget-title text-uppercase mb-4">Help &amp; Info</h5>
+            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
+              <li class="menu-item"><a href="#" class="item-anchor">Track Your Order</a></li>
+              <li class="menu-item"><a href="#" class="item-anchor">Returns + Exchanges</a></li>
+              <li class="menu-item"><a href="#" class="item-anchor">Shipping + Delivery</a></li>
+              <li class="menu-item"><a href="contact.html" class="item-anchor">Contact Us</a></li>
+              <li class="menu-item"><a href="#" class="item-anchor">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu footer-menu-004 border-animation-left">
+            <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
+            <p>Questions? <a href="mailto:hello@leojeans.com" class="item-anchor">hello@leojeans.com</a></p>
+            <p>Support: <a href="tel:+12345678901" class="item-anchor">+1 (234) 567-8901</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-top py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-wrap">
+            <div class="shipping">
+              <span>We ship with:</span>
+              <img src="images/arct-icon.png" alt="icon" />
+              <img src="images/dhl-logo.png" alt="icon" />
+            </div>
+            <div class="payment-option">
+              <span>Payment Option:</span>
+              <img src="images/visa-card.png" alt="card" />
+              <img src="images/paypal-card.png" alt="card" />
+              <img src="images/master-card.png" alt="card" />
+            </div>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>© Copyright 2024 LEO Jeans. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/SmoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/script.min.js"></script>
+
+  <script>
+    // Subject chip interaction
+    document.querySelectorAll('.subject-chip').forEach(chip => {
+      chip.addEventListener('click', function () {
+        document.querySelectorAll('.subject-chip').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('hiddenSubject').value = this.dataset.subject;
+      });
+    });
+
+    // Form submit handler
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('successMsg').style.display = 'block';
+        btn.textContent = 'Message Sent ✓';
+        this.reset();
+        document.querySelectorAll('.subject-chip').forEach((c, i) => {
+          c.classList.toggle('active', i === 0);
+        });
+      }, 1200);
+    });
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('open');
+        q.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        answer.classList.add('open');
+      }
+    }
+  </script>
+</body>
+
+</html>
