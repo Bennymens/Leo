@@ -1605,3 +1605,58 @@ a.btn-link.text-light:after {
   max-width: 100%;
   height: auto;
 }
+/* Mobile navbar: keep logo + icons on single line */
+@media (max-width: 767.98px) {
+  .navbar .row {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .navbar .col-auto {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .navbar .navbar-brand img {
+    height: 44px !important;
+    width: auto !important;
+  }
+  .navbar .navbar-brand span {
+    font-size: 1.1rem !important;
+    line-height: 1;
+  }
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar .list-unstyled.d-flex {
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .navbar .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.25rem;
+  }
+  .navbar .cart-count {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .navbar .navbar-brand img {
+    height: 36px !important;
+  }
+  .navbar .navbar-brand span {
+    font-size: 0.95rem !important;
+  }
+  .navbar .row {
+    gap: 6px;
+  }
+  .navbar .list-unstyled.d-flex {
+    gap: 4px;
+  }
+  .navbar .navbar-toggler {
+    padding: 0.15rem 0.4rem;
+  }
+}

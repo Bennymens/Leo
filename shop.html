@@ -1,1219 +1,1747 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <title>Shop - LEO Jeans</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop premium denim jeans, jackets, and shorts at LEO Jeans."
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .page-hero {
+        background: linear-gradient(
+          135deg,
+          #1a1a1a 0%,
+          #2d2d2d 50%,
+          #1a1a1a 100%
+        );
+        color: #fff;
+        padding: 100px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
 
-<head>
-  <title>Shop - LEO Jeans</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shop premium denim jeans, jackets, and shorts at LEO Jeans." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="css/vendor.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
-    rel="stylesheet" />
-  <style>
-    .page-hero {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-      color: #fff;
-      padding: 100px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("images/banner-image-5.jpg") center/cover no-repeat;
+        opacity: 0.15;
+      }
 
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('images/banner-image-5.jpg') center/cover no-repeat;
-      opacity: 0.15;
-    }
+      .page-hero h1 {
+        font-family: "Marcellus", serif;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        letter-spacing: 4px;
+        position: relative;
+      }
 
-    .page-hero h1 {
-      font-family: 'Marcellus', serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      letter-spacing: 4px;
-      position: relative;
-    }
+      .page-hero p {
+        color: rgba(255, 255, 255, 0.75);
+        position: relative;
+      }
 
-    .page-hero p {
-      color: rgba(255, 255, 255, 0.75);
-      position: relative;
-    }
+      .breadcrumb-item a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+      }
 
-    .breadcrumb-item a {
-      color: rgba(255, 255, 255, 0.6);
-      text-decoration: none;
-    }
+      .breadcrumb-item.active {
+        color: #fff;
+      }
 
-    .breadcrumb-item.active {
-      color: #fff;
-    }
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.4);
+      }
 
-    .breadcrumb-item+.breadcrumb-item::before {
-      color: rgba(255, 255, 255, 0.4);
-    }
+      /* Filter bar */
+      .filter-bar {
+        background: #f9f9f9;
+        border-bottom: 1px solid #e8e8e8;
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-    /* Filter bar */
-    .filter-bar {
-      background: #f9f9f9;
-      border-bottom: 1px solid #e8e8e8;
-      padding: 18px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+      .filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
 
-    .filter-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
+      .filter-chip {
+        padding: 7px 18px;
+        border: 1.5px solid #ddd;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: all 0.2s;
+        background: transparent;
+        color: #555;
+        border-radius: 2px;
+        font-family: "Jost", sans-serif;
+        white-space: nowrap;
+      }
 
-    .filter-chip {
-      padding: 7px 18px;
-      border: 1.5px solid #ddd;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      cursor: pointer;
-      transition: all 0.2s;
-      background: transparent;
-      color: #555;
-      border-radius: 2px;
-      font-family: 'Jost', sans-serif;
-      white-space: nowrap;
-    }
+      .filter-chip:hover,
+      .filter-chip.active {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+      }
 
-    .filter-chip:hover,
-    .filter-chip.active {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
+      .sort-select {
+        padding: 7px 14px;
+        border: 1.5px solid #ddd;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: transparent;
+        color: #555;
+        font-family: "Jost", sans-serif;
+        cursor: pointer;
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 2px;
+      }
 
-    .sort-select {
-      padding: 7px 14px;
-      border: 1.5px solid #ddd;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: transparent;
-      color: #555;
-      font-family: 'Jost', sans-serif;
-      cursor: pointer;
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
-      border-radius: 2px;
-    }
+      .results-count {
+        font-size: 0.85rem;
+        color: #888;
+      }
+      @media (max-width: 767.98px) {
+        /* Disable sticky header on small screens so it scrolls with content */
+        .filter-bar {
+          position: static;
+        }
+        /* Allow filter chips to scroll horizontally on small screens */
+        .filter-chips {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          white-space: nowrap;
+        }
+        .filter-chips .filter-chip {
+          display: inline-block;
+        }
+        .filter-chips::-webkit-scrollbar {
+          display: none;
+        }
+      }
 
-    .results-count {
-      font-size: 0.85rem;
-      color: #888;
-    }
+      /* Product grid */
+      .shop-section {
+        padding: 60px 0 80px;
+      }
 
-    /* Product grid */
-    .shop-section {
-      padding: 60px 0 80px;
-    }
+      .product-card {
+        position: relative;
+      }
 
-    .product-card {
-      position: relative;
-    }
+      .product-img-wrap {
+        position: relative;
+        overflow: hidden;
+        background: #f5f5f5;
+      }
 
-    .product-img-wrap {
-      position: relative;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
-
-    .product-img-wrap img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-      display: block;
-    }
-
-    .product-card:hover .product-img-wrap img {
-      transform: scale(1.06);
-    }
-
-    .product-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: #111;
-      color: #fff;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 4px 10px;
-      z-index: 2;
-    }
-
-    .product-badge.sale {
-      background: #c0392b;
-    }
-
-    .product-badge.new {
-      background: #27ae60;
-    }
-
-    .product-actions {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      gap: 1px;
-      transform: translateY(100%);
-      transition: transform 0.35s ease;
-    }
-
-    .product-card:hover .product-actions {
-      transform: translateY(0);
-    }
-
-    .action-btn {
-      flex: 1;
-      padding: 13px 0;
-      background: rgba(17, 17, 17, 0.92);
-      color: #fff;
-      border: none;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      cursor: pointer;
-      font-family: 'Jost', sans-serif;
-      transition: background 0.2s;
-    }
-
-    .action-btn:hover {
-      background: #000;
-    }
-
-    .action-btn.wishlist {
-      flex: 0 0 52px;
-      font-size: 1.1rem;
-    }
-
-    .product-info {
-      padding: 16px 4px 8px;
-    }
-
-    .product-name {
-      font-family: 'Marcellus', serif;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-      text-decoration: none;
-      color: #111;
-      display: block;
-      transition: color 0.2s;
-    }
-
-    .product-name:hover {
-      color: #555;
-    }
-
-    .product-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .product-price {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #111;
-    }
-
-    .product-price .old {
-      color: #bbb;
-      text-decoration: line-through;
-      font-size: 0.85rem;
-      font-weight: 400;
-      margin-right: 6px;
-    }
-
-    .product-stars {
-      color: #f39c12;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-    }
-
-    .product-colors {
-      display: flex;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .color-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .color-dot:hover {
-      border-color: #111;
-    }
-
-    /* Sidebar */
-    .sidebar-heading {
-      font-family: 'Marcellus', serif;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border-bottom: 2px solid #111;
-      padding-bottom: 10px;
-      margin-bottom: 18px;
-    }
-
-    .sidebar-section {
-      margin-bottom: 36px;
-    }
-
-    .sidebar-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.88rem;
-      color: #555;
-      text-decoration: none;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
-
-    .sidebar-link:hover,
-    .sidebar-link.active {
-      color: #111;
-      font-weight: 500;
-    }
-
-    .sidebar-link .count {
-      color: #bbb;
-      font-size: 0.78rem;
-    }
-
-    .price-range {
-      margin-top: 10px;
-    }
-
-    .price-range input[type=range] {
-      width: 100%;
-      accent-color: #111;
-      cursor: pointer;
-    }
-
-    .price-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.82rem;
-      color: #888;
-      margin-top: 6px;
-    }
-
-    .size-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .size-box {
-      width: 42px;
-      height: 38px;
-      border: 1.5px solid #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: 'Jost', sans-serif;
-      font-weight: 500;
-    }
-
-    .size-box:hover,
-    .size-box.active {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
-    /* Pagination */
-    .pagination-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 50px;
-      flex-wrap: wrap;
-    }
-
-    .page-btn {
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid #ddd;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: 'Jost', sans-serif;
-      background: transparent;
-      color: #555;
-    }
-
-    .page-btn:hover,
-    .page-btn.active {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
-    /* Toast */
-    .cart-toast {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #111;
-      color: #fff;
-      padding: 14px 24px;
-      font-size: 0.85rem;
-      z-index: 9999;
-      border-radius: 2px;
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.4s ease;
-      max-width: 300px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .cart-toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    @media(max-width:768px) {
       .product-img-wrap img {
-        height: 280px;
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        display: block;
+      }
+
+      .product-card:hover .product-img-wrap img {
+        transform: scale(1.06);
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: #111;
+        color: #fff;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 4px 10px;
+        z-index: 2;
+      }
+
+      .product-badge.sale {
+        background: #c0392b;
+      }
+
+      .product-badge.new {
+        background: #27ae60;
       }
 
       .product-actions {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        gap: 1px;
+        transform: translateY(100%);
+        transition: transform 0.35s ease;
+      }
+
+      .product-card:hover .product-actions {
         transform: translateY(0);
       }
-    }
-  </style>
-</head>
 
-<body>
-  <!-- SVG Sprite -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <defs>
-      <symbol id="instagram" viewBox="0 0 15 15">
-        <path fill="none" stroke="currentColor"
-          d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
-      </symbol>
-      <symbol id="facebook" viewBox="0 0 15 15">
-        <path fill="none" stroke="currentColor"
-          d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5" />
-      </symbol>
-      <symbol id="twitter" viewBox="0 0 15 15">
-        <path fill="currentColor"
-          d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334Zm-.498 2.959a.5.5 0 1 0-1 0h1Zm-6.49.082h-.5h.5Zm0 .959h.5h-.5Zm-6.99 7V12a.5.5 0 0 0-.278.916L.5 12.5Zm.998-11l.469-.175a.5.5 0 0 0-.916-.048l.447.223Zm3.994 9l.354.353a.5.5 0 0 0-.195-.827l-.159.474ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z" />
-      </symbol>
-      <symbol id="youtube" viewBox="0 0 15 15">
-        <path fill="currentColor"
-          d="M6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5h.5Zm0 4H6a.5.5 0 0 0 .777.416L6.5 9.5Zm3-2l.277.416a.5.5 0 0 0 0-.832L9.5 7.5ZM0 3.636v7.728h1V3.636Zm15 7.728V3.636h-1v7.728ZM13.494 1.773a28.606 28.606 0 0 0-11.988 0l.21.978a27.607 27.607 0 0 1 11.568 0ZM6 5.5v4h1v-4Zm.777 4.416l3-2-.554-.832-3 2Zm3-2.832-3-2-.554.832 3 2Z" />
-      </symbol>
-      <symbol id="cart" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z" />
-      </symbol>
-      <symbol id="search" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
-      </symbol>
-      <symbol id="heart" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z" />
-      </symbol>
-    </defs>
-  </svg>
-
-  <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
-
-  <!-- Cart Toast -->
-  <div class="cart-toast" id="cartToast"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
-      style="margin-right:8px;vertical-align:middle">
-      <use xlink:href="#cart"></use>
-    </svg>Item added to your cart!</div>
-
-  <!-- Cart Offcanvas -->
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="My Cart">
-    <div class="offcanvas-header justify-content-center">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your denim cart</span>
-          <span class="badge bg-primary rounded-pill" id="cartBadge">0</span>
-        </h4>
-        <ul class="list-group mb-3" id="cartList">
-          <li class="list-group-item text-muted">Your cart is empty.</li>
-        </ul>
-        <button class="w-100 btn btn-primary btn-lg">Continue to Checkout</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Search Popup -->
-  <div class="search-popup">
-    <div class="search-popup-container">
-      <form role="search" method="get" class="form-group" action="">
-        <input type="search" id="search-form" class="form-control border-0 border-bottom"
-          placeholder="Type and press enter" value="" name="s" />
-        <button type="submit" class="search-submit border-0 position-absolute bg-white" style="top:15px;right:15px">
-          <svg class="search" width="24" height="24">
-            <use xlink:href="#search"></use>
-          </svg>
-        </button>
-      </form>
-      <h5 class="cat-list-title">Browse Categories</h5>
-      <ul class="cat-list">
-        <li class="cat-list-item"><a href="#" onclick="filterProducts('Skinny')">Skinny Jeans</a></li>
-        <li class="cat-list-item"><a href="#" onclick="filterProducts('Straight')">Straight Jeans</a></li>
-        <li class="cat-list-item"><a href="#" onclick="filterProducts('Jacket')">Denim Jackets</a></li>
-        <li class="cat-list-item"><a href="#" onclick="filterProducts('Shorts')">Denim Shorts</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
-    <div class="container-fluid">
-      <div class="row justify-content-between align-items-center w-100">
-        <div class="col-auto me-auto me-lg-0">
-          <a class="navbar-brand text-white" href="index.html">
-            <span style="display:flex;align-items:center;gap:12px">
-              <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo" style="height:80px;width:auto" />
-              <span
-                style="font-size:2.2rem;font-family:'Marcellus',Roboto,sans-serif;font-weight:400;color:#111;letter-spacing:2px">LEO</span>
-            </span>
-          </a>
-        </div>
-        <div class="col-auto order-last order-lg-0">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title">Menu</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <ul class="list-unstyled d-flex m-0">
-            <li class="d-none d-lg-block">
-              <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <use xlink:href="#cart"></use>
-                </svg>
-                <span class="cart-count ms-1" id="navCartCount">(0)</span>
-              </a>
-            </li>
-            <li class="d-lg-none">
-              <a href="#" class="mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <use xlink:href="#cart"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="search-box mx-2">
-              <a href="#search" class="search-button">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <use xlink:href="#search"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container text-center">
-      <nav aria-label="breadcrumb" class="mb-3">
-        <ol class="breadcrumb justify-content-center" style="background:transparent">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Shop</li>
-        </ol>
-      </nav>
-      <h1 class="mb-4">The Collection</h1>
-      <p class="mx-auto" style="max-width:500px">Premium denim for every occasion. Find your perfect fit from our
-        curated range of jeans, jackets, and shorts.</p>
-    </div>
-  </section>
-
-  <!-- Filter Bar -->
-  <div class="filter-bar">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-        <div class="filter-chips">
-          <button class="filter-chip active" data-filter="all">All</button>
-          <button class="filter-chip" data-filter="Skinny">Skinny</button>
-          <button class="filter-chip" data-filter="Straight">Straight</button>
-          <button class="filter-chip" data-filter="Relaxed">Relaxed</button>
-          <button class="filter-chip" data-filter="Jacket">Jackets</button>
-          <button class="filter-chip" data-filter="Shorts">Shorts</button>
-          <button class="filter-chip" data-filter="High-Rise">High-Rise</button>
-        </div>
-        <div class="d-flex align-items-center gap-3">
-          <span class="results-count" id="resultsCount">12 products</span>
-          <select class="sort-select" id="sortSelect">
-            <option value="default">Sort: Featured</option>
-            <option value="price-asc">Price: Low → High</option>
-            <option value="price-desc">Price: High → Low</option>
-            <option value="newest">Newest</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Shop Section -->
-  <section class="shop-section">
-    <div class="container">
-      <div class="row g-4">
-
-        <!-- Sidebar -->
-        <div class="col-lg-3 d-none d-lg-block">
-          <div class="sidebar-section">
-            <h6 class="sidebar-heading">Categories</h6>
-            <a class="sidebar-link active" onclick="filterProducts('all')">All Products <span
-                class="count">(12)</span></a>
-            <a class="sidebar-link" onclick="filterProducts('Skinny')">Skinny Jeans <span class="count">(3)</span></a>
-            <a class="sidebar-link" onclick="filterProducts('Straight')">Straight Cut <span class="count">(2)</span></a>
-            <a class="sidebar-link" onclick="filterProducts('Relaxed')">Relaxed Fit <span class="count">(2)</span></a>
-            <a class="sidebar-link" onclick="filterProducts('Jacket')">Denim Jackets <span class="count">(2)</span></a>
-            <a class="sidebar-link" onclick="filterProducts('Shorts')">Denim Shorts <span class="count">(2)</span></a>
-            <a class="sidebar-link" onclick="filterProducts('High-Rise')">High-Rise <span class="count">(1)</span></a>
-          </div>
-
-          <div class="sidebar-section">
-            <h6 class="sidebar-heading">Price Range</h6>
-            <div class="price-range">
-              <input type="range" id="priceRange" min="0" max="200" value="200" oninput="updatePrice(this.value)" />
-              <div class="price-label">
-                <span>$0</span>
-                <span id="priceMax">Up to $200</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="sidebar-section">
-            <h6 class="sidebar-heading">Size</h6>
-            <div class="size-grid">
-              <div class="size-box" onclick="this.classList.toggle('active')">XS</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">S</div>
-              <div class="size-box active" onclick="this.classList.toggle('active')">M</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">L</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">XL</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">28</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">30</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">32</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">34</div>
-              <div class="size-box" onclick="this.classList.toggle('active')">36</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Grid -->
-        <div class="col-lg-9">
-          <div class="row g-4" id="productGrid">
-
-            <!-- Product 1 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Skinny" data-price="59">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge new">New</span>
-                  <img src="images/banner-image-6.jpg" alt="Classic Blue Skinny Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Classic Blue Skinny Jeans','$59')">Add to
-                      Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Classic Blue Skinny Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price">$59</span>
-                    <span class="product-stars">★★★★★</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#3d5a99" title="Blue"></div>
-                    <div class="color-dot" style="background:#111" title="Black"></div>
-                    <div class="color-dot" style="background:#8B6914" title="Tan"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Straight" data-price="69">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge">Bestseller</span>
-                  <img src="images/banner-image-1.jpg" alt="Classic Indigo Straight Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Classic Indigo Straight Jeans','$69')">Add to
-                      Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Classic Indigo Straight Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price">$69</span>
-                    <span class="product-stars">★★★★★</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#3d5a99"></div>
-                    <div class="color-dot" style="background:#1e3460"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="High-Rise" data-price="75">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge sale">Sale</span>
-                  <img src="images/banner-image-2.jpg" alt="High-Rise Mom Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('High-Rise Mom Jeans','$75')">Add to Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">High-Rise Mom Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price"><span class="old">$99</span>$75</span>
-                    <span class="product-stars">★★★★☆</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#c0b9a8"></div>
-                    <div class="color-dot" style="background:#3d5a99"></div>
-                    <div class="color-dot" style="background:#111"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Relaxed" data-price="65">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <img src="images/banner-image-3.jpg" alt="Relaxed Fit Straight Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Relaxed Fit Straight Jeans','$65')">Add to
-                      Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Relaxed Fit Straight Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price">$65</span>
-                    <span class="product-stars">★★★★☆</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#3d5a99"></div>
-                    <div class="color-dot" style="background:#7a9cc2"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Jacket" data-price="120">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge new">New</span>
-                  <img src="images/banner-image-4.jpg" alt="Vintage Wash Denim Jacket" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Vintage Wash Denim Jacket','$120')">Add to
-                      Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Vintage Wash Denim Jacket</a>
-                  <div class="product-meta">
-                    <span class="product-price">$120</span>
-                    <span class="product-stars">★★★★★</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#7a9cc2"></div>
-                    <div class="color-dot" style="background:#111"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Skinny" data-price="55">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge">Bestseller</span>
-                  <img src="images/banner-image-5.jpg" alt="Black Skinny Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Black Skinny Jeans','$55')">Add to Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Black Skinny Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price">$55</span>
-                    <span class="product-stars">★★★★★</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#111"></div>
-                    <div class="color-dot" style="background:#444"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Shorts" data-price="45">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <img src="images/banner-image-6.jpg" alt="Classic Denim Shorts" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Classic Denim Shorts','$45')">Add to Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Classic Denim Shorts</a>
-                  <div class="product-meta">
-                    <span class="product-price">$45</span>
-                    <span class="product-stars">★★★★☆</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#7a9cc2"></div>
-                    <div class="color-dot" style="background:#c0b9a8"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Straight" data-price="72">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge sale">Sale</span>
-                  <img src="images/banner-image-1.jpg" alt="Dark Wash Straight Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Dark Wash Straight Jeans','$72')">Add to
-                      Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Dark Wash Straight Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price"><span class="old">$89</span>$72</span>
-                    <span class="product-stars">★★★★☆</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#1e3460"></div>
-                    <div class="color-dot" style="background:#111"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 9 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Jacket" data-price="135">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <img src="images/banner-image-3.jpg" alt="Oversized Denim Jacket" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Oversized Denim Jacket','$135')">Add to Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Oversized Denim Jacket</a>
-                  <div class="product-meta">
-                    <span class="product-price">$135</span>
-                    <span class="product-stars">★★★★★</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#c0b9a8"></div>
-                    <div class="color-dot" style="background:#3d5a99"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 10 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Skinny" data-price="62">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge new">New</span>
-                  <img src="images/banner-image-2.jpg" alt="Ripped Skinny Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Ripped Skinny Jeans','$62')">Add to Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Ripped Skinny Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price">$62</span>
-                    <span class="product-stars">★★★★☆</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#3d5a99"></div>
-                    <div class="color-dot" style="background:#7a9cc2"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 11 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Relaxed" data-price="68">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <img src="images/banner-image-4.jpg" alt="Loose Fit Wide Leg Jeans" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Loose Fit Wide Leg Jeans','$68')">Add to
-                      Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Loose Fit Wide Leg Jeans</a>
-                  <div class="product-meta">
-                    <span class="product-price">$68</span>
-                    <span class="product-stars">★★★★★</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#c0b9a8"></div>
-                    <div class="color-dot" style="background:#3d5a99"></div>
-                    <div class="color-dot" style="background:#111"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product 12 -->
-            <div class="col-sm-6 col-xl-4 product-item" data-category="Shorts" data-price="42">
-              <div class="product-card">
-                <div class="product-img-wrap">
-                  <span class="product-badge sale">Sale</span>
-                  <img src="images/banner-image-5.jpg" alt="Cut-Off Denim Shorts" />
-                  <div class="product-actions">
-                    <button class="action-btn" onclick="addToCart('Cut-Off Denim Shorts','$42')">Add to Cart</button>
-                    <button class="action-btn wishlist">♡</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <a href="#" class="product-name">Cut-Off Denim Shorts</a>
-                  <div class="product-meta">
-                    <span class="product-price"><span class="old">$58</span>$42</span>
-                    <span class="product-stars">★★★★☆</span>
-                  </div>
-                  <div class="product-colors">
-                    <div class="color-dot" style="background:#7a9cc2"></div>
-                    <div class="color-dot" style="background:#111"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- end product grid -->
-
-          <!-- Empty state -->
-          <div id="emptyState" style="display:none; text-align:center; padding:60px 0; color:#aaa;">
-            <div style="margin-bottom:16px"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#bbb"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2h12l1 7-4 13H9L5 9z" />
-                <path d="M9 2v7m6-7v7" />
-              </svg></div>
-            <h5 style="font-family:'Marcellus',serif; color:#555;">No products found</h5>
-            <p style="font-size:0.9rem;">Try a different filter or category.</p>
-          </div>
-
-          <!-- Pagination -->
-          <div class="pagination-wrap">
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">→</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Promo Banner -->
-  <section style="background:#f9f9f9; border-top:1px solid #eee; padding:60px 0;">
-    <div class="container">
-      <div class="row g-4 text-center">
-        <div class="col-md-4">
-          <div style="padding:20px">
-            <div style="margin-bottom:12px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#111"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="3" width="15" height="13" rx="1" />
-                <path d="M16 8h4l3 5v4h-7V8z" />
-                <circle cx="5.5" cy="18.5" r="2.5" />
-                <circle cx="18.5" cy="18.5" r="2.5" />
-              </svg></div>
-            <h6 style="font-family:'Marcellus',serif; font-size:1rem; text-transform:uppercase; letter-spacing:2px">Free
-              Shipping</h6>
-            <p style="font-size:0.88rem; color:#888; margin:0">On all orders over $75</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div style="padding:20px; border-left:1px solid #eee; border-right:1px solid #eee">
-            <div style="margin-bottom:12px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#111"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 14l-4-4 4-4" />
-                <path d="M5 10h11a4 4 0 0 1 0 8h-1" />
-              </svg></div>
-            <h6 style="font-family:'Marcellus',serif; font-size:1rem; text-transform:uppercase; letter-spacing:2px">Easy
-              Returns</h6>
-            <p style="font-size:0.88rem; color:#888; margin:0">30-day free returns</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div style="padding:20px">
-            <div style="margin-bottom:12px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#111"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 22c1.25-1.67 2.5-3 5-3s3.75 1.33 5 3" />
-                <path d="M2 22V12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.76-1.12 5.26-2.93 7.07" />
-                <path d="M12 12C12 8 9 5 6 5" />
-              </svg></div>
-            <h6 style="font-family:'Marcellus',serif; font-size:1rem; text-transform:uppercase; letter-spacing:2px">
-              Sustainably Made</h6>
-            <p style="font-size:0.88rem; color:#888; margin:0">Certified organic cotton</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row d-flex flex-wrap justify-content-between py-5">
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-001">
-            <div class="footer-intro mb-4">
-              <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-                <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo" style="height:55px;width:auto" />
-                <span
-                  style="font-size:1.6rem;font-family:'Marcellus',Roboto,sans-serif;font-weight:400;color:#111;letter-spacing:2px">LEO</span>
-              </a>
-            </div>
-            <p>Premium denim crafted for real life.</p>
-            <div class="social-links">
-              <ul class="list-unstyled d-flex flex-wrap gap-3">
-                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#facebook"></use>
-                    </svg></a></li>
-                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#twitter"></use>
-                    </svg></a></li>
-                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#youtube"></use>
-                    </svg></a></li>
-                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 15 15">
-                      <use xlink:href="#instagram"></use>
-                    </svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-002">
-            <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
-            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-              <li class="menu-item"><a href="index.html" class="item-anchor">Home</a></li>
-              <li class="menu-item"><a href="about.html" class="item-anchor">About</a></li>
-              <li class="menu-item"><a href="shop.html" class="item-anchor">Shop</a></li>
-              <li class="menu-item"><a href="contact.html" class="item-anchor">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-003">
-            <h5 class="widget-title text-uppercase mb-4">Help &amp; Info</h5>
-            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-              <li class="menu-item"><a href="#" class="item-anchor">Track Order</a></li>
-              <li class="menu-item"><a href="#" class="item-anchor">Returns</a></li>
-              <li class="menu-item"><a href="#" class="item-anchor">Shipping</a></li>
-              <li class="menu-item"><a href="contact.html" class="item-anchor">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-004 border-animation-left">
-            <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
-            <p><a href="mailto:hello@leojeans.com" class="item-anchor">hello@leojeans.com</a></p>
-            <p><a href="tel:+12345678901" class="item-anchor">+1 (234) 567-8901</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="border-top py-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 d-flex flex-wrap">
-            <div class="shipping"><span>We ship with:</span><img src="images/arct-icon.png" alt /><img
-                src="images/dhl-logo.png" alt /></div>
-            <div class="payment-option"><span>Payment:</span><img src="images/visa-card.png" alt /><img
-                src="images/paypal-card.png" alt /><img src="images/master-card.png" alt /></div>
-          </div>
-          <div class="col-md-6 text-end">
-            <p>© Copyright 2024 LEO Jeans. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/SmoothScroll.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="js/script.min.js"></script>
-
-  <script>
-    // Cart state
-    const cart = [];
-
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      updateCartUI();
-      showToast();
-    }
-
-    function updateCartUI() {
-      const count = cart.length;
-      document.getElementById('cartBadge').textContent = count;
-      document.getElementById('navCartCount').textContent = '(' + count + ')';
-      const cartList = document.getElementById('cartList');
-      if (count === 0) {
-        cartList.innerHTML = '<li class="list-group-item text-muted">Your cart is empty.</li>';
-        return;
+      .action-btn {
+        flex: 1;
+        padding: 13px 0;
+        background: rgba(17, 17, 17, 0.92);
+        color: #fff;
+        border: none;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        transition: background 0.2s;
       }
-      let totalNum = 0;
-      let html = '';
-      cart.forEach(item => {
-        const p = parseInt(item.price.replace('$', ''));
-        totalNum += p;
-        html += `<li class="list-group-item d-flex justify-content-between lh-sm">
+
+      .action-btn:hover {
+        background: #000;
+      }
+
+      .action-btn.wishlist {
+        flex: 0 0 52px;
+        font-size: 1.1rem;
+      }
+
+      .product-info {
+        padding: 16px 4px 8px;
+      }
+
+      .product-name {
+        font-family: "Marcellus", serif;
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+        text-decoration: none;
+        color: #111;
+        display: block;
+        transition: color 0.2s;
+      }
+
+      .product-name:hover {
+        color: #555;
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .product-price {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #111;
+      }
+
+      .product-price .old {
+        color: #bbb;
+        text-decoration: line-through;
+        font-size: 0.85rem;
+        font-weight: 400;
+        margin-right: 6px;
+      }
+
+      .product-stars {
+        color: #f39c12;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+      }
+
+      .product-colors {
+        display: flex;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .color-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.2s;
+      }
+
+      .color-dot:hover {
+        border-color: #111;
+      }
+
+      /* Sidebar */
+      .sidebar-heading {
+        font-family: "Marcellus", serif;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #111;
+        padding-bottom: 10px;
+        margin-bottom: 18px;
+      }
+
+      .sidebar-section {
+        margin-bottom: 36px;
+      }
+
+      .sidebar-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.88rem;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.2s;
+        cursor: pointer;
+      }
+
+      .sidebar-link:hover,
+      .sidebar-link.active {
+        color: #111;
+        font-weight: 500;
+      }
+
+      .sidebar-link .count {
+        color: #bbb;
+        font-size: 0.78rem;
+      }
+
+      .price-range {
+        margin-top: 10px;
+      }
+
+      .price-range input[type="range"] {
+        width: 100%;
+        accent-color: #111;
+        cursor: pointer;
+      }
+
+      .price-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.82rem;
+        color: #888;
+        margin-top: 6px;
+      }
+
+      .size-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .size-box {
+        width: 42px;
+        height: 38px;
+        border: 1.5px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+      }
+
+      .size-box:hover,
+      .size-box.active {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+      }
+
+      /* Pagination */
+      .pagination-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+      }
+
+      .page-btn {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid #ddd;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: "Jost", sans-serif;
+        background: transparent;
+        color: #555;
+      }
+
+      .page-btn:hover,
+      .page-btn.active {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+      }
+
+      /* Toast */
+      .cart-toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #111;
+        color: #fff;
+        padding: 14px 24px;
+        font-size: 0.85rem;
+        z-index: 9999;
+        border-radius: 2px;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.4s ease;
+        max-width: 300px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .cart-toast.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        .product-img-wrap img {
+          height: 280px;
+        }
+
+        .product-actions {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <defs>
+        <symbol id="instagram" viewBox="0 0 15 15">
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"
+          />
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 15 15">
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5"
+          />
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 15 15">
+          <path
+            fill="currentColor"
+            d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334Zm-.498 2.959a.5.5 0 1 0-1 0h1Zm-6.49.082h-.5h.5Zm0 .959h.5h-.5Zm-6.99 7V12a.5.5 0 0 0-.278.916L.5 12.5Zm.998-11l.469-.175a.5.5 0 0 0-.916-.048l.447.223Zm3.994 9l.354.353a.5.5 0 0 0-.195-.827l-.159.474ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z"
+          />
+        </symbol>
+        <symbol id="youtube" viewBox="0 0 15 15">
+          <path
+            fill="currentColor"
+            d="M6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5h.5Zm0 4H6a.5.5 0 0 0 .777.416L6.5 9.5Zm3-2l.277.416a.5.5 0 0 0 0-.832L9.5 7.5ZM0 3.636v7.728h1V3.636Zm15 7.728V3.636h-1v7.728ZM13.494 1.773a28.606 28.606 0 0 0-11.988 0l.21.978a27.607 27.607 0 0 1 11.568 0ZM6 5.5v4h1v-4Zm.777 4.416l3-2-.554-.832-3 2Zm3-2.832-3-2-.554.832 3 2Z"
+          />
+        </symbol>
+        <symbol id="cart" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z"
+          />
+        </symbol>
+        <symbol id="search" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"
+          />
+        </symbol>
+        <symbol id="heart" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
+
+    <!-- Cart Toast -->
+    <div class="cart-toast" id="cartToast">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        style="margin-right: 8px; vertical-align: middle"
+      >
+        <use xlink:href="#cart"></use></svg
+      >Item added to your cart!
+    </div>
+
+    <!-- Cart Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasCart"
+      aria-labelledby="My Cart"
+    >
+      <div class="offcanvas-header justify-content-center">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Your denim cart</span>
+            <span class="badge bg-primary rounded-pill" id="cartBadge">0</span>
+          </h4>
+          <ul class="list-group mb-3" id="cartList">
+            <li class="list-group-item text-muted">Your cart is empty.</li>
+          </ul>
+          <button class="w-100 btn btn-primary btn-lg">
+            Continue to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Popup -->
+    <div class="search-popup">
+      <div class="search-popup-container">
+        <form role="search" method="get" class="form-group" action="">
+          <input
+            type="search"
+            id="search-form"
+            class="form-control border-0 border-bottom"
+            placeholder="Type and press enter"
+            value=""
+            name="s"
+          />
+          <button
+            type="submit"
+            class="search-submit border-0 position-absolute bg-white"
+            style="top: 15px; right: 15px"
+          >
+            <svg class="search" width="24" height="24">
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+        </form>
+        <h5 class="cat-list-title">Browse Categories</h5>
+        <ul class="cat-list">
+          <li class="cat-list-item">
+            <a href="#" onclick="filterProducts('Skinny')">Skinny Jeans</a>
+          </li>
+          <li class="cat-list-item">
+            <a href="#" onclick="filterProducts('Straight')">Straight Jeans</a>
+          </li>
+          <li class="cat-list-item">
+            <a href="#" onclick="filterProducts('Jacket')">Denim Jackets</a>
+          </li>
+          <li class="cat-list-item">
+            <a href="#" onclick="filterProducts('Shorts')">Denim Shorts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center"
+    >
+      <div class="container-fluid">
+        <div class="row justify-content-between align-items-center w-100">
+          <div class="col-auto me-auto me-lg-0">
+            <a class="navbar-brand text-white" href="index.html">
+              <span style="display: flex; align-items: center; gap: 12px">
+                <img
+                  src="images/Leo_logo-removebg-preview.png"
+                  alt="Leo Logo"
+                  style="height: 80px; width: auto"
+                />
+                <span
+                  style="
+                    font-size: 2.2rem;
+                    font-family: &quot;Marcellus&quot;, Roboto, sans-serif;
+                    font-weight: 400;
+                    color: #111;
+                    letter-spacing: 2px;
+                  "
+                  >LEO</span
+                >
+              </span>
+            </a>
+          </div>
+          <div class="col-auto order-last order-lg-0">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasNavbar"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul
+                  class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <ul class="list-unstyled d-flex m-0">
+              <li class="d-none d-lg-block">
+                <a
+                  href="#"
+                  class="mx-3"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#cart"></use>
+                  </svg>
+                  <span class="cart-count ms-1" id="navCartCount">(0)</span>
+                </a>
+              </li>
+              <li class="d-lg-none">
+                <a
+                  href="#"
+                  class="mx-2"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#cart"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="search-box mx-2">
+                <a href="#search" class="search-button">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#search"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container text-center">
+        <nav aria-label="breadcrumb" class="mb-3">
+          <ol
+            class="breadcrumb justify-content-center"
+            style="background: transparent"
+          >
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Shop</li>
+          </ol>
+        </nav>
+        <h1 class="mb-4">The Collection</h1>
+        <p class="mx-auto" style="max-width: 500px">
+          Premium denim for every occasion. Find your perfect fit from our
+          curated range of jeans, jackets, and shorts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <div class="filter-chips">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="Skinny">Skinny</button>
+            <button class="filter-chip" data-filter="Straight">Straight</button>
+            <button class="filter-chip" data-filter="Relaxed">Relaxed</button>
+            <button class="filter-chip" data-filter="Jacket">Jackets</button>
+            <button class="filter-chip" data-filter="Shorts">Shorts</button>
+            <button class="filter-chip" data-filter="High-Rise">
+              High-Rise
+            </button>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <span class="results-count" id="resultsCount">12 products</span>
+            <select class="sort-select" id="sortSelect">
+              <option value="default">Sort: Featured</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Sidebar -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-section">
+              <h6 class="sidebar-heading">Categories</h6>
+              <a class="sidebar-link active" onclick="filterProducts('all')"
+                >All Products <span class="count">(12)</span></a
+              >
+              <a class="sidebar-link" onclick="filterProducts('Skinny')"
+                >Skinny Jeans <span class="count">(3)</span></a
+              >
+              <a class="sidebar-link" onclick="filterProducts('Straight')"
+                >Straight Cut <span class="count">(2)</span></a
+              >
+              <a class="sidebar-link" onclick="filterProducts('Relaxed')"
+                >Relaxed Fit <span class="count">(2)</span></a
+              >
+              <a class="sidebar-link" onclick="filterProducts('Jacket')"
+                >Denim Jackets <span class="count">(2)</span></a
+              >
+              <a class="sidebar-link" onclick="filterProducts('Shorts')"
+                >Denim Shorts <span class="count">(2)</span></a
+              >
+              <a class="sidebar-link" onclick="filterProducts('High-Rise')"
+                >High-Rise <span class="count">(1)</span></a
+              >
+            </div>
+
+            <div class="sidebar-section">
+              <h6 class="sidebar-heading">Price Range</h6>
+              <div class="price-range">
+                <input
+                  type="range"
+                  id="priceRange"
+                  min="0"
+                  max="200"
+                  value="200"
+                  oninput="updatePrice(this.value)"
+                />
+                <div class="price-label">
+                  <span>$0</span>
+                  <span id="priceMax">Up to $200</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h6 class="sidebar-heading">Size</h6>
+              <div class="size-grid">
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  XS
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  S
+                </div>
+                <div
+                  class="size-box active"
+                  onclick="this.classList.toggle('active')"
+                >
+                  M
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  L
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  XL
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  28
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  30
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  32
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  34
+                </div>
+                <div class="size-box" onclick="this.classList.toggle('active')">
+                  36
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="col-lg-9">
+            <div class="row g-4" id="productGrid">
+              <!-- Product 1 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Skinny"
+                data-price="59"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge new">New</span>
+                    <img
+                      src="images/banner-image-6.jpg"
+                      alt="Classic Blue Skinny Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Classic Blue Skinny Jeans', '$59')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name"
+                      >Classic Blue Skinny Jeans</a
+                    >
+                    <div class="product-meta">
+                      <span class="product-price">$59</span>
+                      <span class="product-stars">★★★★★</span>
+                    </div>
+                    <div class="product-colors">
+                      <div
+                        class="color-dot"
+                        style="background: #3d5a99"
+                        title="Blue"
+                      ></div>
+                      <div
+                        class="color-dot"
+                        style="background: #111"
+                        title="Black"
+                      ></div>
+                      <div
+                        class="color-dot"
+                        style="background: #8b6914"
+                        title="Tan"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Straight"
+                data-price="69"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge">Bestseller</span>
+                    <img
+                      src="images/banner-image-1.jpg"
+                      alt="Classic Indigo Straight Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="
+                          addToCart('Classic Indigo Straight Jeans', '$69')
+                        "
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name"
+                      >Classic Indigo Straight Jeans</a
+                    >
+                    <div class="product-meta">
+                      <span class="product-price">$69</span>
+                      <span class="product-stars">★★★★★</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #3d5a99"></div>
+                      <div class="color-dot" style="background: #1e3460"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="High-Rise"
+                data-price="75"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge sale">Sale</span>
+                    <img
+                      src="images/banner-image-2.jpg"
+                      alt="High-Rise Mom Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('High-Rise Mom Jeans', '$75')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name">High-Rise Mom Jeans</a>
+                    <div class="product-meta">
+                      <span class="product-price"
+                        ><span class="old">$99</span>$75</span
+                      >
+                      <span class="product-stars">★★★★☆</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #c0b9a8"></div>
+                      <div class="color-dot" style="background: #3d5a99"></div>
+                      <div class="color-dot" style="background: #111"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Relaxed"
+                data-price="65"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <img
+                      src="images/banner-image-3.jpg"
+                      alt="Relaxed Fit Straight Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Relaxed Fit Straight Jeans', '$65')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name"
+                      >Relaxed Fit Straight Jeans</a
+                    >
+                    <div class="product-meta">
+                      <span class="product-price">$65</span>
+                      <span class="product-stars">★★★★☆</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #3d5a99"></div>
+                      <div class="color-dot" style="background: #7a9cc2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Jacket"
+                data-price="120"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge new">New</span>
+                    <img
+                      src="images/banner-image-4.jpg"
+                      alt="Vintage Wash Denim Jacket"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Vintage Wash Denim Jacket', '$120')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name"
+                      >Vintage Wash Denim Jacket</a
+                    >
+                    <div class="product-meta">
+                      <span class="product-price">$120</span>
+                      <span class="product-stars">★★★★★</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #7a9cc2"></div>
+                      <div class="color-dot" style="background: #111"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Skinny"
+                data-price="55"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge">Bestseller</span>
+                    <img
+                      src="images/banner-image-5.jpg"
+                      alt="Black Skinny Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Black Skinny Jeans', '$55')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name">Black Skinny Jeans</a>
+                    <div class="product-meta">
+                      <span class="product-price">$55</span>
+                      <span class="product-stars">★★★★★</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #111"></div>
+                      <div class="color-dot" style="background: #444"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 7 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Shorts"
+                data-price="45"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <img
+                      src="images/banner-image-6.jpg"
+                      alt="Classic Denim Shorts"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Classic Denim Shorts', '$45')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name">Classic Denim Shorts</a>
+                    <div class="product-meta">
+                      <span class="product-price">$45</span>
+                      <span class="product-stars">★★★★☆</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #7a9cc2"></div>
+                      <div class="color-dot" style="background: #c0b9a8"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Straight"
+                data-price="72"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge sale">Sale</span>
+                    <img
+                      src="images/banner-image-1.jpg"
+                      alt="Dark Wash Straight Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Dark Wash Straight Jeans', '$72')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name"
+                      >Dark Wash Straight Jeans</a
+                    >
+                    <div class="product-meta">
+                      <span class="product-price"
+                        ><span class="old">$89</span>$72</span
+                      >
+                      <span class="product-stars">★★★★☆</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #1e3460"></div>
+                      <div class="color-dot" style="background: #111"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 9 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Jacket"
+                data-price="135"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <img
+                      src="images/banner-image-3.jpg"
+                      alt="Oversized Denim Jacket"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Oversized Denim Jacket', '$135')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name">Oversized Denim Jacket</a>
+                    <div class="product-meta">
+                      <span class="product-price">$135</span>
+                      <span class="product-stars">★★★★★</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #c0b9a8"></div>
+                      <div class="color-dot" style="background: #3d5a99"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 10 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Skinny"
+                data-price="62"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge new">New</span>
+                    <img
+                      src="images/banner-image-2.jpg"
+                      alt="Ripped Skinny Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Ripped Skinny Jeans', '$62')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name">Ripped Skinny Jeans</a>
+                    <div class="product-meta">
+                      <span class="product-price">$62</span>
+                      <span class="product-stars">★★★★☆</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #3d5a99"></div>
+                      <div class="color-dot" style="background: #7a9cc2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 11 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Relaxed"
+                data-price="68"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <img
+                      src="images/banner-image-4.jpg"
+                      alt="Loose Fit Wide Leg Jeans"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Loose Fit Wide Leg Jeans', '$68')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name"
+                      >Loose Fit Wide Leg Jeans</a
+                    >
+                    <div class="product-meta">
+                      <span class="product-price">$68</span>
+                      <span class="product-stars">★★★★★</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #c0b9a8"></div>
+                      <div class="color-dot" style="background: #3d5a99"></div>
+                      <div class="color-dot" style="background: #111"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 12 -->
+              <div
+                class="col-sm-6 col-xl-4 product-item"
+                data-category="Shorts"
+                data-price="42"
+              >
+                <div class="product-card">
+                  <div class="product-img-wrap">
+                    <span class="product-badge sale">Sale</span>
+                    <img
+                      src="images/banner-image-5.jpg"
+                      alt="Cut-Off Denim Shorts"
+                    />
+                    <div class="product-actions">
+                      <button
+                        class="action-btn"
+                        onclick="addToCart('Cut-Off Denim Shorts', '$42')"
+                      >
+                        Add to Cart
+                      </button>
+                      <button class="action-btn wishlist">♡</button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <a href="#" class="product-name">Cut-Off Denim Shorts</a>
+                    <div class="product-meta">
+                      <span class="product-price"
+                        ><span class="old">$58</span>$42</span
+                      >
+                      <span class="product-stars">★★★★☆</span>
+                    </div>
+                    <div class="product-colors">
+                      <div class="color-dot" style="background: #7a9cc2"></div>
+                      <div class="color-dot" style="background: #111"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end product grid -->
+
+            <!-- Empty state -->
+            <div
+              id="emptyState"
+              style="
+                display: none;
+                text-align: center;
+                padding: 60px 0;
+                color: #aaa;
+              "
+            >
+              <div style="margin-bottom: 16px">
+                <svg
+                  width="52"
+                  height="52"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#bbb"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 2h12l1 7-4 13H9L5 9z" />
+                  <path d="M9 2v7m6-7v7" />
+                </svg>
+              </div>
+              <h5
+                style="font-family: &quot;Marcellus&quot;, serif; color: #555"
+              >
+                No products found
+              </h5>
+              <p style="font-size: 0.9rem">
+                Try a different filter or category.
+              </p>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-wrap">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section
+      style="background: #f9f9f9; border-top: 1px solid #eee; padding: 60px 0"
+    >
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div style="padding: 20px">
+              <div style="margin-bottom: 12px">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#111"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="1" y="3" width="15" height="13" rx="1" />
+                  <path d="M16 8h4l3 5v4h-7V8z" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <h6
+                style="
+                  font-family: &quot;Marcellus&quot;, serif;
+                  font-size: 1rem;
+                  text-transform: uppercase;
+                  letter-spacing: 2px;
+                "
+              >
+                Free Shipping
+              </h6>
+              <p style="font-size: 0.88rem; color: #888; margin: 0">
+                On all orders over $75
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              style="
+                padding: 20px;
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+              "
+            >
+              <div style="margin-bottom: 12px">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#111"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 14l-4-4 4-4" />
+                  <path d="M5 10h11a4 4 0 0 1 0 8h-1" />
+                </svg>
+              </div>
+              <h6
+                style="
+                  font-family: &quot;Marcellus&quot;, serif;
+                  font-size: 1rem;
+                  text-transform: uppercase;
+                  letter-spacing: 2px;
+                "
+              >
+                Easy Returns
+              </h6>
+              <p style="font-size: 0.88rem; color: #888; margin: 0">
+                30-day free returns
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding: 20px">
+              <div style="margin-bottom: 12px">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#111"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 22c1.25-1.67 2.5-3 5-3s3.75 1.33 5 3" />
+                  <path
+                    d="M2 22V12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.76-1.12 5.26-2.93 7.07"
+                  />
+                  <path d="M12 12C12 8 9 5 6 5" />
+                </svg>
+              </div>
+              <h6
+                style="
+                  font-family: &quot;Marcellus&quot;, serif;
+                  font-size: 1rem;
+                  text-transform: uppercase;
+                  letter-spacing: 2px;
+                "
+              >
+                Sustainably Made
+              </h6>
+              <p style="font-size: 0.88rem; color: #888; margin: 0">
+                Certified organic cotton
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row d-flex flex-wrap justify-content-between py-5">
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-001">
+              <div class="footer-intro mb-4">
+                <a
+                  href="index.html"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    text-decoration: none;
+                  "
+                >
+                  <img
+                    src="images/Leo_logo-removebg-preview.png"
+                    alt="Leo Logo"
+                    style="height: 55px; width: auto"
+                  />
+                  <span
+                    style="
+                      font-size: 1.6rem;
+                      font-family: &quot;Marcellus&quot;, Roboto, sans-serif;
+                      font-weight: 400;
+                      color: #111;
+                      letter-spacing: 2px;
+                    "
+                    >LEO</span
+                  >
+                </a>
+              </div>
+              <p>Premium denim crafted for real life.</p>
+              <div class="social-links">
+                <ul class="list-unstyled d-flex flex-wrap gap-3">
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#facebook"></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#twitter"></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#youtube"></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 15 15">
+                        <use xlink:href="#instagram"></use></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-002">
+              <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
+              <ul
+                class="menu-list list-unstyled text-uppercase border-animation-left fs-6"
+              >
+                <li class="menu-item">
+                  <a href="index.html" class="item-anchor">Home</a>
+                </li>
+                <li class="menu-item">
+                  <a href="about.html" class="item-anchor">About</a>
+                </li>
+                <li class="menu-item">
+                  <a href="shop.html" class="item-anchor">Shop</a>
+                </li>
+                <li class="menu-item">
+                  <a href="contact.html" class="item-anchor">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-003">
+              <h5 class="widget-title text-uppercase mb-4">Help &amp; Info</h5>
+              <ul
+                class="menu-list list-unstyled text-uppercase border-animation-left fs-6"
+              >
+                <li class="menu-item">
+                  <a href="#" class="item-anchor">Track Order</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="item-anchor">Returns</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="item-anchor">Shipping</a>
+                </li>
+                <li class="menu-item">
+                  <a href="contact.html" class="item-anchor">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-004 border-animation-left">
+              <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
+              <p>
+                <a href="mailto:hello@leojeans.com" class="item-anchor"
+                  >hello@leojeans.com</a
+                >
+              </p>
+              <p>
+                <a href="tel:+12345678901" class="item-anchor"
+                  >+1 (234) 567-8901</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-top py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 d-flex flex-wrap">
+              <div class="shipping">
+                <span>We ship with:</span
+                ><img src="images/arct-icon.png" alt /><img
+                  src="images/dhl-logo.png"
+                  alt
+                />
+              </div>
+              <div class="payment-option">
+                <span>Payment:</span><img src="images/visa-card.png" alt /><img
+                  src="images/paypal-card.png"
+                  alt
+                /><img src="images/master-card.png" alt />
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <p>© Copyright 2024 LEO Jeans. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/SmoothScroll.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/script.min.js"></script>
+
+    <script>
+      // Cart state
+      const cart = [];
+
+      function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCartUI();
+        showToast();
+      }
+
+      function updateCartUI() {
+        const count = cart.length;
+        document.getElementById("cartBadge").textContent = count;
+        document.getElementById("navCartCount").textContent = "(" + count + ")";
+        const cartList = document.getElementById("cartList");
+        if (count === 0) {
+          cartList.innerHTML =
+            '<li class="list-group-item text-muted">Your cart is empty.</li>';
+          return;
+        }
+        let totalNum = 0;
+        let html = "";
+        cart.forEach((item) => {
+          const p = parseInt(item.price.replace("$", ""));
+          totalNum += p;
+          html += `<li class="list-group-item d-flex justify-content-between lh-sm">
             <div><h6 class="my-0">${item.name}</h6></div>
             <span class="text-body-secondary">${item.price}</span>
           </li>`;
+        });
+        html += `<li class="list-group-item d-flex justify-content-between"><span>Total</span><strong>$${totalNum}</strong></li>`;
+        cartList.innerHTML = html;
+      }
+
+      function showToast() {
+        const t = document.getElementById("cartToast");
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 2500);
+      }
+
+      // Filter
+      function filterProducts(cat) {
+        const items = document.querySelectorAll(".product-item");
+        let count = 0;
+        items.forEach((item) => {
+          const match = cat === "all" || item.dataset.category === cat;
+          item.style.display = match ? "" : "none";
+          if (match) count++;
+        });
+        document.getElementById("resultsCount").textContent =
+          count + " product" + (count !== 1 ? "s" : "");
+        document.getElementById("emptyState").style.display =
+          count === 0 ? "block" : "none";
+      }
+
+      // Filter chip buttons
+      document.querySelectorAll(".filter-chip").forEach((chip) => {
+        chip.addEventListener("click", function () {
+          document
+            .querySelectorAll(".filter-chip")
+            .forEach((c) => c.classList.remove("active"));
+          this.classList.add("active");
+          filterProducts(this.dataset.filter);
+        });
       });
-      html += `<li class="list-group-item d-flex justify-content-between"><span>Total</span><strong>$${totalNum}</strong></li>`;
-      cartList.innerHTML = html;
-    }
 
-    function showToast() {
-      const t = document.getElementById('cartToast');
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 2500);
-    }
-
-    // Filter
-    function filterProducts(cat) {
-      const items = document.querySelectorAll('.product-item');
-      let count = 0;
-      items.forEach(item => {
-        const match = cat === 'all' || item.dataset.category === cat;
-        item.style.display = match ? '' : 'none';
-        if (match) count++;
+      // Sidebar links
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document
+            .querySelectorAll(".sidebar-link")
+            .forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+        });
       });
-      document.getElementById('resultsCount').textContent = count + ' product' + (count !== 1 ? 's' : '');
-      document.getElementById('emptyState').style.display = count === 0 ? 'block' : 'none';
-    }
 
-    // Filter chip buttons
-    document.querySelectorAll('.filter-chip').forEach(chip => {
-      chip.addEventListener('click', function () {
-        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        filterProducts(this.dataset.filter);
-      });
-    });
+      // Price range
+      function updatePrice(val) {
+        document.getElementById("priceMax").textContent = "Up to $" + val;
+        const items = document.querySelectorAll(".product-item");
+        items.forEach((item) => {
+          const price = parseInt(item.dataset.price);
+          item.style.display = price <= parseInt(val) ? "" : "none";
+        });
+      }
 
-    // Sidebar links
-    document.querySelectorAll('.sidebar-link').forEach(link => {
-      link.addEventListener('click', function () {
-        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-
-    // Price range
-    function updatePrice(val) {
-      document.getElementById('priceMax').textContent = 'Up to $' + val;
-      const items = document.querySelectorAll('.product-item');
-      items.forEach(item => {
-        const price = parseInt(item.dataset.price);
-        item.style.display = price <= parseInt(val) ? '' : 'none';
-      });
-    }
-
-    // Sort
-    document.getElementById('sortSelect').addEventListener('change', function () {
-      const grid = document.getElementById('productGrid');
-      const items = Array.from(grid.querySelectorAll('.product-item'));
-      items.sort((a, b) => {
-        const pa = parseInt(a.dataset.price), pb = parseInt(b.dataset.price);
-        if (this.value === 'price-asc') return pa - pb;
-        if (this.value === 'price-desc') return pb - pa;
-        return 0;
-      });
-      items.forEach(item => grid.appendChild(item));
-    });
-  </script>
-</body>
-
+      // Sort
+      document
+        .getElementById("sortSelect")
+        .addEventListener("change", function () {
+          const grid = document.getElementById("productGrid");
+          const items = Array.from(grid.querySelectorAll(".product-item"));
+          items.sort((a, b) => {
+            const pa = parseInt(a.dataset.price),
+              pb = parseInt(b.dataset.price);
+            if (this.value === "price-asc") return pa - pb;
+            if (this.value === "price-desc") return pb - pa;
+            return 0;
+          });
+          items.forEach((item) => grid.appendChild(item));
+        });
+    </script>
+  </body>
 </html>
