@@ -418,11 +418,11 @@
           <span class="text-primary">Your denim cart</span>
           <span class="badge bg-primary rounded-pill">0</span>
         </h4>
-        <ul class="list-group mb-3">
+        <ul class="list-group mb-3" id="cartList">
           <li class="list-group-item d-flex justify-content-between"><span class="text-muted">Your cart is empty.</span>
           </li>
         </ul>
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to Checkout</button>
+        <a href="checkout.html" class="w-100 btn btn-primary btn-lg">Continue to Checkout</a>
       </div>
     </div>
   </div>
@@ -718,7 +718,8 @@
               <img src="images/Leo profile.jpeg" alt="Team Member" />
               <div class="team-overlay">
                 <div class="team-social">
-                  <a href="https://www.instagram.com/queenleo_m?igsh=dmlzM2N4NWc1OTJn" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 15 15">
+                  <a href="https://www.instagram.com/queenleo_m?igsh=dmlzM2N4NWc1OTJn" target="_blank"
+                    rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 15 15">
                       <use xlink:href="#instagram"></use>
                     </svg></a>
                   <a href="#"><svg width="18" height="18" viewBox="0 0 15 15">
@@ -835,6 +836,7 @@
     </div>
   </footer>
 
+  <div id="cartToast" class="cart-toast"></div>
   <script src="js/jquery.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/SmoothScroll.js"></script>
@@ -843,6 +845,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="js/script.min.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 
 </html>

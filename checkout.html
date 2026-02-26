@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Checkout - LEO Jeans Shop</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="LEO Jeans" />
+    <meta name="keywords" content="denim,jeans,shop,LEO,checkout" />
+    <meta name="description" content="Complete your purchase at LEO Jeans Shop. Premium denim for real life." />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="checkout-page">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <defs>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z" />
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 15 15">
+                <path fill="none" stroke="currentColor"
+                    d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5" />
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 15 15">
+                <path fill="currentColor"
+                    d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334Zm-.498 2.959a.5.5 0 1 0-1 0h1Zm-6.49.082h-.5h.5Zm0 .959h.5h-.5Zm-6.99 7V12a.5.5 0 0 0-.278.916L.5 12.5Zm.998-11l.469-.175a.5.5 0 0 0-.916-.048l.447.223Zm3.994 9l.354.353a.5.5 0 0 0-.195-.827l-.159.474Zm7.224-8.027l-.37.336l.18.199l.265-.04l-.075-.495Zm1.264-.94c.051.778.003 1.25-.123 1.606c-.122.345-.336.629-.723 1l.692.722c.438-.42.776-.832.974-1.388c.193-.546.232-1.178.177-2.006l-.998.066Zm0 3.654V4.46h-1v.728h1Zm-6.99-.646V5.5h1v-.959h-1Zm0 .959V6h1v-.5h-1ZM10.525 1a3.539 3.539 0 0 0-3.537 3.541h1A2.539 2.539 0 0 1 10.526 2V1Zm2.454 4.187C12.98 9.503 9.487 13 5.18 13v1c4.86 0 8.8-3.946 8.8-8.813h-1ZM1.03 1.675C1.574 3.127 3.614 6 7.49 6V5C4.174 5 2.421 2.54 1.966 1.325l-.937.35Zm.021-.398C.004 3.373-.157 5.407.604 7.139c.759 1.727 2.392 3.055 4.73 3.835l.317-.948c-2.155-.72-3.518-1.892-4.132-3.29c-.612-1.393-.523-3.11.427-5.013l-.895-.446Zm4.087 8.87C4.536 10.75 2.726 12 .5 12v1c2.566 0 4.617-1.416 5.346-2.147l-.708-.706Zm7.949-8.009A3.445 3.445 0 0 0 10.526 1v1c.721 0 1.37.311 1.82.809l.74-.671Zm-.296.83a3.513 3.513 0 0 0 2.06-1.134l-.744-.668a2.514 2.514 0 0 1-1.466.813l.15.989ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z" />
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="pinterest" viewBox="0 0 15 15">
+                <path fill="none" stroke="currentColor"
+                    d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z" />
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 15 15">
+                <path fill="currentColor"
+                    d="m1.61 12.738l-.104.489l.105-.489Zm11.78 0l.104.489l-.105-.489Zm0-10.476l.104-.489l-.105.489Zm-11.78 0l.106.489l-.105-.489ZM6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5h.5Zm0 4H6a.5.5 0 0 0 .777.416L6.5 9.5Zm3-2l.277.416a.5.5 0 0 0 0-.832L9.5 7.5ZM0 3.636v7.728h1V3.636H0Zm15 7.728V3.636h-1v7.728h1ZM1.506 13.227c3.951.847 8.037.847 11.988 0l-.21-.978a27.605 27.605 0 0 1-11.568 0l-.21.978ZM13.494 1.773a28.606 28.606 0 0 0-11.988 0l.21.978a27.607 27.607 0 0 1 11.568 0l.21-.978ZM15 3.636c0-.898-.628-1.675-1.506-1.863l-.21.978c.418.09.716.458.716.885h1Zm-1 7.728a.905.905 0 0 1-.716.885l.21.978A1.905 1.905 0 0 0 15 11.364h-1Zm-14 0c0 .898.628 1.675 1.506 1.863l.21-.978A.905.905 0 0 1 1 11.364H0Zm1-7.728c0-.427.298-.796.716-.885l-.21-.978A1.905 1.905 0 0 0 0 3.636h1ZM6 5.5v4h1v-4H6Zm.777 4.416l3-2l-.554-.832l-3 2l.554.832Zm3-2.832l-3-2l-.554.832l3 2l.554-.832Z" />
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
+                <path fill="none" stroke="currentColor"
+                    d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+        <div class="container-fluid">
+            <div class="row justify-content-between align-items-center w-100">
+                <div class="col-auto me-auto me-lg-0">
+                    <a class="navbar-brand text-white" href="index.html">
+                        <span style="display: flex; align-items: center; gap: 12px">
+                            <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo"
+                                style="height: 80px; width: auto" />
+                            <span style="
+                    font-size: 2.2rem;
+                    font-family: &quot;Marcellus&quot;, Roboto, sans-serif;
+                    font-weight: 400;
+                    color: #111;
+                    letter-spacing: 2px;
+                  ">LEO</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-auto order-last order-lg-0">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="shop.html">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <ul class="list-unstyled d-flex m-0">
+                        <li>
+                            <a href="index.html" class="mx-3">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <use xlink:href="#cart"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="search-box" class="mx-2">
+                            <a href="#search" class="search-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <use xlink:href="#search"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="checkout-header py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4 text-uppercase">Checkout</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section class="checkout-content py-5">
+        <div class="container">
+            <form class="needs-validation" novalidate>
+                <div class="row g-5">
+                    <div class="col-md-7 col-lg-8">
+                        <h4 class="mb-3 text-uppercase">Billing Address</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="firstName" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                    required />
+                                <div class="invalid-feedback">Valid first name is required.</div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value=""
+                                    required />
+                                <div class="invalid-feedback">Valid last name is required.</div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com"
+                                    required />
+                                <div class="invalid-feedback">Please enter a valid email address for shipping updates.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="1234 Main St"
+                                    required />
+                                <div class="invalid-feedback">Please enter your shipping address.</div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" required>
+                                    <option value="">Choose...</option>
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Canada</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a valid country.</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state" required>
+                                    <option value="">Choose...</option>
+                                    <option>California</option>
+                                    <option>New York</option>
+                                    <option>Texas</option>
+                                </select>
+                                <div class="invalid-feedback">Please provide a valid state.</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required />
+                                <div class="invalid-feedback">Zip code required.</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="same-address" />
+                            <label class="form-check-label" for="same-address">Shipping address is the same as my
+                                billing address</label>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <h4 class="mb-3 text-uppercase">Payment</h4>
+
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked
+                                    required />
+                                <label class="form-check-label" for="credit">Credit card</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required />
+                                <label class="form-check-label" for="debit">Debit card</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input"
+                                    required />
+                                <label class="form-check-label" for="paypal">PayPal</label>
+                            </div>
+                        </div>
+
+                        <div class="row gy-3">
+                            <div class="col-md-6">
+                                <label for="cc-name" class="form-label">Name on card</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required />
+                                <small class="text-body-secondary">Full name as displayed on card</small>
+                                <div class="invalid-feedback">Name on card is required</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="cc-number" class="form-label">Credit card number</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required />
+                                <div class="invalid-feedback">Credit card number is required</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="cc-expiration" class="form-label">Expiration</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required />
+                                <div class="invalid-feedback">Expiration date required</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="cc-cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required />
+                                <div class="invalid-feedback">Security code required</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <button class="w-100 btn btn-primary btn-lg text-uppercase" type="submit">Place Order</button>
+                    </div>
+
+                    <div class="col-md-5 col-lg-4">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3 text-uppercase">
+                            <span class="text-primary">Your cart</span>
+                            <span class="badge bg-primary rounded-pill">3</span>
+                        </h4>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Classic Blue Jeans</h6>
+                                    <small class="text-body-secondary">Premium stretch denim</small>
+                                </div>
+                                <span class="text-body-secondary">$12.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Black Skinny Jeans</h6>
+                                    <small class="text-body-secondary">Everyday slim fit</small>
+                                </div>
+                                <span class="text-body-secondary">$8.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Vintage Denim Jacket</h6>
+                                    <small class="text-body-secondary">Washed classic look</small>
+                                </div>
+                                <span class="text-body-secondary">$5.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+                                <div class="text-success">
+                                    <h6 class="my-0">Promo code</h6>
+                                    <small>EXAMPLECODE</small>
+                                </div>
+                                <span class="text-success">−$2.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between border-top py-3">
+                                <span class="text-uppercase fw-bold">Total (USD)</span>
+                                <strong class="fs-4">$23.00</strong>
+                            </li>
+                        </ul>
+
+                        <form class="card p-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Promo code" />
+                                <button type="submit" class="btn btn-secondary">Redeem</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer" class="mt-5">
+        <div class="container">
+            <div class="row d-flex flex-wrap justify-content-between py-5">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-001">
+                        <div class="footer-intro mb-4">
+                            <a href="index.html"
+                                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                                <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo"
+                                    style="height: 55px; width: auto" />
+                                <span
+                                    style="font-size: 1.6rem; font-family: 'Marcellus', Roboto, sans-serif; font-weight: 400; color: #111; letter-spacing: 2px;">LEO</span>
+                            </a>
+                        </div>
+                        <p>Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in.
+                            Nisi, purus vitae, ultrices nunc.</p>
+                        <div class="social-links">
+                            <ul class="list-unstyled d-flex flex-wrap gap-3">
+                                <li><a href="#" class="text-secondary"><svg width="24" height="24">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg></a></li>
+                                <li><a href="#" class="text-secondary"><svg width="24" height="24">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg></a></li>
+                                <li><a href="#" class="text-secondary"><svg width="24" height="24">
+                                            <use xlink:href="#youtube"></use>
+                                        </svg></a></li>
+                                <li><a href="#" class="text-secondary"><svg width="24" height="24">
+                                            <use xlink:href="#pinterest"></use>
+                                        </svg></a></li>
+                                <li><a href="#" class="text-secondary"><svg width="24" height="24">
+                                            <use xlink:href="#instagram"></use>
+                                        </svg></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-002">
+                        <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
+                        <ul class="menu-list list-unstyled text-uppercase fs-6">
+                            <li class="menu-item"><a href="index.html" class="item-anchor">Home</a></li>
+                            <li class="menu-item"><a href="about.html" class="item-anchor">About</a></li>
+                            <li class="menu-item"><a href="shop.html" class="item-anchor">Shop</a></li>
+                            <li class="menu-item"><a href="contact.html" class="item-anchor">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-003">
+                        <h5 class="widget-title text-uppercase mb-4">Help & Info</h5>
+                        <ul class="menu-list list-unstyled text-uppercase fs-6">
+                            <li class="menu-item"><a href="#" class="item-anchor">Track Your Order</a></li>
+                            <li class="menu-item"><a href="#" class="item-anchor">Returns + Exchanges</a></li>
+                            <li class="menu-item"><a href="#" class="item-anchor">Shipping + Delivery</a></li>
+                            <li class="menu-item"><a href="#" class="item-anchor">Faqs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-004">
+                        <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
+                        <p>Do you have any questions or suggestions? <a href="mailto:contact@yourcompany.com"
+                                class="item-anchor">contact@yourcompany.com</a></p>
+                        <p>Do you need support? Give us a call. <a href="tel:+43 720 11 52 78" class="item-anchor">+43
+                                720 11 52 78</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex flex-wrap">
+                        <div class="shipping me-4">
+                            <span>We ship with:</span>
+                            <img src="images/arct-icon.png" alt="icon" />
+                            <img src="images/dhl-logo.png" alt="icon" />
+                        </div>
+                        <div class="payment-option">
+                            <span>Payment Option:</span>
+                            <img src="images/visa-card.png" alt="card" />
+                            <img src="images/paypal-card.png" alt="card" />
+                            <img src="images/master-card.png" alt="card" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>© Copyright 2022 LEO. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cartToast" class="cart-toast"></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="js/script.min.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

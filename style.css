@@ -427,16 +427,14 @@ a {
 
 /* polygon */
 .polygon {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 20%,
-    100% 100%,
-    80% 100%,
-    20% 100%,
-    0 100%,
-    0% 20%
-  );
+  clip-path: polygon(0 0,
+      100% 0,
+      100% 20%,
+      100% 100%,
+      80% 100%,
+      20% 100%,
+      0 100%,
+      0% 20%);
 }
 
 .aos-animate .polygon {
@@ -445,29 +443,25 @@ a {
 
 @keyframes polygon {
   0% {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 20%,
-      100% 100%,
-      80% 100%,
-      20% 100%,
-      0 100%,
-      0% 20%
-    );
+    clip-path: polygon(0 0,
+        100% 0,
+        100% 20%,
+        100% 100%,
+        80% 100%,
+        20% 100%,
+        0 100%,
+        0% 20%);
   }
 
   100% {
-    clip-path: polygon(
-      20% 0%,
-      80% 0%,
-      100% 20%,
-      100% 80%,
-      80% 100%,
-      20% 100%,
-      0% 80%,
-      0% 20%
-    );
+    clip-path: polygon(20% 0%,
+        80% 0%,
+        100% 20%,
+        100% 80%,
+        80% 100%,
+        20% 100%,
+        0% 80%,
+        0% 20%);
   }
 }
 
@@ -508,6 +502,7 @@ a {
   overflow: hidden;
   line-height: 1;
 }
+
 .txt-fx.zoom {
   overflow: visible;
 }
@@ -518,6 +513,7 @@ a {
   display: inline-block;
   line-height: 1em;
 }
+
 .txt-fx .letter {
   transform-origin: 0 100%;
   display: inline-block;
@@ -664,16 +660,13 @@ a {
     opacity 0.3s 0s,
     visibility 0s 0.3s;
 }
+
 .search-popup.is-visible {
   opacity: 1;
   visibility: visible;
   cursor:
-    -webkit-image-set(
-      url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23FFF' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E")
-        1x,
-      url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E")
-        2x
-    ),
+    -webkit-image-set(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23FFF' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 1x,
+      url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 2x),
     pointer;
   cursor:
     url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E"),
@@ -688,6 +681,7 @@ a {
     opacity 0.3s 0s,
     visibility 0s 0s;
 }
+
 .search-popup-container {
   background-color: transparent;
   position: relative;
@@ -702,26 +696,32 @@ a {
   -webkit-transform: translateY(-40px);
   transform: translateY(-40px);
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transition-property: -webkit-transform;
   transition-property: transform;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+
 .is-visible .search-popup-container {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 .search-popup-form {
   position: relative;
   margin: 0 0 3em 0;
 }
+
 .search-popup-form .form-control {
   padding: 0 0 0.375em 0;
   font-size: 2em;
 }
+
 .search-popup-form #search-popup-submit {
   display: none;
 }
+
 .search-popup .search-popup-close {
   display: block;
   position: absolute;
@@ -731,11 +731,13 @@ a {
   padding: 0.5em;
   line-height: 0;
 }
+
 .search-popup .search-popup-close:hover {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
 .search-popup .search-popup-close i {
   display: block;
   position: relative;
@@ -743,9 +745,11 @@ a {
   height: 1em;
   fill: rgba(0, 0, 0, 0.5);
 }
+
 .search-popup .search-popup-close:hover i {
   fill: rgba(0, 0, 0, 1);
 }
+
 .search-popup .cat-list-title {
   margin-top: 40px;
   margin-bottom: 10px;
@@ -754,19 +758,23 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+
 .search-popup .cat-list {
   margin: 0;
   list-style-type: none;
 }
+
 .search-popup .cat-list-item {
   display: inline-block;
   margin-bottom: 0;
   letter-spacing: 0.015em;
   font-size: 2em;
 }
+
 .search-popup .cat-list-item a {
   position: relative;
 }
+
 .search-popup .cat-list-item a::after {
   background: none repeat scroll 0 0 #fff;
   content: "";
@@ -788,12 +796,14 @@ a {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+
 .search-popup .cat-list-item a:hover::after {
   height: 1px;
   opacity: 1;
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
 }
+
 .search-popup .cat-list-item::after {
   content: "/";
   padding: 0 5px;
@@ -801,27 +811,33 @@ a {
   color: rgba(0, 0, 0, 0.5);
   vertical-align: text-top;
 }
+
 .search-popup .cat-list-item:last-child::after {
   display: none;
 }
 
 @media only screen and (max-width: 991px) {
+
   .search-popup .cat-list-item,
   .search-popup-form .form-control {
     font-size: 1.425em;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .search-popup .search-popup-close {
     top: 1em;
     right: 1em;
   }
 }
+
 @media only screen and (max-width: 575px) {
+
   .search-popup .cat-list-item,
   .search-popup-form .form-control {
     font-size: 1.125em;
   }
+
   .search-popup .search-popup-close {
     top: 1em;
     right: 1em;
@@ -833,10 +849,12 @@ a {
   height: 60px;
   padding: 26px;
 }
+
 .search-popup .search-form button {
   top: 12px;
   right: 15px;
 }
+
 .search-popup .search-form button svg {
   height: 28px;
   width: 28px;
@@ -876,10 +894,12 @@ a {
 }
 
 @media (max-width: 991px) {
+
   .icon-arrow.icon-arrow-left,
   .icon-arrow.icon-arrow-right {
     display: none;
   }
+
   .swiper-pagination {
     position: relative;
   }
@@ -1116,7 +1136,7 @@ a {
   font-size: 2.5em;
 }
 
-.testimonial-swiper .testimonial-item blockquote > p {
+.testimonial-swiper .testimonial-item blockquote>p {
   margin: 0;
 }
 
@@ -1209,13 +1229,13 @@ a {
   transition: inherit;
 }
 
-.link-effect a > span {
+.link-effect a>span {
   display: inline-block;
   transform: translateY(0%);
   transition: inherit;
 }
 
-.link-effect:hover a > span {
+.link-effect:hover a>span {
   transform: translateY(-100%);
 }
 
@@ -1261,22 +1281,26 @@ a {
 .product-thumbnail-slider {
   height: 790px;
 }
+
 @media screen and (max-width: 992px) {
   .product-thumbnail-slider {
     margin-top: 20px;
     height: auto;
   }
 }
+
 @media screen and (min-width: 992px) {
   .product-thumbnail-slider {
     height: 590px;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .product-thumbnail-slider {
     height: 790px;
   }
 }
+
 /* 
 .product-thumbnail-slider .swiper-slide {
   height: 200px;
@@ -1286,10 +1310,12 @@ a {
 .product-quantity .qty-number {
   margin-right: 20px;
 }
+
 .product-quantity .input-group .btn {
   height: 48px;
   border: 1px solid #ccc;
 }
+
 .qty-number .quntity-button {
   min-width: 40px;
   height: 40px;
@@ -1395,10 +1421,12 @@ a {
   cursor: pointer;
   padding: 8px;
 }
+
 .swatch-element .swatch-input {
   display: none;
 }
-.swatch-element .swatch-input:checked + .swatch-label {
+
+.swatch-element .swatch-input:checked+.swatch-label {
   border: 2px solid var(--bs-gray);
 }
 
@@ -1499,12 +1527,12 @@ a.btn-link.text-light:after {
 }
 
 /* On mouse-over, add a grey background color */
-.form-check-label:hover input ~ .checkmark {
+.form-check-label:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.form-check-label input:checked ~ .checkmark {
+.form-check-label input:checked~.checkmark {
   background-color: #a226f3;
 }
 
@@ -1516,7 +1544,7 @@ a.btn-link.text-light:after {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.form-check-label input:checked ~ .checkmark:after {
+.form-check-label input:checked~.checkmark:after {
   display: block;
 }
 
@@ -1530,19 +1558,19 @@ a.btn-link.text-light:after {
   background: #444;
 }
 
-.form-check-label.red input ~ .checkmark {
+.form-check-label.red input~.checkmark {
   background-color: #ca7a7a;
 }
 
-.form-check-label.brown input ~ .checkmark {
+.form-check-label.brown input~.checkmark {
   background-color: #d5bb96;
 }
 
-.form-check-label.green input ~ .checkmark {
+.form-check-label.green input~.checkmark {
   background-color: #a5bc73;
 }
 
-.form-check-label.aqua input ~ .checkmark {
+.form-check-label.aqua input~.checkmark {
   background-color: #779b9d;
 }
 
@@ -1551,6 +1579,7 @@ a.btn-link.text-light:after {
   --bs-accordion-btn-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z"%2F%3E%3C%2Fsvg%3E');
   --bs-accordion-btn-active-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z"%2F%3E%3C%2Fsvg%3E');
 }
+
 .product-filter .accordion {
   --bs-accordion-btn-color: var(--bs-body-color);
   --bs-accordion-btn-bg: var(--bs-accordion-bg);
@@ -1561,7 +1590,7 @@ a.btn-link.text-light:after {
   --bs-accordion-active-color: #8c907e;
 }
 
-.product-filter .accordion-body > div,
+.product-filter .accordion-body>div,
 .product-filter .accordion-body a {
   display: block;
   padding: 10px;
@@ -1599,64 +1628,201 @@ a.btn-link.text-light:after {
   margin: 0 auto;
   text-align: center;
 }
+
 .team-section .team-img-wrap img {
   display: block;
   margin: 0 auto 12px auto;
   max-width: 100%;
   height: auto;
 }
+
 /* Mobile navbar: keep logo + icons on single line */
 @media (max-width: 767.98px) {
   .navbar .row {
     flex-wrap: nowrap;
     align-items: center;
   }
+
   .navbar .col-auto {
     flex: 0 0 auto;
     white-space: nowrap;
   }
+
   .navbar .navbar-brand {
     display: flex;
     align-items: center;
     gap: 8px;
   }
+
   .navbar .navbar-brand img {
     height: 44px !important;
     width: auto !important;
   }
+
   .navbar .navbar-brand span {
     font-size: 1.1rem !important;
     line-height: 1;
   }
+
   .navbar {
     padding: 0.5rem 1rem;
   }
+
   .navbar .list-unstyled.d-flex {
     gap: 0.5rem;
     align-items: center;
   }
+
   .navbar .navbar-toggler {
     padding: 0.25rem 0.5rem;
     margin-left: 0.25rem;
   }
+
   .navbar .cart-count {
     display: none;
   }
 }
+
 @media (max-width: 480px) {
   .navbar .navbar-brand img {
     height: 36px !important;
   }
+
   .navbar .navbar-brand span {
     font-size: 0.95rem !important;
   }
+
   .navbar .row {
     gap: 6px;
   }
+
   .navbar .list-unstyled.d-flex {
     gap: 4px;
   }
+
   .navbar .navbar-toggler {
     padding: 0.15rem 0.4rem;
   }
+}
+
+/*--------------------------------------------------------------
+18. CHECKOUT PAGE
+--------------------------------------------------------------*/
+.checkout-page .form-control,
+.checkout-page .form-select {
+  border-radius: 0;
+  padding: 12px 20px;
+  border-color: #e1e1e1;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.checkout-page .form-control:focus,
+.checkout-page .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: none;
+  background-color: #fff;
+}
+
+.checkout-page .list-group-item {
+  border-left: 0;
+  border-right: 0;
+  padding: 20px 0;
+}
+
+.checkout-page .list-group-item:first-child {
+  border-top: 0;
+}
+
+.checkout-page .checkout-header {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.checkout-page .breadcrumb-item+.breadcrumb-item::before {
+  content: "/";
+}
+
+.checkout-page .btn-primary {
+  padding: 15px 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.checkout-page .order-summary-card {
+  background-color: #fbfbfb;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+.checkout-page .invalid-feedback {
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.checkout-page hr {
+  opacity: 0.1;
+}
+
+.checkout-page .form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.checkout-page .payment-methods .form-check {
+  margin-bottom: 15px;
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .checkout-page .form-check {
+    padding-left: 2.5rem !important;
+    /* Shoving toggles to the right */
+  }
+}
+
+/*--------------------------------------------------------------
+19. CART & TOAST NOTIFICATIONS
+--------------------------------------------------------------*/
+.cart-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--bs-primary);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 9999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.cart-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.remove-item {
+  transition: all 0.3s ease;
+  color: #dc3545 !important;
+}
+
+.remove-item:hover {
+  transform: scale(1.1);
+  color: #a71d2a !important;
+}
+
+#offcanvasCart .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#cartList {
+  flex: 1;
+  overflow-y: auto;
 }
