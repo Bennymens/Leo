@@ -335,6 +335,7 @@
             font-size: .95rem;
             font-family: 'Jost', sans-serif;
             outline: none;
+            appearance: textfield;
             -moz-appearance: textfield;
         }
 
@@ -1044,122 +1045,235 @@
                 name: 'Baggy Fit Jeans',
                 category: 'Relaxed · New Arrival',
                 price: '$55.00',
-                oldPrice: null,
-                badge: 'New',
-                badgeClass: 'new',
-                stars: 5,
-                reviews: 47,
-                desc: 'Our Baggy Fit Jeans are the ultimate in relaxed denim comfort. Featuring a roomy seat and thighs that taper slightly at the knee, these jeans give you that coveted oversized silhouette without sacrificing style. Cut from heavyweight selvedge denim with a subtle stretch, they hold their shape all day long.',
+                desc: 'Our Baggy Fit Jeans are the ultimate in relaxed denim comfort. Featuring a roomy seat and thighs that taper slightly at the knee, these jeans give you that coveted oversized silhouette without sacrificing style.',
                 images: ['images/product-item-2.jpg', 'images/product-item-3.jpg', 'images/banner-image-3.jpg'],
-                colors: [
-                    { name: 'Vintage Blue', hex: '#3d5a99' },
-                    { name: 'Washed Black', hex: '#2a2a2a' },
-                    { name: 'Light Wash', hex: '#8ba8d4' },
-                    { name: 'Tan', hex: '#c09a6b' }
-                ],
+                colors: [{ name: 'Vintage Blue', hex: '#3d5a99' }, { name: 'Washed Black', hex: '#2a2a2a' }],
                 sizes: ['26', '28', '30', '32', '34', '36'],
                 outSizes: ['26'],
-                related: ['off-white-denim-jeans', 'vintage-indigo-jeans', 'handmade-denim-jacket', 'raw-hem-jeans']
+                stars: 5, reviews: 47,
+                related: ['off-white-denim-jeans', 'vintage-indigo-jeans', 'handmade-denim-jacket']
             },
             'off-white-denim-jeans': {
                 name: 'Off-White Denim Jeans',
                 category: 'Straight Cut · New Arrival',
                 price: '$65.00',
                 oldPrice: '$85.00',
-                badge: 'Sale',
-                badgeClass: 'sale',
-                stars: 4,
-                reviews: 33,
-                desc: 'Crisp, clean, and effortlessly cool — our Off-White Denim Jeans are a wardrobe essential. Crafted from premium cotton denim in a soft ecru wash, these straight-leg jeans pair perfectly with everything from a crisp shirt to a chunky knit. The clean, minimal aesthetic makes them the ultimate versatile staple.',
+                badge: 'Sale', badgeClass: 'sale',
+                desc: 'Crisp, clean, and effortlessly cool — our Off-White Denim Jeans are a wardrobe essential. Crafted from premium cotton denim in a soft ecru wash.',
                 images: ['images/product-item-3.jpg', 'images/product-item-5.jpg', 'images/banner-image-1.jpg'],
-                colors: [
-                    { name: 'Off White', hex: '#f0ede4' },
-                    { name: 'Cream', hex: '#d9d1bb' },
-                    { name: 'Light Blue', hex: '#8ba8d4' }
-                ],
+                colors: [{ name: 'Off White', hex: '#f0ede4' }],
                 sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: ['36'],
-                related: ['baggy-fit-jeans', 'classic-blue-jeans', 'raw-hem-jeans', 'handmade-denim-jacket']
+                outSizes: [],
+                stars: 4, reviews: 33,
+                related: ['baggy-fit-jeans', 'classic-blue-jeans', 'raw-hem-jeans']
             },
             'vintage-indigo-jeans': {
                 name: 'Vintage Indigo Jeans',
                 category: 'Straight Cut · Best Seller',
                 price: '$95.00',
-                oldPrice: null,
-                badge: 'Bestseller',
-                badgeClass: '',
-                stars: 5,
-                reviews: 89,
-                desc: 'Deep indigo meets vintage character in our most popular straight-leg silhouette. These jeans are garment-dyed for a rich, saturated colour that fades naturally over time — getting better with every wash. A mid-rise waist and classic 5-pocket layout keep things timeless.',
+                badge: 'Bestseller', badgeClass: '',
+                desc: 'Deep indigo meets vintage character in our most popular straight-leg silhouette. garment-dyed for a rich, saturated colour.',
                 images: ['images/product-item-1.jpg', 'images/product-item-4.jpg', 'images/banner-image-2.jpg'],
-                colors: [
-                    { name: 'Deep Indigo', hex: '#1e3460' },
-                    { name: 'Mid Indigo', hex: '#3d5a99' },
-                    { name: 'Washed Black', hex: '#2a2a2a' }
-                ],
+                colors: [{ name: 'Deep Indigo', hex: '#1e3460' }],
                 sizes: ['26', '28', '30', '32', '34', '36'],
                 outSizes: [],
-                related: ['baggy-fit-jeans', 'off-white-denim-jeans', 'classic-blue-jeans', 'raw-hem-jeans']
+                stars: 5, reviews: 89,
+                related: ['baggy-fit-jeans', 'off-white-denim-jeans', 'classic-blue-jeans']
             },
             'handmade-denim-jacket': {
                 name: 'Handmade Denim Jacket',
                 category: 'Jackets · New Arrival',
                 price: '$50.00',
                 oldPrice: '$75.00',
-                badge: 'Sale',
-                badgeClass: 'sale',
-                stars: 5,
-                reviews: 62,
-                desc: 'Handcrafted stitch by stitch, our Denim Jacket is built to be lived in. A classic trucker silhouette with contrast stitching, chest pockets, and adjustable side tabs makes this a timeless layering piece. The medium wash denim softens beautifully over time, making it uniquely yours.',
+                badge: 'Sale', badgeClass: 'sale',
+                desc: 'Handcrafted stitch by stitch, our Denim Jacket is built to be lived in. A classic trucker silhouette with contrast stitching.',
                 images: ['images/product-item-4.jpg', 'images/product-item-6.jpg', 'images/banner-image-4.jpg'],
-                colors: [
-                    { name: 'Medium Wash', hex: '#7a9cc2' },
-                    { name: 'Light Wash', hex: '#adc4e0' },
-                    { name: 'Washed Black', hex: '#2a2a2a' }
-                ],
-                sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-                outSizes: ['XXL'],
-                related: ['baggy-fit-jeans', 'off-white-denim-jeans', 'vintage-indigo-jeans', 'classic-blue-jeans']
+                colors: [{ name: 'Medium Wash', hex: '#7a9cc2' }],
+                sizes: ['XS', 'S', 'M', 'L', 'XL'],
+                outSizes: [],
+                stars: 5, reviews: 62,
+                related: ['baggy-fit-jeans', 'vintage-indigo-jeans', 'classic-blue-jeans']
             },
             'raw-hem-jeans': {
                 name: 'Raw Hem Jeans',
                 category: 'Straight Cut · New Arrival',
                 price: '$70.00',
-                oldPrice: null,
-                badge: 'New',
-                badgeClass: 'new',
-                stars: 4,
-                reviews: 28,
-                desc: 'The Raw Hem Jeans bring an intentionally unfinished edge to a classic straight-leg cut. The frayed, raw hem gives a modern, high-fashion feel while the premium stretch denim ensures all-day comfort. Available in multiple washes to suit your style.',
+                badge: 'New', badgeClass: 'new',
+                desc: 'The Raw Hem Jeans bring an intentionally unfinished edge to a classic straight-leg cut. The frayed, raw hem gives a modern, high-fashion feel.',
                 images: ['images/product-item-10.jpg', 'images/product-item-9.jpg', 'images/banner-image-5.jpg'],
-                colors: [
-                    { name: 'Medium Blue', hex: '#3d5a99' },
-                    { name: 'Light Wash', hex: '#8ba8d4' },
-                    { name: 'Black', hex: '#111111' }
-                ],
+                colors: [{ name: 'Medium Blue', hex: '#3d5a99' }],
                 sizes: ['26', '28', '30', '32', '34', '36'],
                 outSizes: [],
-                related: ['vintage-indigo-jeans', 'classic-blue-jeans', 'baggy-fit-jeans', 'handmade-denim-jacket']
+                stars: 4, reviews: 28,
+                related: ['vintage-indigo-jeans', 'classic-blue-jeans', 'baggy-fit-jeans']
             },
             'classic-blue-jeans': {
                 name: 'Classic Blue Jeans',
                 category: 'Straight Cut · Best Seller',
                 price: '$70.00',
-                oldPrice: null,
-                badge: 'Bestseller',
-                badgeClass: '',
-                stars: 5,
-                reviews: 115,
-                desc: 'The original. The essential. Our Classic Blue Jeans are the pair everyone reaches for — a straight-leg cut in rich indigo denim that works with absolutely everything. Made from our signature 12oz cotton denim for the perfect balance of structure and comfort.',
+                badge: 'Bestseller', badgeClass: '',
+                desc: 'The original. The essential. Our Classic Blue Jeans are the pair everyone reaches for — a straight-leg cut in rich indigo denim.',
                 images: ['images/product-item-10.jpg', 'images/product-item-1.jpg', 'images/banner-image-6.jpg'],
-                colors: [
-                    { name: 'Classic Blue', hex: '#3d5a99' },
-                    { name: 'Deep Blue', hex: '#1e3460' },
-                    { name: 'Black', hex: '#111111' }
-                ],
+                colors: [{ name: 'Classic Blue', hex: '#3d5a99' }],
                 sizes: ['26', '28', '30', '32', '34', '36'],
                 outSizes: [],
-                related: ['vintage-indigo-jeans', 'baggy-fit-jeans', 'raw-hem-jeans', 'off-white-denim-jeans']
+                stars: 5, reviews: 115,
+                related: ['vintage-indigo-jeans', 'baggy-fit-jeans', 'raw-hem-jeans']
+            },
+            'classic-blue-skinny-jeans': {
+                name: 'Classic Blue Skinny Jeans',
+                category: 'Skinny Fit · Core Essential',
+                price: '$59.00',
+                badge: 'New', badgeClass: 'new',
+                desc: 'The Classic Blue Skinny Jeans are engineered for the perfect fit. Made from premium Turkish denim with a high-recovery stretch.',
+                images: ['images/banner-image-6.jpg', 'images/product-item-1.jpg', 'images/product-item-2.jpg'],
+                colors: [{ name: 'Classic Blue', hex: '#3d5a99' }, { name: 'Midnight', hex: '#1e3460' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 5, reviews: 124,
+                related: ['black-skinny-jeans', 'ripped-skinny-jeans', 'baggy-fit-jeans']
+            },
+            'classic-indigo-straight-jeans': {
+                name: 'Classic Indigo Straight Jeans',
+                category: 'Straight · Best Seller',
+                price: '$69.00',
+                badge: 'Bestseller', badgeClass: '',
+                desc: 'Timeless straight-leg jeans in a classic indigo wash. Durable and versatile for everyday wear.',
+                images: ['images/banner-image-1.jpg', 'images/product-item-1.jpg', 'images/product-item-4.jpg'],
+                colors: [{ name: 'Classic Indigo', hex: '#3d5a99' }, { name: 'Dark Blue', hex: '#1e3460' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 5, reviews: 98,
+                related: ['vintage-indigo-jeans', 'dark-wash-straight-jeans', 'classic-blue-jeans']
+            },
+            'high-rise-mom-jeans': {
+                name: 'High-Rise Mom Jeans',
+                category: 'High-Rise · Sale',
+                price: '$75.00',
+                oldPrice: '$99.00',
+                badge: 'Sale', badgeClass: 'sale',
+                desc: 'A trendy high-rise fit that flatters the silhouette. Inspired by vintage designs for a modern look.',
+                images: ['images/banner-image-2.jpg', 'images/product-item-5.jpg', 'images/product-item-3.jpg'],
+                colors: [{ name: 'Light Blue', hex: '#c0b9a8' }, { name: 'Medium Wash', hex: '#3d5a99' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 4, reviews: 76,
+                related: ['off-white-denim-jeans', 'relaxed-fit-straight-jeans', 'ripped-skinny-jeans']
+            },
+            'relaxed-fit-straight-jeans': {
+                name: 'Relaxed Fit Straight Jeans',
+                category: 'Relaxed · Essential',
+                price: '$65.00',
+                desc: 'Combining comfort and style, these relaxed fit jeans offer a straight-leg silhouette for a laid-back vibe.',
+                images: ['images/banner-image-3.jpg', 'images/product-item-2.jpg', 'images/product-item-10.jpg'],
+                colors: [{ name: 'Medium Blue', hex: '#3d5a99' }, { name: 'Light Blue', hex: '#7a9cc2' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 4, reviews: 54,
+                related: ['baggy-fit-jeans', 'loose-fit-wide-leg-jeans', 'high-rise-mom-jeans']
+            },
+            'vintage-wash-denim-jacket': {
+                name: 'Vintage Wash Denim Jacket',
+                category: 'Jacket · New Arrival',
+                price: '$120.00',
+                badge: 'New', badgeClass: 'new',
+                desc: 'A premium denim jacket with a vintage wash. Features classic trucker styling and durable construction.',
+                images: ['images/banner-image-4.jpg', 'images/product-item-4.jpg', 'images/product-item-6.jpg'],
+                colors: [{ name: 'Vintage Blue', hex: '#7a9cc2' }, { name: 'Washed Black', hex: '#111111' }],
+                sizes: ['S', 'M', 'L', 'XL'],
+                outSizes: [],
+                stars: 5, reviews: 42,
+                related: ['handmade-denim-jacket', 'oversized-denim-jacket', 'vintage-indigo-jeans']
+            },
+            'black-skinny-jeans': {
+                name: 'Black Skinny Jeans',
+                category: 'Skinny · Best Seller',
+                price: '$55.00',
+                badge: 'Bestseller', badgeClass: '',
+                desc: 'Sleek black skinny jeans with a comfortable stretch. A versatile staple for any wardrobe.',
+                images: ['images/banner-image-5.jpg', 'images/product-item-5.jpg', 'images/product-item-1.jpg'],
+                colors: [{ name: 'Deep Black', hex: '#111111' }, { name: 'Charcoal', hex: '#444' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 5, reviews: 112,
+                related: ['classic-blue-skinny-jeans', 'ripped-skinny-jeans', 'raw-hem-jeans']
+            },
+            'classic-denim-shorts': {
+                name: 'Classic Denim Shorts',
+                category: 'Shorts · Essential',
+                price: '$45.00',
+                desc: 'Essential denim shorts for warmer days. Featuring a classic fit and durable denim fabric.',
+                images: ['images/banner-image-6.jpg', 'images/product-item-7.jpg', 'images/product-item-8.jpg'],
+                colors: [{ name: 'Medium Blue', hex: '#7a9cc2' }, { name: 'Light Blue', hex: '#c0b9a8' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 4, reviews: 38,
+                related: ['cut-off-denim-shorts', 'baggy-fit-jeans', 'classic-blue-jeans']
+            },
+            'dark-wash-straight-jeans': {
+                name: 'Dark Wash Straight Jeans',
+                category: 'Straight · Sale',
+                price: '$72.00',
+                oldPrice: '$89.00',
+                badge: 'Sale', badgeClass: 'sale',
+                desc: 'Straight-leg jeans in a rich dark wash. Perfect for dressing up or down.',
+                images: ['images/banner-image-1.jpg', 'images/product-item-4.jpg', 'images/product-item-1.jpg'],
+                colors: [{ name: 'Dark Blue', hex: '#1e3460' }, { name: 'Solid Black', hex: '#111111' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 4, reviews: 65,
+                related: ['classic-indigo-straight-jeans', 'vintage-indigo-jeans', 'classic-blue-jeans']
+            },
+            'oversized-denim-jacket': {
+                name: 'Oversized Denim Jacket',
+                category: 'Jacket · Essential',
+                price: '$135.00',
+                desc: 'A modern oversized take on the classic denim jacket. Provides a relaxed and stylish layering option.',
+                images: ['images/banner-image-3.jpg', 'images/product-item-6.jpg', 'images/product-item-4.jpg'],
+                colors: [{ name: 'Beige Wash', hex: '#c0b9a8' }, { name: 'Classic Blue', hex: '#3d5a99' }],
+                sizes: ['S', 'M', 'L', 'XL'],
+                outSizes: [],
+                stars: 5, reviews: 51,
+                related: ['vintage-wash-denim-jacket', 'handmade-denim-jacket', 'relaxed-fit-straight-jeans']
+            },
+            'ripped-skinny-jeans': {
+                name: 'Ripped Skinny Jeans',
+                category: 'Skinny · New Arrival',
+                price: '$62.00',
+                badge: 'New', badgeClass: 'new',
+                desc: 'Skinny jeans with distressed ripped details for an edgy look. Stretchy denim ensures a great fit.',
+                images: ['images/banner-image-2.jpg', 'images/product-item-9.jpg', 'images/product-item-10.jpg'],
+                colors: [{ name: 'Classic Blue', hex: '#3d5a99' }, { name: 'Light Wash', hex: '#7a9cc2' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 4, reviews: 84,
+                related: ['classic-blue-skinny-jeans', 'black-skinny-jeans', 'raw-hem-jeans']
+            },
+            'loose-fit-wide-leg-jeans': {
+                name: 'Loose Fit Wide Leg Jeans',
+                category: 'Relaxed · New Arrival',
+                price: '$68.00',
+                desc: 'Casual loose fit with a wide leg opening. The ultimate in comfort and contemporary denim style.',
+                images: ['images/banner-image-4.jpg', 'images/product-item-2.jpg', 'images/product-item-3.jpg'],
+                colors: [{ name: 'Ecru', hex: '#c0b9a8' }, { name: 'Blue', hex: '#3d5a99' }, { name: 'Black', hex: '#111111' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 5, reviews: 29,
+                related: ['relaxed-fit-straight-jeans', 'baggy-fit-jeans', 'off-white-denim-jeans']
+            },
+            'cut-off-denim-shorts': {
+                name: 'Cut-Off Denim Shorts',
+                category: 'Shorts · Sale',
+                price: '$42.00',
+                oldPrice: '$58.00',
+                badge: 'Sale', badgeClass: 'sale',
+                desc: 'Rugged cut-off denim shorts for a casual summer look. Features frayed edges and a comfortable fit.',
+                images: ['images/banner-image-5.jpg', 'images/product-item-7.jpg', 'images/product-item-8.jpg'],
+                colors: [{ name: 'Light Blue', hex: '#7a9cc2' }, { name: 'Deep Black', hex: '#111111' }],
+                sizes: ['26', '28', '30', '32', '34', '36'],
+                outSizes: [],
+                stars: 4, reviews: 19,
+                related: ['classic-denim-shorts', 'baggy-fit-jeans', 'raw-hem-jeans']
             }
         };
 
