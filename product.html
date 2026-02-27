@@ -1,1596 +1,2104 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Product - LEO Jeans</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Shop premium denim at LEO Jeans." />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" type="text/css" href="css/vendor.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* ── Breadcrumb hero ── */
-        .product-hero {
-            background: #f5f5f5;
-            border-bottom: 1px solid #eee;
-            padding: 22px 0;
-        }
+      /* ── Breadcrumb hero ── */
+      .product-hero {
+        background: #f5f5f5;
+        border-bottom: 1px solid #eee;
+        padding: 22px 0;
+      }
 
-        .breadcrumb {
-            background: transparent;
-            margin: 0;
-            padding: 0;
-        }
+      .breadcrumb {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+      }
 
-        .breadcrumb-item a {
-            color: #888;
-            text-decoration: none;
-            font-size: .85rem;
-        }
+      .breadcrumb-item a {
+        color: #888;
+        text-decoration: none;
+        font-size: 0.85rem;
+      }
 
-        .breadcrumb-item a:hover {
-            color: #111;
-        }
+      .breadcrumb-item a:hover {
+        color: #111;
+      }
 
-        .breadcrumb-item.active {
-            color: #111;
-            font-size: .85rem;
-        }
+      .breadcrumb-item.active {
+        color: #111;
+        font-size: 0.85rem;
+      }
 
-        .breadcrumb-item+.breadcrumb-item::before {
-            color: #bbb;
-        }
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: #bbb;
+      }
 
-        /* ── Main product layout ── */
-        .product-section {
-            padding: 60px 0 80px;
-        }
+      /* ── Main product layout ── */
+      .product-section {
+        padding: 60px 0 80px;
+      }
 
-        /* ── Image gallery ── */
-        .gallery-main {
-            position: relative;
-            overflow: hidden;
-            background: #f9f9f9;
-            aspect-ratio: 3/4;
-        }
+      /* ── Image gallery ── */
+      .gallery-main {
+        position: relative;
+        overflow: hidden;
+        background: #f9f9f9;
+        aspect-ratio: 3/4;
+      }
 
-        .gallery-main img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .5s ease;
-        }
+      .gallery-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
 
-        .gallery-main:hover img {
-            transform: scale(1.04);
-        }
+      .gallery-main:hover img {
+        transform: scale(1.04);
+      }
 
-        .gallery-badge {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: #111;
-            color: #fff;
-            font-size: .68rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 5px 12px;
-            z-index: 2;
-        }
+      .gallery-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: #111;
+        color: #fff;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 5px 12px;
+        z-index: 2;
+      }
 
-        .gallery-badge.sale {
-            background: #c0392b;
-        }
+      .gallery-badge.sale {
+        background: #c0392b;
+      }
 
-        .gallery-badge.new {
-            background: #27ae60;
-        }
+      .gallery-badge.new {
+        background: #27ae60;
+      }
 
-        .thumb-row {
-            display: flex;
-            gap: 10px;
-            margin-top: 12px;
-        }
+      .thumb-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+      }
 
-        .thumb {
-            width: 70px;
-            height: 85px;
-            object-fit: cover;
-            cursor: pointer;
-            border: 2px solid transparent;
-            flex-shrink: 0;
-            transition: border-color .2s;
-            background: #f5f5f5;
-        }
+      .thumb {
+        width: 70px;
+        height: 85px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid transparent;
+        flex-shrink: 0;
+        transition: border-color 0.2s;
+        background: #f5f5f5;
+      }
 
-        .thumb.active,
-        .thumb:hover {
-            border-color: #111;
-        }
+      .thumb.active,
+      .thumb:hover {
+        border-color: #111;
+      }
 
-        /* ── Product info panel ── */
+      /* ── Product info panel ── */
+      .product-info-panel {
+        padding-left: 30px;
+      }
+
+      @media (max-width: 991px) {
         .product-info-panel {
-            padding-left: 30px;
-        }
-
-        @media(max-width:991px) {
-            .product-info-panel {
-                padding-left: 0;
-                margin-top: 36px;
-            }
-        }
-
-        .product-tag {
-            font-size: .72rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .product-title {
-            font-family: 'Marcellus', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            line-height: 1.2;
-            margin-bottom: 14px;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-
-        .stars {
-            color: #f39c12;
-            font-size: .9rem;
-            letter-spacing: 2px;
-        }
-
-        .review-count {
-            font-size: .82rem;
-            color: #888;
-        }
-
-        .product-price-wrap {
-            margin-bottom: 24px;
-        }
-
-        .price-current {
-            font-size: 1.9rem;
-            font-weight: 700;
-            color: #111;
-        }
-
-        .price-old {
-            font-size: 1.1rem;
-            color: #bbb;
-            text-decoration: line-through;
-            margin-right: 10px;
-        }
-
-        .price-save {
-            font-size: .78rem;
-            background: #ffe4e4;
-            color: #c0392b;
-            padding: 3px 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            vertical-align: middle;
-        }
-
-        .divider {
-            border: none;
-            border-top: 1px solid #eee;
-            margin: 22px 0;
-        }
-
-        /* ── Color selector ── */
-        .option-label {
-            font-size: .75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #555;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .color-label-val {
-            color: #111;
-            font-weight: 500;
-        }
-
-        .color-swatches {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 22px;
-        }
-
-        .swatch {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2.5px solid transparent;
-            transition: border-color .2s, transform .15s;
-            position: relative;
-        }
-
-        .swatch:hover {
-            transform: scale(1.1);
-        }
-
-        .swatch.active {
-            border-color: #111;
-            box-shadow: 0 0 0 2px #fff inset;
-        }
-
-        .swatch[title]::after {
-            content: attr(title);
-            position: absolute;
-            bottom: -22px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: .65rem;
-            color: #888;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity .2s;
-        }
-
-        .swatch:hover::after {
-            opacity: 1;
-        }
-
-        /* ── Size selector ── */
-        .size-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 22px;
-        }
-
-        .size-btn {
-            min-width: 50px;
-            height: 44px;
-            border: 1.5px solid #ddd;
-            background: transparent;
-            font-size: .82rem;
-            font-family: 'Jost', sans-serif;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all .2s;
-            padding: 0 10px;
-            color: #555;
-        }
-
-        .size-btn:hover,
-        .size-btn.active {
-            background: #111;
-            color: #fff;
-            border-color: #111;
-        }
-
-        .size-btn.out {
-            color: #ccc;
-            text-decoration: line-through;
-            cursor: not-allowed;
-        }
-
-        .size-guide {
-            font-size: .78rem;
-            color: #888;
-            text-decoration: underline;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            font-family: 'Jost', sans-serif;
-            margin-left: 8px;
-        }
-
-        /* ── Quantity + Add to Cart ── */
-        .qty-wrap {
-            display: flex;
-            align-items: center;
-            border: 1.5px solid #ddd;
-            width: fit-content;
-            margin-bottom: 20px;
-        }
-
-        .qty-btn {
-            width: 42px;
-            height: 48px;
-            background: transparent;
-            border: none;
-            font-size: 1.3rem;
-            cursor: pointer;
-            color: #555;
-            transition: background .2s, color .2s;
-            font-family: 'Jost', sans-serif;
-        }
-
-        .qty-btn:hover {
-            background: #f5f5f5;
-        }
-
-        .qty-input {
-            width: 52px;
-            height: 48px;
-            border: none;
-            border-left: 1.5px solid #ddd;
-            border-right: 1.5px solid #ddd;
-            text-align: center;
-            font-size: .95rem;
-            font-family: 'Jost', sans-serif;
-            outline: none;
-            appearance: textfield;
-            -moz-appearance: textfield;
-        }
-
-        .qty-input::-webkit-inner-spin-button,
-        .qty-input::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-        }
-
-        .btn-add-cart {
-            background: #111;
-            color: #fff;
-            border: 2px solid #111;
-            padding: 14px 36px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: .85rem;
-            font-family: 'Jost', sans-serif;
-            cursor: pointer;
-            transition: all .3s;
-            flex: 1;
-        }
-
-        .btn-add-cart:hover {
-            background: transparent;
-            color: #111;
-        }
-
-        .btn-wishlist-lg {
-            width: 52px;
-            height: 52px;
-            border: 2px solid #ddd;
-            background: transparent;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .2s;
-            color: #555;
-            flex-shrink: 0;
-        }
-
-        .btn-wishlist-lg:hover,
-        .btn-wishlist-lg.active {
-            border-color: #c0392b;
-            color: #c0392b;
-        }
-
-        /* ── Info accordion ── */
-        .info-accordion {
-            margin-top: 28px;
-        }
-
-        .acc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            border-top: 1px solid #eee;
-            cursor: pointer;
-            font-size: .85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            user-select: none;
-        }
-
-        .acc-toggle {
-            font-size: 1.3rem;
-            color: #888;
-            transition: transform .3s;
-        }
-
-        .acc-header.open .acc-toggle {
-            transform: rotate(45deg);
-        }
-
-        .acc-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .4s ease, padding .4s;
-            font-size: .9rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .acc-body.open {
-            max-height: 400px;
-            padding-bottom: 14px;
-        }
-
-        .acc-body ul {
-            padding-left: 18px;
-        }
-
-        .acc-body li {
-            margin-bottom: 4px;
-        }
-
-        /* ── Toast ── */
-        .cart-toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #111;
-            color: #fff;
-            padding: 16px 24px;
-            font-size: .88rem;
-            z-index: 9999;
-            border-radius: 2px;
-            transform: translateY(80px);
-            opacity: 0;
-            transition: all .4s ease;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
-            max-width: 320px;
-        }
-
-        .cart-toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* ── Virtual Try-On ── */
-        .vto-btn {
-            background: #fff;
-            color: #111;
-            border: 2px solid #111;
-            padding: 14px 24px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: .85rem;
-            font-family: 'Jost', sans-serif;
-            cursor: pointer;
-            transition: all .3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-            width: 100%;
-        }
-
-        .vto-btn:hover {
-            background: #111;
-            color: #fff;
-        }
-
-        .vto-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .95);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .vto-modal.show {
-            display: flex;
-        }
-
-        .vto-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        #vtoVideo,
-        #vtoCanvas {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            inset: 0;
-        }
-
-        .vto-overlay-wrap {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-
-        #vtoOverlay {
-            width: 300px;
-            pointer-events: auto;
-            cursor: grab;
-            transition: transform 0.1s ease;
-            user-select: none;
-        }
-
-        #vtoOverlay:active {
-            cursor: grabbing;
-        }
-
-        .vto-controls {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            gap: 15px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            padding: 20px 30px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            align-items: center;
-        }
-
-        .vto-ctrl-btn {
-            background: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #111;
-            transition: all 0.2s;
-        }
-
-        .vto-ctrl-btn:hover {
-            transform: scale(1.1);
-            background: #f0f0f0;
-        }
-
-        .vto-close {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            z-index: 11;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-        }
-
-        .vto-slider-wrap {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-
-        .vto-slider {
-            width: 100px;
-            accent-color: #fff;
-        }
-
-        /* ── Related products ── */
-        .related-section {
-            padding: 70px 0;
-            background: #f9f9f9;
-        }
-
-        .related-card {
-            position: relative;
-        }
-
-        .related-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            background: #f0f0f0;
-            display: block;
-            transition: transform .5s;
-        }
-
-        .related-card:hover .related-img {
-            transform: scale(1.04);
-        }
-
-        .related-overflow {
-            overflow: hidden;
-        }
-
-        .related-name {
-            font-family: 'Marcellus', serif;
-            font-size: 1rem;
-            display: block;
-            color: #111;
-            text-decoration: none;
-            margin: 12px 4px 4px;
-        }
-
-        .related-name:hover {
-            color: #555;
-        }
-
-        .related-price {
-            font-size: .95rem;
-            font-weight: 600;
-            color: #111;
-            padding: 0 4px;
-        }
-
-        /* ── Size guide modal ── */
-        .size-modal-backdrop {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .5);
-            z-index: 1050;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .size-modal-backdrop.show {
-            display: flex;
-        }
-
-        .size-modal {
-            background: #fff;
-            max-width: 560px;
-            width: 90%;
-            padding: 40px;
-            position: relative;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .size-modal h4 {
-            font-family: 'Marcellus', serif;
-            margin-bottom: 20px;
-        }
-
-        .size-modal table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: .88rem;
-        }
-
-        .size-modal th,
-        .size-modal td {
-            border: 1px solid #eee;
-            padding: 10px 14px;
-            text-align: center;
-        }
-
-        .size-modal th {
-            background: #111;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: .75rem;
-        }
-
-        .size-modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #888;
-            line-height: 1;
-        }
+          padding-left: 0;
+          margin-top: 36px;
+        }
+      }
+
+      .product-tag {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #888;
+        margin-bottom: 10px;
+      }
+
+      .product-title {
+        font-family: "Marcellus", serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        line-height: 1.2;
+        margin-bottom: 14px;
+      }
+
+      .product-rating {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .stars {
+        color: #f39c12;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+      }
+
+      .review-count {
+        font-size: 0.82rem;
+        color: #888;
+      }
+
+      .product-price-wrap {
+        margin-bottom: 24px;
+      }
+
+      .price-current {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #111;
+      }
+
+      .price-old {
+        font-size: 1.1rem;
+        color: #bbb;
+        text-decoration: line-through;
+        margin-right: 10px;
+      }
+
+      .price-save {
+        font-size: 0.78rem;
+        background: #ffe4e4;
+        color: #c0392b;
+        padding: 3px 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        vertical-align: middle;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 22px 0;
+      }
+
+      /* ── Color selector ── */
+      .option-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #555;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .color-label-val {
+        color: #111;
+        font-weight: 500;
+      }
+
+      .color-swatches {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+
+      .swatch {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2.5px solid transparent;
+        transition:
+          border-color 0.2s,
+          transform 0.15s;
+        position: relative;
+      }
+
+      .swatch:hover {
+        transform: scale(1.1);
+      }
+
+      .swatch.active {
+        border-color: #111;
+        box-shadow: 0 0 0 2px #fff inset;
+      }
+
+      .swatch[title]::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.65rem;
+        color: #888;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      .swatch:hover::after {
+        opacity: 1;
+      }
+
+      /* ── Size selector ── */
+      .size-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+
+      .size-btn {
+        min-width: 50px;
+        height: 44px;
+        border: 1.5px solid #ddd;
+        background: transparent;
+        font-size: 0.82rem;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        padding: 0 10px;
+        color: #555;
+      }
+
+      .size-btn:hover,
+      .size-btn.active {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+      }
+
+      .size-btn.out {
+        color: #ccc;
+        text-decoration: line-through;
+        cursor: not-allowed;
+      }
+
+      .size-guide {
+        font-size: 0.78rem;
+        color: #888;
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: "Jost", sans-serif;
+        margin-left: 8px;
+      }
+
+      /* ── Quantity + Add to Cart ── */
+      .qty-wrap {
+        display: flex;
+        align-items: center;
+        border: 1.5px solid #ddd;
+        width: fit-content;
+        margin-bottom: 20px;
+      }
+
+      .qty-btn {
+        width: 42px;
+        height: 48px;
+        background: transparent;
+        border: none;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: #555;
+        transition:
+          background 0.2s,
+          color 0.2s;
+        font-family: "Jost", sans-serif;
+      }
+
+      .qty-btn:hover {
+        background: #f5f5f5;
+      }
+
+      .qty-input {
+        width: 52px;
+        height: 48px;
+        border: none;
+        border-left: 1.5px solid #ddd;
+        border-right: 1.5px solid #ddd;
+        text-align: center;
+        font-size: 0.95rem;
+        font-family: "Jost", sans-serif;
+        outline: none;
+        appearance: textfield;
+        -moz-appearance: textfield;
+      }
+
+      .qty-input::-webkit-inner-spin-button,
+      .qty-input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .btn-add-cart {
+        background: #111;
+        color: #fff;
+        border: 2px solid #111;
+        padding: 14px 36px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        font-family: "Jost", sans-serif;
+        cursor: pointer;
+        transition: all 0.3s;
+        flex: 1;
+      }
+
+      .btn-add-cart:hover {
+        background: transparent;
+        color: #111;
+      }
+
+      .btn-wishlist-lg {
+        width: 52px;
+        height: 52px;
+        border: 2px solid #ddd;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        color: #555;
+        flex-shrink: 0;
+      }
+
+      .btn-wishlist-lg:hover,
+      .btn-wishlist-lg.active {
+        border-color: #c0392b;
+        color: #c0392b;
+      }
+
+      /* ── Info accordion ── */
+      .info-accordion {
+        margin-top: 28px;
+      }
+
+      .acc-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        border-top: 1px solid #eee;
+        cursor: pointer;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        user-select: none;
+      }
+
+      .acc-toggle {
+        font-size: 1.3rem;
+        color: #888;
+        transition: transform 0.3s;
+      }
+
+      .acc-header.open .acc-toggle {
+        transform: rotate(45deg);
+      }
+
+      .acc-body {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.4s ease,
+          padding 0.4s;
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      .acc-body.open {
+        max-height: 400px;
+        padding-bottom: 14px;
+      }
+
+      .acc-body ul {
+        padding-left: 18px;
+      }
+
+      .acc-body li {
+        margin-bottom: 4px;
+      }
+
+      /* ── Toast ── */
+      .cart-toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #111;
+        color: #fff;
+        padding: 16px 24px;
+        font-size: 0.88rem;
+        z-index: 9999;
+        border-radius: 2px;
+        transform: translateY(80px);
+        opacity: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        max-width: 320px;
+      }
+
+      .cart-toast.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* ── Virtual Try-On ── */
+      .vto-btn {
+        background: #fff;
+        color: #111;
+        border: 2px solid #111;
+        padding: 14px 24px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        font-family: "Jost", sans-serif;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+      }
+
+      .vto-btn:hover {
+        background: #111;
+        color: #fff;
+      }
+
+      .vto-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .vto-modal.show {
+        display: flex;
+      }
+
+      .vto-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      #vtoVideo,
+      #vtoCanvas {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+      }
+
+      .vto-overlay-wrap {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+
+      #vtoOverlay {
+        width: 300px;
+        pointer-events: auto;
+        cursor: grab;
+        transition: transform 0.1s ease;
+        user-select: none;
+      }
+
+      #vtoOverlay:active {
+        cursor: grabbing;
+      }
+
+      .vto-controls {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        padding: 20px 30px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        align-items: center;
+      }
+
+      .vto-ctrl-btn {
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #111;
+        transition: all 0.2s;
+      }
+
+      .vto-ctrl-btn:hover {
+        transform: scale(1.1);
+        background: #f0f0f0;
+      }
+
+      .vto-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 11;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+      }
+
+      .vto-slider-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+      }
+
+      .vto-slider {
+        width: 100px;
+        accent-color: #fff;
+      }
+
+      /* ── Related products ── */
+      .related-section {
+        padding: 70px 0;
+        background: #f9f9f9;
+      }
+
+      .related-card {
+        position: relative;
+      }
+
+      .related-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        background: #f0f0f0;
+        display: block;
+        transition: transform 0.5s;
+      }
+
+      .related-card:hover .related-img {
+        transform: scale(1.04);
+      }
+
+      .related-overflow {
+        overflow: hidden;
+      }
+
+      .related-name {
+        font-family: "Marcellus", serif;
+        font-size: 1rem;
+        display: block;
+        color: #111;
+        text-decoration: none;
+        margin: 12px 4px 4px;
+      }
+
+      .related-name:hover {
+        color: #555;
+      }
+
+      .related-price {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #111;
+        padding: 0 4px;
+      }
+
+      /* ── Size guide modal ── */
+      .size-modal-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .size-modal-backdrop.show {
+        display: flex;
+      }
+
+      .size-modal {
+        background: #fff;
+        max-width: 560px;
+        width: 90%;
+        padding: 40px;
+        position: relative;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .size-modal h4 {
+        font-family: "Marcellus", serif;
+        margin-bottom: 20px;
+      }
+
+      .size-modal table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+
+      .size-modal th,
+      .size-modal td {
+        border: 1px solid #eee;
+        padding: 10px 14px;
+        text-align: center;
+      }
+
+      .size-modal th {
+        background: #111;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+      }
+
+      .size-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #888;
+        line-height: 1;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- SVG Sprite -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <defs>
-            <symbol id="cart" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z" />
-            </symbol>
-            <symbol id="search" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
-            </symbol>
-            <symbol id="heart" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z" />
-            </symbol>
-            <symbol id="instagram" viewBox="0 0 15 15">
-                <path fill="none" stroke="currentColor"
-                    d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
-            </symbol>
-            <symbol id="facebook" viewBox="0 0 15 15">
-                <path fill="none" stroke="currentColor"
-                    d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5" />
-            </symbol>
-            <symbol id="twitter" viewBox="0 0 15 15">
-                <path fill="currentColor"
-                    d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z" />
-            </symbol>
-            <symbol id="youtube" viewBox="0 0 15 15">
-                <path fill="currentColor"
-                    d="M6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5Zm0 4H6a.5.5 0 0 0 .777.416Zm3-2l.277.416a.5.5 0 0 0 0-.832ZM0 3.636v7.728h1V3.636Zm15 7.728V3.636h-1v7.728ZM6 5.5v4h1v-4Zm.777 4.416l3-2-.554-.832-3 2Zm3-2.832-3-2-.554.832 3 2Z" />
-            </symbol>
-            <symbol id="pinterest" viewBox="0 0 15 15">
-                <path fill="none" stroke="currentColor"
-                    d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z" />
-            </symbol>
-            <symbol id="camera" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M12 18q2.075 0 3.538-1.462Q17 15.075 17 13q0-2.075-1.462-3.538Q14.075 8 12 8q-2.075 0-3.538 1.462Q7 10.925 7 13q0 2.075 1.462 3.538Q9.925 18 12 18Zm0-2q-1.25 0-2.125-.875T9 13q0-1.25.875-2.125T12 10q1.25 0 2.125.875T15 13q0 1.25-.875 2.125T12 16Zm-8 5q-.825 0-1.412-.587Q2 19.825 2 19V7q0-.825.588-1.412Q3.175 5 4 5h3.15L9 3h6l1.85 2H20q.825 0 1.413.588Q22 6.175 22 7v12q0 .825-.587 1.413Q20.825 21 20 21Zm0-2h16V7H15.125L13.275 5h-2.55L8.875 7H4v12Zm8-6Z" />
-            </symbol>
-        </defs>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <defs>
+        <symbol id="cart" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z"
+          />
+        </symbol>
+        <symbol id="search" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"
+          />
+        </symbol>
+        <symbol id="heart" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z"
+          />
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 15 15">
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"
+          />
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 15 15">
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5"
+          />
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 15 15">
+          <path
+            fill="currentColor"
+            d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z"
+          />
+        </symbol>
+        <symbol id="youtube" viewBox="0 0 15 15">
+          <path
+            fill="currentColor"
+            d="M6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5Zm0 4H6a.5.5 0 0 0 .777.416Zm3-2l.277.416a.5.5 0 0 0 0-.832ZM0 3.636v7.728h1V3.636Zm15 7.728V3.636h-1v7.728ZM6 5.5v4h1v-4Zm.777 4.416l3-2-.554-.832-3 2Zm3-2.832-3-2-.554.832 3 2Z"
+          />
+        </symbol>
+        <symbol id="pinterest" viewBox="0 0 15 15">
+          <path
+            fill="none"
+            stroke="currentColor"
+            d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z"
+          />
+        </symbol>
+        <symbol id="camera" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 18q2.075 0 3.538-1.462Q17 15.075 17 13q0-2.075-1.462-3.538Q14.075 8 12 8q-2.075 0-3.538 1.462Q7 10.925 7 13q0 2.075 1.462 3.538Q9.925 18 12 18Zm0-2q-1.25 0-2.125-.875T9 13q0-1.25.875-2.125T12 10q1.25 0 2.125.875T15 13q0 1.25-.875 2.125T12 16Zm-8 5q-.825 0-1.412-.587Q2 19.825 2 19V7q0-.825.588-1.412Q3.175 5 4 5h3.15L9 3h6l1.85 2H20q.825 0 1.413.588Q22 6.175 22 7v12q0 .825-.587 1.413Q20.825 21 20 21Zm0-2h16V7H15.125L13.275 5h-2.55L8.875 7H4v12Zm8-6Z"
+          />
+        </symbol>
+      </defs>
     </svg>
 
     <!-- Virtual Try-On Modal -->
     <div class="vto-modal" id="vtoModal">
-        <button class="vto-close" onclick="closeVTO()">Close</button>
-        <div class="vto-container">
-            <video id="vtoVideo" autoplay playsinline></video>
-            <canvas id="vtoCanvas" style="display:none"></canvas>
-            <div class="vto-overlay-wrap" id="vtoOverlayWrap">
-                <img id="vtoOverlay" src="images/vto-model.png" alt="Jeans Model" onmousedown="startDrag(event)"
-                    ontouchstart="startDrag(event)" />
-            </div>
-            <div class="vto-controls">
-                <div class="vto-slider-wrap">
-                    <label>Scale</label>
-                    <input type="range" class="vto-slider" id="vtoScale" min="0.5" max="2" step="0.01" value="1"
-                        oninput="updateVTOOverlay()" />
-                </div>
-                <button class="vto-ctrl-btn" onclick="takeVTOShot()" title="Snap a photo!">
-                    <svg width="24" height="24">
-                        <use xlink:href="#camera"></use>
-                    </svg>
-                </button>
-                <div class="vto-slider-wrap">
-                    <label>Upload</label>
-                    <input type="file" id="vtoUpload" style="display:none" accept="image/*"
-                        onchange="handleVTOUpload(event)" />
-                    <button class="vto-ctrl-btn" onclick="document.getElementById('vtoUpload').click()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M11 16V7.85l-2.6 2.6L7 9l5-5 5 5-1.4 1.45-2.6-2.6V16h-2Zm-7 4v-5h2v3h12v-3h2v5H4Z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+      <button class="vto-close" onclick="closeVTO()">Close</button>
+      <div class="vto-container">
+        <video id="vtoVideo" autoplay playsinline></video>
+        <canvas id="vtoCanvas" style="display: none"></canvas>
+        <div class="vto-overlay-wrap" id="vtoOverlayWrap">
+          <img
+            id="vtoOverlay"
+            src="images/vto-model-removebg-preview.png"
+            alt="Jeans Model"
+            onmousedown="startDrag(event)"
+            ontouchstart="startDrag(event)"
+          />
         </div>
+        <div class="vto-controls">
+          <div class="vto-slider-wrap">
+            <label>Scale</label>
+            <input
+              type="range"
+              class="vto-slider"
+              id="vtoScale"
+              min="0.5"
+              max="2"
+              step="0.01"
+              value="1"
+              oninput="updateVTOOverlay()"
+            />
+          </div>
+          <button
+            class="vto-ctrl-btn"
+            onclick="takeVTOShot()"
+            title="Snap a photo!"
+          >
+            <svg width="24" height="24">
+              <use xlink:href="#camera"></use>
+            </svg>
+          </button>
+          <div class="vto-slider-wrap">
+            <label>Upload</label>
+            <input
+              type="file"
+              id="vtoUpload"
+              style="display: none"
+              accept="image/*"
+              onchange="handleVTOUpload(event)"
+            />
+            <button
+              class="vto-ctrl-btn"
+              onclick="document.getElementById('vtoUpload').click()"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M11 16V7.85l-2.6 2.6L7 9l5-5 5 5-1.4 1.45-2.6-2.6V16h-2Zm-7 4v-5h2v3h12v-3h2v5H4Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Cart Toast -->
     <div class="cart-toast" id="cartToast">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
-            style="margin-right:8px;vertical-align:middle">
-            <use xlink:href="#cart"></use>
-        </svg>
-        <span id="toastMsg">Added to cart!</span>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        style="margin-right: 8px; vertical-align: middle"
+      >
+        <use xlink:href="#cart"></use>
+      </svg>
+      <span id="toastMsg">Added to cart!</span>
     </div>
 
     <!-- Size Guide Modal -->
-    <div class="size-modal-backdrop" id="sizeModal" onclick="closeSizeModal(event)">
-        <div class="size-modal">
-            <button class="size-modal-close"
-                onclick="document.getElementById('sizeModal').classList.remove('show')">&times;</button>
-            <h4>Size Guide</h4>
-            <p style="font-size:.85rem;color:#888;margin-bottom:20px">All measurements are in inches. For the best fit,
-                measure yourself and compare to the chart below.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Size</th>
-                        <th>Waist</th>
-                        <th>Hip</th>
-                        <th>Inseam</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>XS / 26</td>
-                        <td>26–27</td>
-                        <td>35–36</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>S / 28</td>
-                        <td>28–29</td>
-                        <td>37–38</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>M / 30</td>
-                        <td>30–31</td>
-                        <td>39–40</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>L / 32</td>
-                        <td>32–33</td>
-                        <td>41–42</td>
-                        <td>31</td>
-                    </tr>
-                    <tr>
-                        <td>XL / 34</td>
-                        <td>34–35</td>
-                        <td>43–44</td>
-                        <td>31</td>
-                    </tr>
-                    <tr>
-                        <td>XXL / 36</td>
-                        <td>36–37</td>
-                        <td>45–46</td>
-                        <td>32</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div
+      class="size-modal-backdrop"
+      id="sizeModal"
+      onclick="closeSizeModal(event)"
+    >
+      <div class="size-modal">
+        <button
+          class="size-modal-close"
+          onclick="
+            document.getElementById('sizeModal').classList.remove('show')
+          "
+        >
+          &times;
+        </button>
+        <h4>Size Guide</h4>
+        <p style="font-size: 0.85rem; color: #888; margin-bottom: 20px">
+          All measurements are in inches. For the best fit, measure yourself and
+          compare to the chart below.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Waist</th>
+              <th>Hip</th>
+              <th>Inseam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>XS / 26</td>
+              <td>26–27</td>
+              <td>35–36</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>S / 28</td>
+              <td>28–29</td>
+              <td>37–38</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>M / 30</td>
+              <td>30–31</td>
+              <td>39–40</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>L / 32</td>
+              <td>32–33</td>
+              <td>41–42</td>
+              <td>31</td>
+            </tr>
+            <tr>
+              <td>XL / 34</td>
+              <td>34–35</td>
+              <td>43–44</td>
+              <td>31</td>
+            </tr>
+            <tr>
+              <td>XXL / 36</td>
+              <td>36–37</td>
+              <td>45–46</td>
+              <td>32</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
 
     <!-- Cart Offcanvas -->
-    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart"
-        aria-labelledby="My Cart">
-        <div class="offcanvas-header justify-content-center">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-primary">Your denim cart</span>
-                <span class="badge bg-primary rounded-pill" id="cartBadge">0</span>
-            </h4>
-            <ul class="list-group mb-3" id="cartList">
-                <li class="list-group-item text-muted">Your cart is empty.</li>
-            </ul>
-            <button class="w-100 btn btn-primary btn-lg">Continue to Checkout</button>
-        </div>
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasCart"
+      aria-labelledby="My Cart"
+    >
+      <div class="offcanvas-header justify-content-center">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your denim cart</span>
+          <span class="badge bg-primary rounded-pill" id="cartBadge">0</span>
+        </h4>
+        <ul class="list-group mb-3" id="cartList">
+          <li class="list-group-item text-muted">Your cart is empty.</li>
+        </ul>
+        <button class="w-100 btn btn-primary btn-lg">
+          Continue to Checkout
+        </button>
+      </div>
     </div>
 
     <!-- Search Popup -->
     <div class="search-popup">
-        <div class="search-popup-container">
-            <form role="search" method="get" class="form-group" action="">
-                <input type="search" id="search-form" class="form-control border-0 border-bottom"
-                    placeholder="Type and press enter" name="s" />
-                <button type="submit" class="search-submit border-0 position-absolute bg-white"
-                    style="top:15px;right:15px">
-                    <svg width="24" height="24">
-                        <use xlink:href="#search"></use>
-                    </svg>
-                </button>
-            </form>
-            <h5 class="cat-list-title">Browse Categories</h5>
-            <ul class="cat-list">
-                <li class="cat-list-item"><a href="shop.html">Skinny Jeans</a></li>
-                <li class="cat-list-item"><a href="shop.html">Straight Jeans</a></li>
-                <li class="cat-list-item"><a href="shop.html">Denim Jackets</a></li>
-            </ul>
-        </div>
+      <div class="search-popup-container">
+        <form role="search" method="get" class="form-group" action="">
+          <input
+            type="search"
+            id="search-form"
+            class="form-control border-0 border-bottom"
+            placeholder="Type and press enter"
+            name="s"
+          />
+          <button
+            type="submit"
+            class="search-submit border-0 position-absolute bg-white"
+            style="top: 15px; right: 15px"
+          >
+            <svg width="24" height="24">
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+        </form>
+        <h5 class="cat-list-title">Browse Categories</h5>
+        <ul class="cat-list">
+          <li class="cat-list-item"><a href="shop.html">Skinny Jeans</a></li>
+          <li class="cat-list-item"><a href="shop.html">Straight Jeans</a></li>
+          <li class="cat-list-item"><a href="shop.html">Denim Jackets</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
-        <div class="container-fluid">
-            <div class="row justify-content-between align-items-center w-100">
-                <div class="col-auto me-auto me-lg-0">
-                    <a class="navbar-brand text-white" href="index.html">
-                        <span style="display:flex;align-items:center;gap:12px">
-                            <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo"
-                                style="height:80px;width:auto" />
-                            <span
-                                style="font-size:2.2rem;font-family:'Marcellus',Roboto,sans-serif;font-weight:400;color:#111;letter-spacing:2px">LEO</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-auto order-last order-lg-0">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title">Menu</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
-                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <ul class="list-unstyled d-flex m-0">
-                        <li class="d-none d-lg-block">
-                            <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
-                                <svg width="24" height="24" viewBox="0 0 24 24">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                                <span class="cart-count ms-1" id="navCartCount">(0)</span>
-                            </a>
-                        </li>
-                        <li class="d-lg-none">
-                            <a href="#" class="mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
-                                <svg width="24" height="24" viewBox="0 0 24 24">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="search-box mx-2">
-                            <a href="#search" class="search-button">
-                                <svg width="24" height="24" viewBox="0 0 24 24">
-                                    <use xlink:href="#search"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <nav
+      class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center"
+    >
+      <div class="container-fluid">
+        <div class="row justify-content-between align-items-center w-100">
+          <div class="col-auto me-auto me-lg-0">
+            <a class="navbar-brand text-white" href="index.html">
+              <span style="display: flex; align-items: center; gap: 12px">
+                <img
+                  src="images/Leo_logo-removebg-preview.png"
+                  alt="Leo Logo"
+                  style="height: 80px; width: auto"
+                />
+                <span
+                  style="
+                    font-size: 2.2rem;
+                    font-family: &quot;Marcellus&quot;, Roboto, sans-serif;
+                    font-weight: 400;
+                    color: #111;
+                    letter-spacing: 2px;
+                  "
+                  >LEO</span
+                >
+              </span>
+            </a>
+          </div>
+          <div class="col-auto order-last order-lg-0">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasNavbar"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul
+                  class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="col-auto">
+            <ul class="list-unstyled d-flex m-0">
+              <li class="d-none d-lg-block">
+                <a
+                  href="#"
+                  class="mx-3"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#cart"></use>
+                  </svg>
+                  <span class="cart-count ms-1" id="navCartCount">(0)</span>
+                </a>
+              </li>
+              <li class="d-lg-none">
+                <a
+                  href="#"
+                  class="mx-2"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#cart"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="search-box mx-2">
+                <a href="#search" class="search-button">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#search"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Breadcrumb -->
     <div class="product-hero">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
-                    <li class="breadcrumb-item active" id="breadcrumbName">Product</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+            <li class="breadcrumb-item active" id="breadcrumbName">Product</li>
+          </ol>
+        </nav>
+      </div>
     </div>
 
     <!-- Product Section -->
     <section class="product-section">
-        <div class="container">
-            <div class="row g-5">
-
-                <!-- LEFT: Image gallery -->
-                <div class="col-lg-6">
-                    <div class="gallery-main" id="galleryMain">
-                        <span class="gallery-badge new" id="productBadge">New</span>
-                        <img id="mainImage" src="" alt="Product Image" />
-                    </div>
-                    <div class="thumb-row" id="thumbRow">
-                        <!-- thumbnails injected by JS -->
-                    </div>
-                </div>
-
-                <!-- RIGHT: Product info -->
-                <div class="col-lg-6">
-                    <div class="product-info-panel">
-                        <p class="product-tag" id="productCategory">Denim Collection</p>
-                        <h1 class="product-title" id="productName">Loading...</h1>
-
-                        <div class="product-rating">
-                            <span class="stars" id="productStars">★★★★★</span>
-                            <span class="review-count" id="productReviews">(0 reviews)</span>
-                        </div>
-
-                        <div class="product-price-wrap">
-                            <span class="price-old" id="productOldPrice" style="display:none"></span>
-                            <span class="price-current" id="productPrice">$0.00</span>
-                            <span class="price-save" id="productSave" style="display:none"></span>
-                        </div>
-
-                        <p id="productDesc" style="color:#666;font-size:.95rem;line-height:1.85;margin-bottom:20px"></p>
-
-                        <hr class="divider" />
-
-                        <!-- Color selector -->
-                        <div id="colorSection">
-                            <p class="option-label">Color: <span class="color-label-val" id="selectedColorName"></span>
-                            </p>
-                            <div class="color-swatches" id="colorSwatches"></div>
-                        </div>
-
-                        <!-- Size selector -->
-                        <div>
-                            <p class="option-label" style="margin-bottom:6px">
-                                Size: <span class="color-label-val" id="selectedSizeName"></span>
-                                <button class="size-guide"
-                                    onclick="document.getElementById('sizeModal').classList.add('show')">Size
-                                    Guide</button>
-                            </p>
-                            <div class="size-grid" id="sizeGrid"></div>
-                        </div>
-
-                        <hr class="divider" />
-
-                        <!-- Quantity -->
-                        <p class="option-label mb-2">Quantity</p>
-                        <div class="qty-wrap mb-4">
-                            <button class="qty-btn" onclick="changeQty(-1)">−</button>
-                            <input type="number" class="qty-input" id="qtyInput" value="1" min="1" max="10" />
-                            <button class="qty-btn" onclick="changeQty(1)">+</button>
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="d-flex gap-2 mb-4">
-                            <button class="btn-add-cart" id="addCartBtn" onclick="addToCart()">Add to Cart</button>
-                            <button class="btn-wishlist-lg" id="wishlistBtn" title="Add to Wishlist"
-                                onclick="toggleWishlist(this)">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <use xlink:href="#heart"></use>
-                                </svg>
-                            </button>
-                        </div>
-
-                        <button class="vto-btn" onclick="openVTO()">
-                            <svg width="20" height="20" style="margin-right:8px">
-                                <use xlink:href="#camera"></use>
-                            </svg>
-                            Try It On Virtually
-                        </button>
-
-                        <!-- Share -->
-                        <div class="d-flex align-items-center gap-3">
-                            <span
-                                style="font-size:.78rem;text-transform:uppercase;letter-spacing:2px;color:#888">Share:</span>
-                            <a href="#" class="text-dark"><svg width="18" height="18" viewBox="0 0 15 15">
-                                    <use xlink:href="#instagram"></use>
-                                </svg></a>
-                            <a href="#" class="text-dark"><svg width="18" height="18" viewBox="0 0 15 15">
-                                    <use xlink:href="#facebook"></use>
-                                </svg></a>
-                            <a href="#" class="text-dark"><svg width="18" height="18" viewBox="0 0 15 15">
-                                    <use xlink:href="#twitter"></use>
-                                </svg></a>
-                            <a href="#" class="text-dark"><svg width="18" height="18" viewBox="0 0 15 15">
-                                    <use xlink:href="#pinterest"></use>
-                                </svg></a>
-                        </div>
-
-                        <!-- Accordion info -->
-                        <div class="info-accordion">
-                            <div class="acc-header" onclick="toggleAcc(this)">
-                                Description
-                                <span class="acc-toggle">+</span>
-                            </div>
-                            <div class="acc-body" id="accDesc">
-                                <!-- filled by JS -->
-                            </div>
-
-                            <div class="acc-header" onclick="toggleAcc(this)">
-                                Material & Care
-                                <span class="acc-toggle">+</span>
-                            </div>
-                            <div class="acc-body" id="accCare">
-                                <ul>
-                                    <li>98% Cotton, 2% Elastane</li>
-                                    <li>Machine wash cold, gentle cycle</li>
-                                    <li>Do not bleach</li>
-                                    <li>Tumble dry low</li>
-                                    <li>Iron on low heat if needed</li>
-                                </ul>
-                            </div>
-
-                            <div class="acc-header" onclick="toggleAcc(this)">
-                                Shipping & Returns
-                                <span class="acc-toggle">+</span>
-                            </div>
-                            <div class="acc-body">
-                                <ul>
-                                    <li>Free standard shipping on orders over $75</li>
-                                    <li>Standard delivery: 3–5 business days</li>
-                                    <li>Express delivery: 1–2 business days</li>
-                                    <li>Free returns within 30 days</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-5">
+          <!-- LEFT: Image gallery -->
+          <div class="col-lg-6">
+            <div class="gallery-main" id="galleryMain">
+              <span class="gallery-badge new" id="productBadge">New</span>
+              <img id="mainImage" src="" alt="Product Image" />
             </div>
+            <div class="thumb-row" id="thumbRow">
+              <!-- thumbnails injected by JS -->
+            </div>
+          </div>
+
+          <!-- RIGHT: Product info -->
+          <div class="col-lg-6">
+            <div class="product-info-panel">
+              <p class="product-tag" id="productCategory">Denim Collection</p>
+              <h1 class="product-title" id="productName">Loading...</h1>
+
+              <div class="product-rating">
+                <span class="stars" id="productStars">★★★★★</span>
+                <span class="review-count" id="productReviews"
+                  >(0 reviews)</span
+                >
+              </div>
+
+              <div class="product-price-wrap">
+                <span
+                  class="price-old"
+                  id="productOldPrice"
+                  style="display: none"
+                ></span>
+                <span class="price-current" id="productPrice">$0.00</span>
+                <span
+                  class="price-save"
+                  id="productSave"
+                  style="display: none"
+                ></span>
+              </div>
+
+              <p
+                id="productDesc"
+                style="
+                  color: #666;
+                  font-size: 0.95rem;
+                  line-height: 1.85;
+                  margin-bottom: 20px;
+                "
+              ></p>
+
+              <hr class="divider" />
+
+              <!-- Color selector -->
+              <div id="colorSection">
+                <p class="option-label">
+                  Color:
+                  <span class="color-label-val" id="selectedColorName"></span>
+                </p>
+                <div class="color-swatches" id="colorSwatches"></div>
+              </div>
+
+              <!-- Size selector -->
+              <div>
+                <p class="option-label" style="margin-bottom: 6px">
+                  Size:
+                  <span class="color-label-val" id="selectedSizeName"></span>
+                  <button
+                    class="size-guide"
+                    onclick="
+                      document.getElementById('sizeModal').classList.add('show')
+                    "
+                  >
+                    Size Guide
+                  </button>
+                </p>
+                <div class="size-grid" id="sizeGrid"></div>
+              </div>
+
+              <hr class="divider" />
+
+              <!-- Quantity -->
+              <p class="option-label mb-2">Quantity</p>
+              <div class="qty-wrap mb-4">
+                <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                <input
+                  type="number"
+                  class="qty-input"
+                  id="qtyInput"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+                <button class="qty-btn" onclick="changeQty(1)">+</button>
+              </div>
+
+              <!-- Actions -->
+              <div class="d-flex gap-2 mb-4">
+                <button
+                  class="btn-add-cart"
+                  id="addCartBtn"
+                  onclick="addToCart()"
+                >
+                  Add to Cart
+                </button>
+                <button
+                  class="btn-wishlist-lg"
+                  id="wishlistBtn"
+                  title="Add to Wishlist"
+                  onclick="toggleWishlist(this)"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <button class="vto-btn" onclick="openVTO()">
+                <svg width="20" height="20" style="margin-right: 8px">
+                  <use xlink:href="#camera"></use>
+                </svg>
+                Try It On Virtually
+              </button>
+
+              <!-- Share -->
+              <div class="d-flex align-items-center gap-3">
+                <span
+                  style="
+                    font-size: 0.78rem;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    color: #888;
+                  "
+                  >Share:</span
+                >
+                <a href="#" class="text-dark"
+                  ><svg width="18" height="18" viewBox="0 0 15 15">
+                    <use xlink:href="#instagram"></use></svg
+                ></a>
+                <a href="#" class="text-dark"
+                  ><svg width="18" height="18" viewBox="0 0 15 15">
+                    <use xlink:href="#facebook"></use></svg
+                ></a>
+                <a href="#" class="text-dark"
+                  ><svg width="18" height="18" viewBox="0 0 15 15">
+                    <use xlink:href="#twitter"></use></svg
+                ></a>
+                <a href="#" class="text-dark"
+                  ><svg width="18" height="18" viewBox="0 0 15 15">
+                    <use xlink:href="#pinterest"></use></svg
+                ></a>
+              </div>
+
+              <!-- Accordion info -->
+              <div class="info-accordion">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  Description
+                  <span class="acc-toggle">+</span>
+                </div>
+                <div class="acc-body" id="accDesc">
+                  <!-- filled by JS -->
+                </div>
+
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  Material & Care
+                  <span class="acc-toggle">+</span>
+                </div>
+                <div class="acc-body" id="accCare">
+                  <ul>
+                    <li>98% Cotton, 2% Elastane</li>
+                    <li>Machine wash cold, gentle cycle</li>
+                    <li>Do not bleach</li>
+                    <li>Tumble dry low</li>
+                    <li>Iron on low heat if needed</li>
+                  </ul>
+                </div>
+
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  Shipping & Returns
+                  <span class="acc-toggle">+</span>
+                </div>
+                <div class="acc-body">
+                  <ul>
+                    <li>Free standard shipping on orders over $75</li>
+                    <li>Standard delivery: 3–5 business days</li>
+                    <li>Express delivery: 1–2 business days</li>
+                    <li>Free returns within 30 days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Related Products -->
     <section class="related-section">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="text-uppercase" style="font-family:'Marcellus',serif;font-size:1.5rem">You May Also Like</h4>
-                <a href="shop.html" class="btn-link"
-                    style="font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:#111;text-decoration:none">View
-                    All</a>
-            </div>
-            <div class="row g-4" id="relatedGrid">
-                <!-- filled by JS -->
-            </div>
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4
+            class="text-uppercase"
+            style="font-family: &quot;Marcellus&quot;, serif; font-size: 1.5rem"
+          >
+            You May Also Like
+          </h4>
+          <a
+            href="shop.html"
+            class="btn-link"
+            style="
+              font-size: 0.85rem;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              color: #111;
+              text-decoration: none;
+            "
+            >View All</a
+          >
         </div>
+        <div class="row g-4" id="relatedGrid">
+          <!-- filled by JS -->
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer id="footer">
+      <div class="container">
+        <div class="row d-flex flex-wrap justify-content-between py-5">
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-001">
+              <div class="footer-intro mb-4">
+                <a
+                  href="index.html"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    text-decoration: none;
+                  "
+                >
+                  <img
+                    src="images/Leo_logo-removebg-preview.png"
+                    alt="Leo Logo"
+                    style="height: 55px; width: auto"
+                  />
+                  <span
+                    style="
+                      font-size: 1.6rem;
+                      font-family: &quot;Marcellus&quot;, Roboto, sans-serif;
+                      font-weight: 400;
+                      color: #111;
+                      letter-spacing: 2px;
+                    "
+                    >LEO</span
+                  >
+                </a>
+              </div>
+              <p>Premium denim crafted for real life.</p>
+              <div class="social-links">
+                <ul class="list-unstyled d-flex flex-wrap gap-3">
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#facebook"></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#twitter"></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#youtube"></use></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary"
+                      ><svg width="24" height="24" viewBox="0 0 15 15">
+                        <use xlink:href="#instagram"></use></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-002">
+              <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
+              <ul
+                class="menu-list list-unstyled text-uppercase border-animation-left fs-6"
+              >
+                <li class="menu-item">
+                  <a href="index.html" class="item-anchor">Home</a>
+                </li>
+                <li class="menu-item">
+                  <a href="about.html" class="item-anchor">About</a>
+                </li>
+                <li class="menu-item">
+                  <a href="shop.html" class="item-anchor">Shop</a>
+                </li>
+                <li class="menu-item">
+                  <a href="contact.html" class="item-anchor">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-003">
+              <h5 class="widget-title text-uppercase mb-4">Help &amp; Info</h5>
+              <ul
+                class="menu-list list-unstyled text-uppercase border-animation-left fs-6"
+              >
+                <li class="menu-item">
+                  <a href="#" class="item-anchor">Track Order</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="item-anchor">Returns</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="item-anchor">Shipping</a>
+                </li>
+                <li class="menu-item">
+                  <a href="contact.html" class="item-anchor">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-menu footer-menu-004 border-animation-left">
+              <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
+              <p>
+                <a href="mailto:hello@leojeans.com" class="item-anchor"
+                  >hello@leojeans.com</a
+                >
+              </p>
+              <p>
+                <a href="tel:+12345678901" class="item-anchor"
+                  >+1 (234) 567-8901</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-top py-4">
         <div class="container">
-            <div class="row d-flex flex-wrap justify-content-between py-5">
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu footer-menu-001">
-                        <div class="footer-intro mb-4">
-                            <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-                                <img src="images/Leo_logo-removebg-preview.png" alt="Leo Logo"
-                                    style="height:55px;width:auto" />
-                                <span
-                                    style="font-size:1.6rem;font-family:'Marcellus',Roboto,sans-serif;font-weight:400;color:#111;letter-spacing:2px">LEO</span>
-                            </a>
-                        </div>
-                        <p>Premium denim crafted for real life.</p>
-                        <div class="social-links">
-                            <ul class="list-unstyled d-flex flex-wrap gap-3">
-                                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
-                                            <use xlink:href="#facebook"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
-                                            <use xlink:href="#twitter"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24">
-                                            <use xlink:href="#youtube"></use>
-                                        </svg></a></li>
-                                <li><a href="#" class="text-secondary"><svg width="24" height="24" viewBox="0 0 15 15">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu footer-menu-002">
-                        <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
-                        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-                            <li class="menu-item"><a href="index.html" class="item-anchor">Home</a></li>
-                            <li class="menu-item"><a href="about.html" class="item-anchor">About</a></li>
-                            <li class="menu-item"><a href="shop.html" class="item-anchor">Shop</a></li>
-                            <li class="menu-item"><a href="contact.html" class="item-anchor">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu footer-menu-003">
-                        <h5 class="widget-title text-uppercase mb-4">Help &amp; Info</h5>
-                        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-                            <li class="menu-item"><a href="#" class="item-anchor">Track Order</a></li>
-                            <li class="menu-item"><a href="#" class="item-anchor">Returns</a></li>
-                            <li class="menu-item"><a href="#" class="item-anchor">Shipping</a></li>
-                            <li class="menu-item"><a href="contact.html" class="item-anchor">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu footer-menu-004 border-animation-left">
-                        <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
-                        <p><a href="mailto:hello@leojeans.com" class="item-anchor">hello@leojeans.com</a></p>
-                        <p><a href="tel:+12345678901" class="item-anchor">+1 (234) 567-8901</a></p>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-md-6 d-flex flex-wrap">
+              <div class="shipping">
+                <span>We ship with:</span
+                ><img src="images/arct-icon.png" alt /><img
+                  src="images/dhl-logo.png"
+                  alt
+                />
+              </div>
+              <div class="payment-option">
+                <span>Payment:</span><img src="images/visa-card.png" alt /><img
+                  src="images/paypal-card.png"
+                  alt
+                /><img src="images/master-card.png" alt />
+              </div>
             </div>
-        </div>
-        <div class="border-top py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d-flex flex-wrap">
-                        <div class="shipping"><span>We ship with:</span><img src="images/arct-icon.png" alt /><img
-                                src="images/dhl-logo.png" alt /></div>
-                        <div class="payment-option"><span>Payment:</span><img src="images/visa-card.png" alt /><img
-                                src="images/paypal-card.png" alt /><img src="images/master-card.png" alt /></div>
-                    </div>
-                    <div class="col-md-6 text-end">
-                        <p>© Copyright 2024 LEO Jeans. All rights reserved.</p>
-                    </div>
-                </div>
+            <div class="col-md-6 text-end">
+              <p>© Copyright 2024 LEO Jeans. All rights reserved.</p>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/SmoothScroll.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.min.js"></script>
 
     <script>
-        // ─── Product database ─────────────────────────────────────────────────────
-        const PRODUCTS = {
-            'baggy-fit-jeans': {
-                name: 'Baggy Fit Jeans',
-                category: 'Relaxed · New Arrival',
-                price: '$55.00',
-                desc: 'Our Baggy Fit Jeans are the ultimate in relaxed denim comfort. Featuring a roomy seat and thighs that taper slightly at the knee, these jeans give you that coveted oversized silhouette without sacrificing style.',
-                images: ['images/product-item-2.jpg', 'images/product-item-3.jpg', 'images/banner-image-3.jpg'],
-                colors: [{ name: 'Vintage Blue', hex: '#3d5a99' }, { name: 'Washed Black', hex: '#2a2a2a' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: ['26'],
-                stars: 5, reviews: 47,
-                related: ['off-white-denim-jeans', 'vintage-indigo-jeans', 'handmade-denim-jacket']
-            },
-            'off-white-denim-jeans': {
-                name: 'Off-White Denim Jeans',
-                category: 'Straight Cut · New Arrival',
-                price: '$65.00',
-                oldPrice: '$85.00',
-                badge: 'Sale', badgeClass: 'sale',
-                desc: 'Crisp, clean, and effortlessly cool — our Off-White Denim Jeans are a wardrobe essential. Crafted from premium cotton denim in a soft ecru wash.',
-                images: ['images/product-item-3.jpg', 'images/product-item-5.jpg', 'images/banner-image-1.jpg'],
-                colors: [{ name: 'Off White', hex: '#f0ede4' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 33,
-                related: ['baggy-fit-jeans', 'classic-blue-jeans', 'raw-hem-jeans']
-            },
-            'vintage-indigo-jeans': {
-                name: 'Vintage Indigo Jeans',
-                category: 'Straight Cut · Best Seller',
-                price: '$95.00',
-                badge: 'Bestseller', badgeClass: '',
-                desc: 'Deep indigo meets vintage character in our most popular straight-leg silhouette. garment-dyed for a rich, saturated colour.',
-                images: ['images/product-item-1.jpg', 'images/product-item-4.jpg', 'images/banner-image-2.jpg'],
-                colors: [{ name: 'Deep Indigo', hex: '#1e3460' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 5, reviews: 89,
-                related: ['baggy-fit-jeans', 'off-white-denim-jeans', 'classic-blue-jeans']
-            },
-            'handmade-denim-jacket': {
-                name: 'Handmade Denim Jacket',
-                category: 'Jackets · New Arrival',
-                price: '$50.00',
-                oldPrice: '$75.00',
-                badge: 'Sale', badgeClass: 'sale',
-                desc: 'Handcrafted stitch by stitch, our Denim Jacket is built to be lived in. A classic trucker silhouette with contrast stitching.',
-                images: ['images/product-item-4.jpg', 'images/product-item-6.jpg', 'images/banner-image-4.jpg'],
-                colors: [{ name: 'Medium Wash', hex: '#7a9cc2' }],
-                sizes: ['XS', 'S', 'M', 'L', 'XL'],
-                outSizes: [],
-                stars: 5, reviews: 62,
-                related: ['baggy-fit-jeans', 'vintage-indigo-jeans', 'classic-blue-jeans']
-            },
-            'raw-hem-jeans': {
-                name: 'Raw Hem Jeans',
-                category: 'Straight Cut · New Arrival',
-                price: '$70.00',
-                badge: 'New', badgeClass: 'new',
-                desc: 'The Raw Hem Jeans bring an intentionally unfinished edge to a classic straight-leg cut. The frayed, raw hem gives a modern, high-fashion feel.',
-                images: ['images/product-item-10.jpg', 'images/product-item-9.jpg', 'images/banner-image-5.jpg'],
-                colors: [{ name: 'Medium Blue', hex: '#3d5a99' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 28,
-                related: ['vintage-indigo-jeans', 'classic-blue-jeans', 'baggy-fit-jeans']
-            },
-            'classic-blue-jeans': {
-                name: 'Classic Blue Jeans',
-                category: 'Straight Cut · Best Seller',
-                price: '$70.00',
-                badge: 'Bestseller', badgeClass: '',
-                desc: 'The original. The essential. Our Classic Blue Jeans are the pair everyone reaches for — a straight-leg cut in rich indigo denim.',
-                images: ['images/product-item-10.jpg', 'images/product-item-1.jpg', 'images/banner-image-6.jpg'],
-                colors: [{ name: 'Classic Blue', hex: '#3d5a99' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 5, reviews: 115,
-                related: ['vintage-indigo-jeans', 'baggy-fit-jeans', 'raw-hem-jeans']
-            },
-            'classic-blue-skinny-jeans': {
-                name: 'Classic Blue Skinny Jeans',
-                category: 'Skinny Fit · Core Essential',
-                price: '$59.00',
-                badge: 'New', badgeClass: 'new',
-                desc: 'The Classic Blue Skinny Jeans are engineered for the perfect fit. Made from premium Turkish denim with a high-recovery stretch.',
-                images: ['images/banner-image-6.jpg', 'images/product-item-1.jpg', 'images/product-item-2.jpg'],
-                colors: [{ name: 'Classic Blue', hex: '#3d5a99' }, { name: 'Midnight', hex: '#1e3460' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 5, reviews: 124,
-                related: ['black-skinny-jeans', 'ripped-skinny-jeans', 'baggy-fit-jeans']
-            },
-            'classic-indigo-straight-jeans': {
-                name: 'Classic Indigo Straight Jeans',
-                category: 'Straight · Best Seller',
-                price: '$69.00',
-                badge: 'Bestseller', badgeClass: '',
-                desc: 'Timeless straight-leg jeans in a classic indigo wash. Durable and versatile for everyday wear.',
-                images: ['images/banner-image-1.jpg', 'images/product-item-1.jpg', 'images/product-item-4.jpg'],
-                colors: [{ name: 'Classic Indigo', hex: '#3d5a99' }, { name: 'Dark Blue', hex: '#1e3460' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 5, reviews: 98,
-                related: ['vintage-indigo-jeans', 'dark-wash-straight-jeans', 'classic-blue-jeans']
-            },
-            'high-rise-mom-jeans': {
-                name: 'High-Rise Mom Jeans',
-                category: 'High-Rise · Sale',
-                price: '$75.00',
-                oldPrice: '$99.00',
-                badge: 'Sale', badgeClass: 'sale',
-                desc: 'A trendy high-rise fit that flatters the silhouette. Inspired by vintage designs for a modern look.',
-                images: ['images/banner-image-2.jpg', 'images/product-item-5.jpg', 'images/product-item-3.jpg'],
-                colors: [{ name: 'Light Blue', hex: '#c0b9a8' }, { name: 'Medium Wash', hex: '#3d5a99' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 76,
-                related: ['off-white-denim-jeans', 'relaxed-fit-straight-jeans', 'ripped-skinny-jeans']
-            },
-            'relaxed-fit-straight-jeans': {
-                name: 'Relaxed Fit Straight Jeans',
-                category: 'Relaxed · Essential',
-                price: '$65.00',
-                desc: 'Combining comfort and style, these relaxed fit jeans offer a straight-leg silhouette for a laid-back vibe.',
-                images: ['images/banner-image-3.jpg', 'images/product-item-2.jpg', 'images/product-item-10.jpg'],
-                colors: [{ name: 'Medium Blue', hex: '#3d5a99' }, { name: 'Light Blue', hex: '#7a9cc2' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 54,
-                related: ['baggy-fit-jeans', 'loose-fit-wide-leg-jeans', 'high-rise-mom-jeans']
-            },
-            'vintage-wash-denim-jacket': {
-                name: 'Vintage Wash Denim Jacket',
-                category: 'Jacket · New Arrival',
-                price: '$120.00',
-                badge: 'New', badgeClass: 'new',
-                desc: 'A premium denim jacket with a vintage wash. Features classic trucker styling and durable construction.',
-                images: ['images/banner-image-4.jpg', 'images/product-item-4.jpg', 'images/product-item-6.jpg'],
-                colors: [{ name: 'Vintage Blue', hex: '#7a9cc2' }, { name: 'Washed Black', hex: '#111111' }],
-                sizes: ['S', 'M', 'L', 'XL'],
-                outSizes: [],
-                stars: 5, reviews: 42,
-                related: ['handmade-denim-jacket', 'oversized-denim-jacket', 'vintage-indigo-jeans']
-            },
-            'black-skinny-jeans': {
-                name: 'Black Skinny Jeans',
-                category: 'Skinny · Best Seller',
-                price: '$55.00',
-                badge: 'Bestseller', badgeClass: '',
-                desc: 'Sleek black skinny jeans with a comfortable stretch. A versatile staple for any wardrobe.',
-                images: ['images/banner-image-5.jpg', 'images/product-item-5.jpg', 'images/product-item-1.jpg'],
-                colors: [{ name: 'Deep Black', hex: '#111111' }, { name: 'Charcoal', hex: '#444' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 5, reviews: 112,
-                related: ['classic-blue-skinny-jeans', 'ripped-skinny-jeans', 'raw-hem-jeans']
-            },
-            'classic-denim-shorts': {
-                name: 'Classic Denim Shorts',
-                category: 'Shorts · Essential',
-                price: '$45.00',
-                desc: 'Essential denim shorts for warmer days. Featuring a classic fit and durable denim fabric.',
-                images: ['images/banner-image-6.jpg', 'images/product-item-7.jpg', 'images/product-item-8.jpg'],
-                colors: [{ name: 'Medium Blue', hex: '#7a9cc2' }, { name: 'Light Blue', hex: '#c0b9a8' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 38,
-                related: ['cut-off-denim-shorts', 'baggy-fit-jeans', 'classic-blue-jeans']
-            },
-            'dark-wash-straight-jeans': {
-                name: 'Dark Wash Straight Jeans',
-                category: 'Straight · Sale',
-                price: '$72.00',
-                oldPrice: '$89.00',
-                badge: 'Sale', badgeClass: 'sale',
-                desc: 'Straight-leg jeans in a rich dark wash. Perfect for dressing up or down.',
-                images: ['images/banner-image-1.jpg', 'images/product-item-4.jpg', 'images/product-item-1.jpg'],
-                colors: [{ name: 'Dark Blue', hex: '#1e3460' }, { name: 'Solid Black', hex: '#111111' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 65,
-                related: ['classic-indigo-straight-jeans', 'vintage-indigo-jeans', 'classic-blue-jeans']
-            },
-            'oversized-denim-jacket': {
-                name: 'Oversized Denim Jacket',
-                category: 'Jacket · Essential',
-                price: '$135.00',
-                desc: 'A modern oversized take on the classic denim jacket. Provides a relaxed and stylish layering option.',
-                images: ['images/banner-image-3.jpg', 'images/product-item-6.jpg', 'images/product-item-4.jpg'],
-                colors: [{ name: 'Beige Wash', hex: '#c0b9a8' }, { name: 'Classic Blue', hex: '#3d5a99' }],
-                sizes: ['S', 'M', 'L', 'XL'],
-                outSizes: [],
-                stars: 5, reviews: 51,
-                related: ['vintage-wash-denim-jacket', 'handmade-denim-jacket', 'relaxed-fit-straight-jeans']
-            },
-            'ripped-skinny-jeans': {
-                name: 'Ripped Skinny Jeans',
-                category: 'Skinny · New Arrival',
-                price: '$62.00',
-                badge: 'New', badgeClass: 'new',
-                desc: 'Skinny jeans with distressed ripped details for an edgy look. Stretchy denim ensures a great fit.',
-                images: ['images/banner-image-2.jpg', 'images/product-item-9.jpg', 'images/product-item-10.jpg'],
-                colors: [{ name: 'Classic Blue', hex: '#3d5a99' }, { name: 'Light Wash', hex: '#7a9cc2' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 84,
-                related: ['classic-blue-skinny-jeans', 'black-skinny-jeans', 'raw-hem-jeans']
-            },
-            'loose-fit-wide-leg-jeans': {
-                name: 'Loose Fit Wide Leg Jeans',
-                category: 'Relaxed · New Arrival',
-                price: '$68.00',
-                desc: 'Casual loose fit with a wide leg opening. The ultimate in comfort and contemporary denim style.',
-                images: ['images/banner-image-4.jpg', 'images/product-item-2.jpg', 'images/product-item-3.jpg'],
-                colors: [{ name: 'Ecru', hex: '#c0b9a8' }, { name: 'Blue', hex: '#3d5a99' }, { name: 'Black', hex: '#111111' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 5, reviews: 29,
-                related: ['relaxed-fit-straight-jeans', 'baggy-fit-jeans', 'off-white-denim-jeans']
-            },
-            'cut-off-denim-shorts': {
-                name: 'Cut-Off Denim Shorts',
-                category: 'Shorts · Sale',
-                price: '$42.00',
-                oldPrice: '$58.00',
-                badge: 'Sale', badgeClass: 'sale',
-                desc: 'Rugged cut-off denim shorts for a casual summer look. Features frayed edges and a comfortable fit.',
-                images: ['images/banner-image-5.jpg', 'images/product-item-7.jpg', 'images/product-item-8.jpg'],
-                colors: [{ name: 'Light Blue', hex: '#7a9cc2' }, { name: 'Deep Black', hex: '#111111' }],
-                sizes: ['26', '28', '30', '32', '34', '36'],
-                outSizes: [],
-                stars: 4, reviews: 19,
-                related: ['classic-denim-shorts', 'baggy-fit-jeans', 'raw-hem-jeans']
-            }
-        };
+      // ─── Product database ─────────────────────────────────────────────────────
+      const PRODUCTS = {
+        "baggy-fit-jeans": {
+          name: "Baggy Fit Jeans",
+          category: "Relaxed · New Arrival",
+          price: "$55.00",
+          desc: "Our Baggy Fit Jeans are the ultimate in relaxed denim comfort. Featuring a roomy seat and thighs that taper slightly at the knee, these jeans give you that coveted oversized silhouette without sacrificing style.",
+          images: [
+            "images/product-item-2.jpg",
+            "images/product-item-3.jpg",
+            "images/banner-image-3.jpg",
+          ],
+          colors: [
+            { name: "Vintage Blue", hex: "#3d5a99" },
+            { name: "Washed Black", hex: "#2a2a2a" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: ["26"],
+          stars: 5,
+          reviews: 47,
+          related: [
+            "off-white-denim-jeans",
+            "vintage-indigo-jeans",
+            "handmade-denim-jacket",
+          ],
+        },
+        "off-white-denim-jeans": {
+          name: "Off-White Denim Jeans",
+          category: "Straight Cut · New Arrival",
+          price: "$65.00",
+          oldPrice: "$85.00",
+          badge: "Sale",
+          badgeClass: "sale",
+          desc: "Crisp, clean, and effortlessly cool — our Off-White Denim Jeans are a wardrobe essential. Crafted from premium cotton denim in a soft ecru wash.",
+          images: [
+            "images/product-item-3.jpg",
+            "images/product-item-5.jpg",
+            "images/banner-image-1.jpg",
+          ],
+          colors: [{ name: "Off White", hex: "#f0ede4" }],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 33,
+          related: ["baggy-fit-jeans", "classic-blue-jeans", "raw-hem-jeans"],
+        },
+        "vintage-indigo-jeans": {
+          name: "Vintage Indigo Jeans",
+          category: "Straight Cut · Best Seller",
+          price: "$95.00",
+          badge: "Bestseller",
+          badgeClass: "",
+          desc: "Deep indigo meets vintage character in our most popular straight-leg silhouette. garment-dyed for a rich, saturated colour.",
+          images: [
+            "images/product-item-1.jpg",
+            "images/product-item-4.jpg",
+            "images/banner-image-2.jpg",
+          ],
+          colors: [{ name: "Deep Indigo", hex: "#1e3460" }],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 5,
+          reviews: 89,
+          related: [
+            "baggy-fit-jeans",
+            "off-white-denim-jeans",
+            "classic-blue-jeans",
+          ],
+        },
+        "handmade-denim-jacket": {
+          name: "Handmade Denim Jacket",
+          category: "Jackets · New Arrival",
+          price: "$50.00",
+          oldPrice: "$75.00",
+          badge: "Sale",
+          badgeClass: "sale",
+          desc: "Handcrafted stitch by stitch, our Denim Jacket is built to be lived in. A classic trucker silhouette with contrast stitching.",
+          images: [
+            "images/product-item-4.jpg",
+            "images/product-item-6.jpg",
+            "images/banner-image-4.jpg",
+          ],
+          colors: [{ name: "Medium Wash", hex: "#7a9cc2" }],
+          sizes: ["XS", "S", "M", "L", "XL"],
+          outSizes: [],
+          stars: 5,
+          reviews: 62,
+          related: [
+            "baggy-fit-jeans",
+            "vintage-indigo-jeans",
+            "classic-blue-jeans",
+          ],
+        },
+        "raw-hem-jeans": {
+          name: "Raw Hem Jeans",
+          category: "Straight Cut · New Arrival",
+          price: "$70.00",
+          badge: "New",
+          badgeClass: "new",
+          desc: "The Raw Hem Jeans bring an intentionally unfinished edge to a classic straight-leg cut. The frayed, raw hem gives a modern, high-fashion feel.",
+          images: [
+            "images/product-item-10.jpg",
+            "images/product-item-9.jpg",
+            "images/banner-image-5.jpg",
+          ],
+          colors: [{ name: "Medium Blue", hex: "#3d5a99" }],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 28,
+          related: [
+            "vintage-indigo-jeans",
+            "classic-blue-jeans",
+            "baggy-fit-jeans",
+          ],
+        },
+        "classic-blue-jeans": {
+          name: "Classic Blue Jeans",
+          category: "Straight Cut · Best Seller",
+          price: "$70.00",
+          badge: "Bestseller",
+          badgeClass: "",
+          desc: "The original. The essential. Our Classic Blue Jeans are the pair everyone reaches for — a straight-leg cut in rich indigo denim.",
+          images: [
+            "images/product-item-10.jpg",
+            "images/product-item-1.jpg",
+            "images/banner-image-6.jpg",
+          ],
+          colors: [{ name: "Classic Blue", hex: "#3d5a99" }],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 5,
+          reviews: 115,
+          related: ["vintage-indigo-jeans", "baggy-fit-jeans", "raw-hem-jeans"],
+        },
+        "classic-blue-skinny-jeans": {
+          name: "Classic Blue Skinny Jeans",
+          category: "Skinny Fit · Core Essential",
+          price: "$59.00",
+          badge: "New",
+          badgeClass: "new",
+          desc: "The Classic Blue Skinny Jeans are engineered for the perfect fit. Made from premium Turkish denim with a high-recovery stretch.",
+          images: [
+            "images/banner-image-6.jpg",
+            "images/product-item-1.jpg",
+            "images/product-item-2.jpg",
+          ],
+          colors: [
+            { name: "Classic Blue", hex: "#3d5a99" },
+            { name: "Midnight", hex: "#1e3460" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 5,
+          reviews: 124,
+          related: [
+            "black-skinny-jeans",
+            "ripped-skinny-jeans",
+            "baggy-fit-jeans",
+          ],
+        },
+        "classic-indigo-straight-jeans": {
+          name: "Classic Indigo Straight Jeans",
+          category: "Straight · Best Seller",
+          price: "$69.00",
+          badge: "Bestseller",
+          badgeClass: "",
+          desc: "Timeless straight-leg jeans in a classic indigo wash. Durable and versatile for everyday wear.",
+          images: [
+            "images/banner-image-1.jpg",
+            "images/product-item-1.jpg",
+            "images/product-item-4.jpg",
+          ],
+          colors: [
+            { name: "Classic Indigo", hex: "#3d5a99" },
+            { name: "Dark Blue", hex: "#1e3460" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 5,
+          reviews: 98,
+          related: [
+            "vintage-indigo-jeans",
+            "dark-wash-straight-jeans",
+            "classic-blue-jeans",
+          ],
+        },
+        "high-rise-mom-jeans": {
+          name: "High-Rise Mom Jeans",
+          category: "High-Rise · Sale",
+          price: "$75.00",
+          oldPrice: "$99.00",
+          badge: "Sale",
+          badgeClass: "sale",
+          desc: "A trendy high-rise fit that flatters the silhouette. Inspired by vintage designs for a modern look.",
+          images: [
+            "images/banner-image-2.jpg",
+            "images/product-item-5.jpg",
+            "images/product-item-3.jpg",
+          ],
+          colors: [
+            { name: "Light Blue", hex: "#c0b9a8" },
+            { name: "Medium Wash", hex: "#3d5a99" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 76,
+          related: [
+            "off-white-denim-jeans",
+            "relaxed-fit-straight-jeans",
+            "ripped-skinny-jeans",
+          ],
+        },
+        "relaxed-fit-straight-jeans": {
+          name: "Relaxed Fit Straight Jeans",
+          category: "Relaxed · Essential",
+          price: "$65.00",
+          desc: "Combining comfort and style, these relaxed fit jeans offer a straight-leg silhouette for a laid-back vibe.",
+          images: [
+            "images/banner-image-3.jpg",
+            "images/product-item-2.jpg",
+            "images/product-item-10.jpg",
+          ],
+          colors: [
+            { name: "Medium Blue", hex: "#3d5a99" },
+            { name: "Light Blue", hex: "#7a9cc2" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 54,
+          related: [
+            "baggy-fit-jeans",
+            "loose-fit-wide-leg-jeans",
+            "high-rise-mom-jeans",
+          ],
+        },
+        "vintage-wash-denim-jacket": {
+          name: "Vintage Wash Denim Jacket",
+          category: "Jacket · New Arrival",
+          price: "$120.00",
+          badge: "New",
+          badgeClass: "new",
+          desc: "A premium denim jacket with a vintage wash. Features classic trucker styling and durable construction.",
+          images: [
+            "images/banner-image-4.jpg",
+            "images/product-item-4.jpg",
+            "images/product-item-6.jpg",
+          ],
+          colors: [
+            { name: "Vintage Blue", hex: "#7a9cc2" },
+            { name: "Washed Black", hex: "#111111" },
+          ],
+          sizes: ["S", "M", "L", "XL"],
+          outSizes: [],
+          stars: 5,
+          reviews: 42,
+          related: [
+            "handmade-denim-jacket",
+            "oversized-denim-jacket",
+            "vintage-indigo-jeans",
+          ],
+        },
+        "black-skinny-jeans": {
+          name: "Black Skinny Jeans",
+          category: "Skinny · Best Seller",
+          price: "$55.00",
+          badge: "Bestseller",
+          badgeClass: "",
+          desc: "Sleek black skinny jeans with a comfortable stretch. A versatile staple for any wardrobe.",
+          images: [
+            "images/banner-image-5.jpg",
+            "images/product-item-5.jpg",
+            "images/product-item-1.jpg",
+          ],
+          colors: [
+            { name: "Deep Black", hex: "#111111" },
+            { name: "Charcoal", hex: "#444" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 5,
+          reviews: 112,
+          related: [
+            "classic-blue-skinny-jeans",
+            "ripped-skinny-jeans",
+            "raw-hem-jeans",
+          ],
+        },
+        "classic-denim-shorts": {
+          name: "Classic Denim Shorts",
+          category: "Shorts · Essential",
+          price: "$45.00",
+          desc: "Essential denim shorts for warmer days. Featuring a classic fit and durable denim fabric.",
+          images: [
+            "images/banner-image-6.jpg",
+            "images/product-item-7.jpg",
+            "images/product-item-8.jpg",
+          ],
+          colors: [
+            { name: "Medium Blue", hex: "#7a9cc2" },
+            { name: "Light Blue", hex: "#c0b9a8" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 38,
+          related: [
+            "cut-off-denim-shorts",
+            "baggy-fit-jeans",
+            "classic-blue-jeans",
+          ],
+        },
+        "dark-wash-straight-jeans": {
+          name: "Dark Wash Straight Jeans",
+          category: "Straight · Sale",
+          price: "$72.00",
+          oldPrice: "$89.00",
+          badge: "Sale",
+          badgeClass: "sale",
+          desc: "Straight-leg jeans in a rich dark wash. Perfect for dressing up or down.",
+          images: [
+            "images/banner-image-1.jpg",
+            "images/product-item-4.jpg",
+            "images/product-item-1.jpg",
+          ],
+          colors: [
+            { name: "Dark Blue", hex: "#1e3460" },
+            { name: "Solid Black", hex: "#111111" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 65,
+          related: [
+            "classic-indigo-straight-jeans",
+            "vintage-indigo-jeans",
+            "classic-blue-jeans",
+          ],
+        },
+        "oversized-denim-jacket": {
+          name: "Oversized Denim Jacket",
+          category: "Jacket · Essential",
+          price: "$135.00",
+          desc: "A modern oversized take on the classic denim jacket. Provides a relaxed and stylish layering option.",
+          images: [
+            "images/banner-image-3.jpg",
+            "images/product-item-6.jpg",
+            "images/product-item-4.jpg",
+          ],
+          colors: [
+            { name: "Beige Wash", hex: "#c0b9a8" },
+            { name: "Classic Blue", hex: "#3d5a99" },
+          ],
+          sizes: ["S", "M", "L", "XL"],
+          outSizes: [],
+          stars: 5,
+          reviews: 51,
+          related: [
+            "vintage-wash-denim-jacket",
+            "handmade-denim-jacket",
+            "relaxed-fit-straight-jeans",
+          ],
+        },
+        "ripped-skinny-jeans": {
+          name: "Ripped Skinny Jeans",
+          category: "Skinny · New Arrival",
+          price: "$62.00",
+          badge: "New",
+          badgeClass: "new",
+          desc: "Skinny jeans with distressed ripped details for an edgy look. Stretchy denim ensures a great fit.",
+          images: [
+            "images/banner-image-2.jpg",
+            "images/product-item-9.jpg",
+            "images/product-item-10.jpg",
+          ],
+          colors: [
+            { name: "Classic Blue", hex: "#3d5a99" },
+            { name: "Light Wash", hex: "#7a9cc2" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 84,
+          related: [
+            "classic-blue-skinny-jeans",
+            "black-skinny-jeans",
+            "raw-hem-jeans",
+          ],
+        },
+        "loose-fit-wide-leg-jeans": {
+          name: "Loose Fit Wide Leg Jeans",
+          category: "Relaxed · New Arrival",
+          price: "$68.00",
+          desc: "Casual loose fit with a wide leg opening. The ultimate in comfort and contemporary denim style.",
+          images: [
+            "images/banner-image-4.jpg",
+            "images/product-item-2.jpg",
+            "images/product-item-3.jpg",
+          ],
+          colors: [
+            { name: "Ecru", hex: "#c0b9a8" },
+            { name: "Blue", hex: "#3d5a99" },
+            { name: "Black", hex: "#111111" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 5,
+          reviews: 29,
+          related: [
+            "relaxed-fit-straight-jeans",
+            "baggy-fit-jeans",
+            "off-white-denim-jeans",
+          ],
+        },
+        "cut-off-denim-shorts": {
+          name: "Cut-Off Denim Shorts",
+          category: "Shorts · Sale",
+          price: "$42.00",
+          oldPrice: "$58.00",
+          badge: "Sale",
+          badgeClass: "sale",
+          desc: "Rugged cut-off denim shorts for a casual summer look. Features frayed edges and a comfortable fit.",
+          images: [
+            "images/banner-image-5.jpg",
+            "images/product-item-7.jpg",
+            "images/product-item-8.jpg",
+          ],
+          colors: [
+            { name: "Light Blue", hex: "#7a9cc2" },
+            { name: "Deep Black", hex: "#111111" },
+          ],
+          sizes: ["26", "28", "30", "32", "34", "36"],
+          outSizes: [],
+          stars: 4,
+          reviews: 19,
+          related: ["classic-denim-shorts", "baggy-fit-jeans", "raw-hem-jeans"],
+        },
+      };
 
-        // ─── Cart state
-        const cart = [];
-        let selectedColor = null;
-        let selectedSize = null;
-        let currentProduct = null;
+      // ─── Cart state
+      const cart = [];
+      let selectedColor = null;
+      let selectedSize = null;
+      let currentProduct = null;
 
-        // ─── Read URL param
-        function getParam(key) {
-            return new URLSearchParams(window.location.search).get(key);
+      // ─── Read URL param
+      function getParam(key) {
+        return new URLSearchParams(window.location.search).get(key);
+      }
+
+      // ─── Render product
+      function renderProduct(id) {
+        const p = PRODUCTS[id];
+        if (!p) {
+          document.querySelector(".product-section").innerHTML =
+            '<div class="container text-center py-5"><h3>Product not found.</h3><a href="shop.html" class="btn btn-dark mt-3">Back to Shop</a></div>';
+          return;
+        }
+        currentProduct = { ...p, id };
+        document.title = p.name + " - LEO Jeans";
+        document.getElementById("breadcrumbName").textContent = p.name;
+        document.getElementById("productName").textContent = p.name;
+        document.getElementById("productCategory").textContent = p.category;
+        document.getElementById("productPrice").textContent = p.price;
+        document.getElementById("productDesc").textContent = p.desc;
+        document.getElementById("accDesc").innerHTML = "<p>" + p.desc + "</p>";
+
+        // Stars
+        const fullStars = Math.round(p.stars);
+        document.getElementById("productStars").textContent =
+          "★".repeat(fullStars) + "☆".repeat(5 - fullStars);
+        document.getElementById("productReviews").textContent =
+          "(" + p.reviews + " reviews)";
+
+        // Badge
+        const badge = document.getElementById("productBadge");
+        if (p.badge) {
+          badge.textContent = p.badge;
+          badge.className = "gallery-badge " + p.badgeClass;
+          badge.style.display = "";
+        } else {
+          badge.style.display = "none";
         }
 
-        // ─── Render product
-        function renderProduct(id) {
-            const p = PRODUCTS[id];
-            if (!p) {
-                document.querySelector('.product-section').innerHTML =
-                    '<div class="container text-center py-5"><h3>Product not found.</h3><a href="shop.html" class="btn btn-dark mt-3">Back to Shop</a></div>';
-                return;
-            }
-            currentProduct = { ...p, id };
-            document.title = p.name + ' - LEO Jeans';
-            document.getElementById('breadcrumbName').textContent = p.name;
-            document.getElementById('productName').textContent = p.name;
-            document.getElementById('productCategory').textContent = p.category;
-            document.getElementById('productPrice').textContent = p.price;
-            document.getElementById('productDesc').textContent = p.desc;
-            document.getElementById('accDesc').innerHTML = '<p>' + p.desc + '</p>';
-
-            // Stars
-            const fullStars = Math.round(p.stars);
-            document.getElementById('productStars').textContent = '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
-            document.getElementById('productReviews').textContent = '(' + p.reviews + ' reviews)';
-
-            // Badge
-            const badge = document.getElementById('productBadge');
-            if (p.badge) {
-                badge.textContent = p.badge;
-                badge.className = 'gallery-badge ' + p.badgeClass;
-                badge.style.display = '';
-            } else {
-                badge.style.display = 'none';
-            }
-
-            // Old price
-            if (p.oldPrice) {
-                const op = document.getElementById('productOldPrice');
-                op.textContent = p.oldPrice; op.style.display = '';
-                const save = document.getElementById('productSave');
-                const diff = Math.round(((parseFloat(p.oldPrice.replace('$', '')) - parseFloat(p.price.replace('$', ''))) / parseFloat(p.oldPrice.replace('$', ''))) * 100);
-                save.textContent = 'Save ' + diff + '%'; save.style.display = 'inline';
-            }
-
-            // Images
-            const main = document.getElementById('mainImage');
-            main.src = p.images[0];
-            main.alt = p.name;
-            const thumbRow = document.getElementById('thumbRow');
-            thumbRow.innerHTML = '';
-            p.images.forEach((src, i) => {
-                const img = document.createElement('img');
-                img.src = src; img.alt = p.name;
-                img.className = 'thumb' + (i === 0 ? ' active' : '');
-                img.onclick = () => {
-                    document.getElementById('mainImage').src = src;
-                    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-                    img.classList.add('active');
-                };
-                thumbRow.appendChild(img);
-            });
-
-            // Colors
-            const swatchContainer = document.getElementById('colorSwatches');
-            swatchContainer.innerHTML = '';
-            p.colors.forEach((c, i) => {
-                const el = document.createElement('div');
-                el.className = 'swatch' + (i === 0 ? ' active' : '');
-                el.style.background = c.hex;
-                el.title = c.name;
-                el.onclick = () => {
-                    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
-                    el.classList.add('active');
-                    selectedColor = c.name;
-                    document.getElementById('selectedColorName').textContent = c.name;
-                };
-                swatchContainer.appendChild(el);
-            });
-            selectedColor = p.colors[0].name;
-            document.getElementById('selectedColorName').textContent = selectedColor;
-
-            // Sizes
-            const sizeContainer = document.getElementById('sizeGrid');
-            sizeContainer.innerHTML = '';
-            p.sizes.forEach(s => {
-                const btn = document.createElement('button');
-                btn.className = 'size-btn' + (p.outSizes.includes(s) ? ' out' : '');
-                btn.textContent = s;
-                if (!p.outSizes.includes(s)) {
-                    btn.onclick = () => {
-                        document.querySelectorAll('.size-btn:not(.out)').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        selectedSize = s;
-                        document.getElementById('selectedSizeName').textContent = s;
-                    };
-                }
-                sizeContainer.appendChild(btn);
-            });
-            // pre-select first available size
-            const firstAvail = sizeContainer.querySelector('.size-btn:not(.out)');
-            if (firstAvail) { firstAvail.classList.add('active'); selectedSize = firstAvail.textContent; document.getElementById('selectedSizeName').textContent = selectedSize; }
-
-            // Related
-            renderRelated(p.related);
+        // Old price
+        if (p.oldPrice) {
+          const op = document.getElementById("productOldPrice");
+          op.textContent = p.oldPrice;
+          op.style.display = "";
+          const save = document.getElementById("productSave");
+          const diff = Math.round(
+            ((parseFloat(p.oldPrice.replace("$", "")) -
+              parseFloat(p.price.replace("$", ""))) /
+              parseFloat(p.oldPrice.replace("$", ""))) *
+              100,
+          );
+          save.textContent = "Save " + diff + "%";
+          save.style.display = "inline";
         }
 
-        function renderRelated(ids) {
-            const grid = document.getElementById('relatedGrid');
-            grid.innerHTML = '';
-            ids.slice(0, 4).forEach(id => {
-                const p = PRODUCTS[id];
-                if (!p) return;
-                grid.innerHTML += `
+        // Images
+        const main = document.getElementById("mainImage");
+        main.src = p.images[0];
+        main.alt = p.name;
+        const thumbRow = document.getElementById("thumbRow");
+        thumbRow.innerHTML = "";
+        p.images.forEach((src, i) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = p.name;
+          img.className = "thumb" + (i === 0 ? " active" : "");
+          img.onclick = () => {
+            document.getElementById("mainImage").src = src;
+            document
+              .querySelectorAll(".thumb")
+              .forEach((t) => t.classList.remove("active"));
+            img.classList.add("active");
+          };
+          thumbRow.appendChild(img);
+        });
+
+        // Colors
+        const swatchContainer = document.getElementById("colorSwatches");
+        swatchContainer.innerHTML = "";
+        p.colors.forEach((c, i) => {
+          const el = document.createElement("div");
+          el.className = "swatch" + (i === 0 ? " active" : "");
+          el.style.background = c.hex;
+          el.title = c.name;
+          el.onclick = () => {
+            document
+              .querySelectorAll(".swatch")
+              .forEach((s) => s.classList.remove("active"));
+            el.classList.add("active");
+            selectedColor = c.name;
+            document.getElementById("selectedColorName").textContent = c.name;
+          };
+          swatchContainer.appendChild(el);
+        });
+        selectedColor = p.colors[0].name;
+        document.getElementById("selectedColorName").textContent =
+          selectedColor;
+
+        // Sizes
+        const sizeContainer = document.getElementById("sizeGrid");
+        sizeContainer.innerHTML = "";
+        p.sizes.forEach((s) => {
+          const btn = document.createElement("button");
+          btn.className = "size-btn" + (p.outSizes.includes(s) ? " out" : "");
+          btn.textContent = s;
+          if (!p.outSizes.includes(s)) {
+            btn.onclick = () => {
+              document
+                .querySelectorAll(".size-btn:not(.out)")
+                .forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+              selectedSize = s;
+              document.getElementById("selectedSizeName").textContent = s;
+            };
+          }
+          sizeContainer.appendChild(btn);
+        });
+        // pre-select first available size
+        const firstAvail = sizeContainer.querySelector(".size-btn:not(.out)");
+        if (firstAvail) {
+          firstAvail.classList.add("active");
+          selectedSize = firstAvail.textContent;
+          document.getElementById("selectedSizeName").textContent =
+            selectedSize;
+        }
+
+        // Related
+        renderRelated(p.related);
+      }
+
+      function renderRelated(ids) {
+        const grid = document.getElementById("relatedGrid");
+        grid.innerHTML = "";
+        ids.slice(0, 4).forEach((id) => {
+          const p = PRODUCTS[id];
+          if (!p) return;
+          grid.innerHTML += `
             <div class="col-6 col-md-3">
               <div class="related-card">
                 <div class="related-overflow">
@@ -1602,172 +2110,200 @@
                 <div class="related-price">${p.price}</div>
               </div>
             </div>`;
-            });
-        }
+        });
+      }
 
-        // ─── Cart
-        function addToCart() {
-            if (!selectedSize) {
-                alert('Please select a size first.');
-                return;
-            }
-            cart.push({ name: currentProduct.name, color: selectedColor, size: selectedSize, price: currentProduct.price });
-            updateCartUI();
-            showToast(currentProduct.name + ' (' + selectedSize + ', ' + selectedColor + ') added!');
+      // ─── Cart
+      function addToCart() {
+        if (!selectedSize) {
+          alert("Please select a size first.");
+          return;
         }
-        function updateCartUI() {
-            const count = cart.length;
-            document.getElementById('cartBadge').textContent = count;
-            document.getElementById('navCartCount').textContent = '(' + count + ')';
-            const list = document.getElementById('cartList');
-            if (!count) { list.innerHTML = '<li class="list-group-item text-muted">Your cart is empty.</li>'; return; }
-            let total = 0, html = '';
-            cart.forEach(item => {
-                const p = parseFloat(item.price.replace('$', ''));
-                total += p;
-                html += `<li class="list-group-item d-flex justify-content-between lh-sm">
+        cart.push({
+          name: currentProduct.name,
+          color: selectedColor,
+          size: selectedSize,
+          price: currentProduct.price,
+        });
+        updateCartUI();
+        showToast(
+          currentProduct.name +
+            " (" +
+            selectedSize +
+            ", " +
+            selectedColor +
+            ") added!",
+        );
+      }
+      function updateCartUI() {
+        const count = cart.length;
+        document.getElementById("cartBadge").textContent = count;
+        document.getElementById("navCartCount").textContent = "(" + count + ")";
+        const list = document.getElementById("cartList");
+        if (!count) {
+          list.innerHTML =
+            '<li class="list-group-item text-muted">Your cart is empty.</li>';
+          return;
+        }
+        let total = 0,
+          html = "";
+        cart.forEach((item) => {
+          const p = parseFloat(item.price.replace("$", ""));
+          total += p;
+          html += `<li class="list-group-item d-flex justify-content-between lh-sm">
             <div><h6 class="my-0">${item.name}</h6>
             <small class="text-muted">${item.size} · ${item.color}</small></div>
             <span class="text-body-secondary">${item.price}</span></li>`;
-            });
-            html += `<li class="list-group-item d-flex justify-content-between"><span>Total</span><strong>$${total.toFixed(2)}</strong></li>`;
-            list.innerHTML = html;
+        });
+        html += `<li class="list-group-item d-flex justify-content-between"><span>Total</span><strong>$${total.toFixed(2)}</strong></li>`;
+        list.innerHTML = html;
+      }
+      function showToast(msg) {
+        document.getElementById("toastMsg").textContent = msg;
+        const t = document.getElementById("cartToast");
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 3000);
+      }
+
+      // ─── Quantity
+      function changeQty(delta) {
+        const inp = document.getElementById("qtyInput");
+        let val = parseInt(inp.value) + delta;
+        if (val < 1) val = 1;
+        if (val > 10) val = 10;
+        inp.value = val;
+      }
+
+      // ─── Wishlist toggle
+      function toggleWishlist(btn) {
+        btn.classList.toggle("active");
+        showToast(
+          btn.classList.contains("active")
+            ? currentProduct.name + " added to wishlist!"
+            : currentProduct.name + " removed from wishlist.",
+        );
+      }
+
+      // ─── Accordion
+      function toggleAcc(header) {
+        const body = header.nextElementSibling;
+        const isOpen = header.classList.contains("open");
+        document.querySelectorAll(".acc-header").forEach((h) => {
+          h.classList.remove("open");
+          h.nextElementSibling.classList.remove("open");
+        });
+        if (!isOpen) {
+          header.classList.add("open");
+          body.classList.add("open");
         }
-        function showToast(msg) {
-            document.getElementById('toastMsg').textContent = msg;
-            const t = document.getElementById('cartToast');
-            t.classList.add('show');
-            setTimeout(() => t.classList.remove('show'), 3000);
+      }
+
+      // ─── Size modal
+      function closeSizeModal(e) {
+        if (e.target === document.getElementById("sizeModal"))
+          document.getElementById("sizeModal").classList.remove("show");
+      }
+
+      // ─── Init
+      const productId = getParam("id") || "baggy-fit-jeans";
+      renderProduct(productId);
+
+      // ─── Virtual Try-On Logic ───
+      let vtoStream = null;
+      let vtoX = 0,
+        vtoY = 0;
+      let isDraggingVTO = false;
+      let startX, startY;
+
+      async function openVTO() {
+        document.getElementById("vtoModal").classList.add("show");
+        try {
+          vtoStream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "user" },
+          });
+          document.getElementById("vtoVideo").srcObject = vtoStream;
+        } catch (err) {
+          console.error("Camera access denied:", err);
+          alert(
+            "Camera access denied. You can still use the upload function to try on jeans.",
+          );
+        }
+      }
+
+      function closeVTO() {
+        document.getElementById("vtoModal").classList.remove("show");
+        if (vtoStream) {
+          vtoStream.getTracks().forEach((track) => track.stop());
+          vtoStream = null;
+        }
+      }
+
+      function updateVTOOverlay() {
+        const scale = document.getElementById("vtoScale").value;
+        const img = document.getElementById("vtoOverlay");
+        img.style.transform = `translate(${vtoX}px, ${vtoY}px) scale(${scale})`;
+      }
+
+      function startDrag(e) {
+        isDraggingVTO = true;
+        const event = e.touches ? e.touches[0] : e;
+        startX = event.clientX - vtoX;
+        startY = event.clientY - vtoY;
+        document.addEventListener("mousemove", dragVTO);
+        document.addEventListener("touchmove", dragVTO);
+        document.addEventListener("mouseup", stopDrag);
+        document.addEventListener("touchend", stopDrag);
+      }
+
+      function dragVTO(e) {
+        if (!isDraggingVTO) return;
+        const event = e.touches ? e.touches[0] : e;
+        vtoX = event.clientX - startX;
+        vtoY = event.clientY - startY;
+        updateVTOOverlay();
+      }
+
+      function stopDrag() {
+        isDraggingVTO = false;
+        document.removeEventListener("mousemove", dragVTO);
+        document.removeEventListener("touchmove", dragVTO);
+      }
+
+      function handleVTOUpload(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const video = document.getElementById("vtoVideo");
+            video.style.display = "none";
+            const container = document.querySelector(".vto-container");
+            container.style.backgroundImage = `url(${event.target.result})`;
+            container.style.backgroundSize = "cover";
+            container.style.backgroundPosition = "center";
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      function takeVTOShot() {
+        const video = document.getElementById("vtoVideo");
+        const canvas = document.getElementById("vtoCanvas");
+        const context = canvas.getContext("2d");
+
+        canvas.width = video.videoWidth || 1080;
+        canvas.height = video.videoHeight || 1920;
+
+        // Draw video (or background image)
+        if (video.style.display !== "none") {
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        } else {
+          // For simplified demo, we'll just note it took a shot.
+          // In a full implementation, you'd draw the background image here.
         }
 
-        // ─── Quantity
-        function changeQty(delta) {
-            const inp = document.getElementById('qtyInput');
-            let val = parseInt(inp.value) + delta;
-            if (val < 1) val = 1;
-            if (val > 10) val = 10;
-            inp.value = val;
-        }
-
-        // ─── Wishlist toggle
-        function toggleWishlist(btn) {
-            btn.classList.toggle('active');
-            showToast(btn.classList.contains('active') ? currentProduct.name + ' added to wishlist!' : currentProduct.name + ' removed from wishlist.');
-        }
-
-        // ─── Accordion
-        function toggleAcc(header) {
-            const body = header.nextElementSibling;
-            const isOpen = header.classList.contains('open');
-            document.querySelectorAll('.acc-header').forEach(h => {
-                h.classList.remove('open');
-                h.nextElementSibling.classList.remove('open');
-            });
-            if (!isOpen) { header.classList.add('open'); body.classList.add('open'); }
-        }
-
-        // ─── Size modal
-        function closeSizeModal(e) {
-            if (e.target === document.getElementById('sizeModal'))
-                document.getElementById('sizeModal').classList.remove('show');
-        }
-
-        // ─── Init
-        const productId = getParam('id') || 'baggy-fit-jeans';
-        renderProduct(productId);
-
-        // ─── Virtual Try-On Logic ───
-        let vtoStream = null;
-        let vtoX = 0, vtoY = 0;
-        let isDraggingVTO = false;
-        let startX, startY;
-
-        async function openVTO() {
-            document.getElementById('vtoModal').classList.add('show');
-            try {
-                vtoStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
-                document.getElementById('vtoVideo').srcObject = vtoStream;
-            } catch (err) {
-                console.error("Camera access denied:", err);
-                alert("Camera access denied. You can still use the upload function to try on jeans.");
-            }
-        }
-
-        function closeVTO() {
-            document.getElementById('vtoModal').classList.remove('show');
-            if (vtoStream) {
-                vtoStream.getTracks().forEach(track => track.stop());
-                vtoStream = null;
-            }
-        }
-
-        function updateVTOOverlay() {
-            const scale = document.getElementById('vtoScale').value;
-            const img = document.getElementById('vtoOverlay');
-            img.style.transform = `translate(${vtoX}px, ${vtoY}px) scale(${scale})`;
-        }
-
-        function startDrag(e) {
-            isDraggingVTO = true;
-            const event = e.touches ? e.touches[0] : e;
-            startX = event.clientX - vtoX;
-            startY = event.clientY - vtoY;
-            document.addEventListener('mousemove', dragVTO);
-            document.addEventListener('touchmove', dragVTO);
-            document.addEventListener('mouseup', stopDrag);
-            document.addEventListener('touchend', stopDrag);
-        }
-
-        function dragVTO(e) {
-            if (!isDraggingVTO) return;
-            const event = e.touches ? e.touches[0] : e;
-            vtoX = event.clientX - startX;
-            vtoY = event.clientY - startY;
-            updateVTOOverlay();
-        }
-
-        function stopDrag() {
-            isDraggingVTO = false;
-            document.removeEventListener('mousemove', dragVTO);
-            document.removeEventListener('touchmove', dragVTO);
-        }
-
-        function handleVTOUpload(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const video = document.getElementById('vtoVideo');
-                    video.style.display = 'none';
-                    const container = document.querySelector('.vto-container');
-                    container.style.backgroundImage = `url(${event.target.result})`;
-                    container.style.backgroundSize = 'cover';
-                    container.style.backgroundPosition = 'center';
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function takeVTOShot() {
-            const video = document.getElementById('vtoVideo');
-            const canvas = document.getElementById('vtoCanvas');
-            const context = canvas.getContext('2d');
-
-            canvas.width = video.videoWidth || 1080;
-            canvas.height = video.videoHeight || 1920;
-
-            // Draw video (or background image)
-            if (video.style.display !== 'none') {
-                context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            } else {
-                // For simplified demo, we'll just note it took a shot.
-                // In a full implementation, you'd draw the background image here.
-            }
-
-            // Draw overlay (simplified representation)
-            showToast("Fit captured! Looking great.");
-        }
+        // Draw overlay (simplified representation)
+        showToast("Fit captured! Looking great.");
+      }
     </script>
-</body>
-
+  </body>
 </html>
